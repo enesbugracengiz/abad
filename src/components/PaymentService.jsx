@@ -11,38 +11,92 @@ const PaymentService = ({
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
 
+  // New state variables for card details
+  const [cardNumber, setCardNumber] = useState("");
+  const [expiryDate, setExpiryDate] = useState(""); // For MM/YY input
+  const [cvc, setCvc] = useState("");
+  const [cardHolderName, setCardHolderName] = useState("");
+
   const handlePayment = async (e) => {
     e.preventDefault();
     setIsProcessing(true);
     setError(null);
 
     try {
-      // İyzico ödeme işlemi simülasyonu
-      // Gerçek projede backend API'ye istek atılacak
+      const [mm, yy] = expiryDate.split("/");
+      const expireMonth = mm;
+      const expireYear = "20" + yy; // Assuming 20XX format
+
+      // Prepare payment data for the backend
       const paymentData = {
-        amount: donationAmount,
-        donorInfo: donorInfo,
-        timestamp: new Date().toISOString(),
+        price: donationAmount,
+        paymentCard: {
+          cardHolderName: cardHolderName,
+          cardNumber: cardNumber.replace(/\s/g, ""), // Remove spaces
+          expireMonth: expireMonth,
+          expireYear: expireYear,
+          cvc: cvc,
+        },
+        buyer: {
+          id: donorInfo?.id || "BY" + Date.now(), // Use donorInfo.id if available, otherwise generate
+          name: donorInfo?.name || "Anonim",
+          surname: donorInfo?.surname || "Bağışçı",
+          gsmNumber: donorInfo?.gsmNumber || "+905551234567", // Placeholder
+          email: donorInfo?.email || "anonim@example.com", // Placeholder
+          identityNumber: donorInfo?.identityNumber || "11111111111", // Placeholder
+          lastLoginDate: new Date().toISOString().slice(0, 19).replace('T', ' '), // Current date/time
+          registrationDate: new Date().toISOString().slice(0, 19).replace('T', ' '), // Current date/time
+          registrationAddress: donorInfo?.address || "Placeholder Adres", // Placeholder
+          ip: "127.0.0.1", // Placeholder, should be client IP in real app
+          city: donorInfo?.city || "Istanbul", // Placeholder
+          country: donorInfo?.country || "Turkey", // Placeholder
+          zipCode: donorInfo?.zipCode || "34000", // Placeholder
+        },
+        shippingAddress: {
+          contactName: `${donorInfo?.name || "Anonim"} ${donorInfo?.surname || "Bağışçı"}`,
+          city: donorInfo?.city || "Istanbul", // Placeholder
+          country: donorInfo?.country || "Turkey", // Placeholder
+          address: donorInfo?.address || "Placeholder Adres", // Placeholder
+          zipCode: donorInfo?.zipCode || "34000", // Placeholder
+        },
+        billingAddress: {
+          contactName: `${donorInfo?.name || "Anonim"} ${donorInfo?.surname || "Bağışçı"}`,
+          city: donorInfo?.city || "Istanbul", // Placeholder
+          country: donorInfo?.country || "Turkey", // Placeholder
+          address: donorInfo?.address || "Placeholder Adres", // Placeholder
+          zipCode: donorInfo?.zipCode || "34000", // Placeholder
+        },
+        basketItems: [
+          {
+            id: "BI" + Date.now(),
+            name: "Bağış",
+            category1: "Bağış",
+            itemType: "VIRTUAL", // Assuming donation is a virtual item
+            price: donationAmount,
+          },
+        ],
       };
 
-      // Log payment data for debugging
-      console.log("Payment data:", paymentData);
+      const response = await fetch("http://localhost:5000/create-payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(paymentData),
+      });
 
-      // Simülasyon - 2 saniye bekle
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const data = await response.json();
 
-      // Rastgele başarı/hata durumu (demo için)
-      const isSuccess = Math.random() > 0.1; // %90 başarı oranı
-
-      if (isSuccess) {
+      if (data.success) {
         onPaymentSuccess({
-          transactionId: "TXN-" + Date.now(),
+          transactionId: data.result.paymentId,
           amount: donationAmount,
           status: "success",
+          rawResult: data.result, // Pass raw result for debugging/further use
         });
         setShowModal(false);
       } else {
-        throw new Error("Ödeme işlemi başarısız oldu. Lütfen tekrar deneyin.");
+        throw new Error(data.error || "Ödeme işlemi başarısız oldu.");
       }
     } catch (err) {
       setError(err.message);
@@ -101,6 +155,8 @@ const PaymentService = ({
                 placeholder="1234 5678 9012 3456"
                 required
                 disabled={isProcessing}
+                value={cardNumber}
+                onChange={(e) => setCardNumber(e.target.value)}
               />
             </Form.Group>
 
@@ -113,6 +169,8 @@ const PaymentService = ({
                     placeholder="MM/YY"
                     required
                     disabled={isProcessing}
+                    value={expiryDate}
+                    onChange={(e) => setExpiryDate(e.target.value)}
                   />
                 </Form.Group>
               </div>
@@ -124,6 +182,8 @@ const PaymentService = ({
                     placeholder="123"
                     required
                     disabled={isProcessing}
+                    value={cvc}
+                    onChange={(e) => setCvc(e.target.value)}
                   />
                 </Form.Group>
               </div>
@@ -136,6 +196,8 @@ const PaymentService = ({
                 placeholder="KART SAHİBİ ADI"
                 required
                 disabled={isProcessing}
+                value={cardHolderName}
+                onChange={(e) => setCardHolderName(e.target.value)}
               />
             </Form.Group>
 
