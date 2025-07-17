@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Modal, Form, Alert, Spinner } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const PaymentService = ({
   donationAmount,
@@ -17,10 +18,41 @@ const PaymentService = ({
   const [cvc, setCvc] = useState("");
   const [cardHolderName, setCardHolderName] = useState("");
 
+  // Kart numarası formatlaması
+  const formatCardNumber = (value) => {
+    const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+    const matches = v.match(/\d{4,16}/g);
+    const match = (matches && matches[0]) || "";
+    const parts = [];
+    for (let i = 0, len = match.length; i < len; i += 4) {
+      parts.push(match.substring(i, i + 4));
+    }
+    if (parts.length) {
+      return parts.join(" ");
+    } else {
+      return v;
+    }
+  };
+
+  // Son kullanma tarihi formatlaması
+  const formatExpiryDate = (value) => {
+    const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+    if (v.length >= 2) {
+      return v.substring(0, 2) + "/" + v.substring(2, 4);
+    }
+    return v;
+  };
+
   const handlePayment = async (e) => {
     e.preventDefault();
     setIsProcessing(true);
     setError(null);
+
+    // İşlem başladığında toast göster
+    const loadingToast = toast.loading("Ödeme işlemi yapılıyor...", {
+      position: "top-right",
+      autoClose: false,
+    });
 
     try {
       const [mm, yy] = expiryDate.split("/");
@@ -44,8 +76,14 @@ const PaymentService = ({
           gsmNumber: donorInfo?.gsmNumber || "+905551234567", // Placeholder
           email: donorInfo?.email || "anonim@example.com", // Placeholder
           identityNumber: donorInfo?.identityNumber || "11111111111", // Placeholder
-          lastLoginDate: new Date().toISOString().slice(0, 19).replace('T', ' '), // Current date/time
-          registrationDate: new Date().toISOString().slice(0, 19).replace('T', ' '), // Current date/time
+          lastLoginDate: new Date()
+            .toISOString()
+            .slice(0, 19)
+            .replace("T", " "), // Current date/time
+          registrationDate: new Date()
+            .toISOString()
+            .slice(0, 19)
+            .replace("T", " "), // Current date/time
           registrationAddress: donorInfo?.address || "Placeholder Adres", // Placeholder
           ip: "127.0.0.1", // Placeholder, should be client IP in real app
           city: donorInfo?.city || "Istanbul", // Placeholder
@@ -53,14 +91,18 @@ const PaymentService = ({
           zipCode: donorInfo?.zipCode || "34000", // Placeholder
         },
         shippingAddress: {
-          contactName: `${donorInfo?.name || "Anonim"} ${donorInfo?.surname || "Bağışçı"}`,
+          contactName: `${donorInfo?.name || "Anonim"} ${
+            donorInfo?.surname || "Bağışçı"
+          }`,
           city: donorInfo?.city || "Istanbul", // Placeholder
           country: donorInfo?.country || "Turkey", // Placeholder
           address: donorInfo?.address || "Placeholder Adres", // Placeholder
           zipCode: donorInfo?.zipCode || "34000", // Placeholder
         },
         billingAddress: {
-          contactName: `${donorInfo?.name || "Anonim"} ${donorInfo?.surname || "Bağışçı"}`,
+          contactName: `${donorInfo?.name || "Anonim"} ${
+            donorInfo?.surname || "Bağışçı"
+          }`,
           city: donorInfo?.city || "Istanbul", // Placeholder
           country: donorInfo?.country || "Turkey", // Placeholder
           address: donorInfo?.address || "Placeholder Adres", // Placeholder
@@ -77,7 +119,7 @@ const PaymentService = ({
         ],
       };
 
-      const response = await fetch("http://localhost:5000/create-payment", {
+      const response = await fetch("http://localhost:5001/create-payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,6 +130,13 @@ const PaymentService = ({
       const data = await response.json();
 
       if (data.success) {
+        // Loading toast'u kapat ve başarı toast'u göster
+        toast.dismiss(loadingToast);
+        toast.success(`Ödeme başarılı! Tutar: ${donationAmount}₺`, {
+          position: "top-right",
+          autoClose: 5000,
+        });
+
         onPaymentSuccess({
           transactionId: data.result.paymentId,
           amount: donationAmount,
@@ -99,6 +148,13 @@ const PaymentService = ({
         throw new Error(data.error || "Ödeme işlemi başarısız oldu.");
       }
     } catch (err) {
+      // Loading toast'u kapat ve hata toast'u göster
+      toast.dismiss(loadingToast);
+      toast.error(`Ödeme başarısız: ${err.message}`, {
+        position: "top-right",
+        autoClose: 7000,
+      });
+
       setError(err.message);
       onPaymentError(err.message);
     } finally {
@@ -156,7 +212,10 @@ const PaymentService = ({
                 required
                 disabled={isProcessing}
                 value={cardNumber}
-                onChange={(e) => setCardNumber(e.target.value)}
+                onChange={(e) =>
+                  setCardNumber(formatCardNumber(e.target.value))
+                }
+                maxLength="19"
               />
             </Form.Group>
 
@@ -170,7 +229,10 @@ const PaymentService = ({
                     required
                     disabled={isProcessing}
                     value={expiryDate}
-                    onChange={(e) => setExpiryDate(e.target.value)}
+                    onChange={(e) =>
+                      setExpiryDate(formatExpiryDate(e.target.value))
+                    }
+                    maxLength="5"
                   />
                 </Form.Group>
               </div>
@@ -183,7 +245,8 @@ const PaymentService = ({
                     required
                     disabled={isProcessing}
                     value={cvc}
-                    onChange={(e) => setCvc(e.target.value)}
+                    onChange={(e) => setCvc(e.target.value.replace(/\D/g, ""))}
+                    maxLength="4"
                   />
                 </Form.Group>
               </div>

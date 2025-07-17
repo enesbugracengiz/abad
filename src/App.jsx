@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import CertificatePage from "./pages/CertificatePage";
@@ -9,20 +11,40 @@ import "./App.css";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/certificate" element={<CertificatePage />} />
-        <Route path="/activities" element={<ActivitiesPage />} />
-        <Route path="/news" element={<NewsPage />} />
-        <Route path="/map" element={<MapPage />} />
-        <Route path="/movement" element={<ActivitiesPage />} />
-        <Route path="/kindergarten" element={<NewsPage />} />
-        <Route path="/shop" element={<HomePage />} />
-        <Route path="/donate" element={<CertificatePage />} />
-        <Route path="/projects" element={<ActivitiesPage />} />
-      </Routes>
-    </Layout>
+    <>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/certificate" element={<CertificatePage />} />
+          <Route path="/activities" element={<ActivitiesPage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/map" element={<MapPage />} />
+          <Route path="/movement" element={<ActivitiesPage />} />
+          <Route path="/kindergarten" element={<NewsPage />} />
+          <Route path="/shop" element={<HomePage />} />
+          <Route path="/donate" element={<CertificatePage />} />
+          <Route path="/projects" element={<ActivitiesPage />} />
+        </Routes>
+      </Layout>
+
+      {/* Toast Bildirimleri */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        toastStyle={{
+          fontSize: "14px",
+          borderRadius: "8px",
+        }}
+      />
+    </>
   );
 }
 
