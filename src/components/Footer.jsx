@@ -2,112 +2,433 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <footer className="footer-modern">
+    <footer style={{ 
+      background: 'linear-gradient(135deg, #727475 0%, #5a5a5a 100%)',
+      color: 'white',
+      marginTop: '3rem',
+      borderTop: '4px solid #00baa3',
+      fontFamily: 'Poppins, sans-serif'
+    }}>
       <div className="footer-main py-5">
         <Container>
           <Row>
             <Col lg={4} md={6} className="mb-4">
               <div className="footer-brand">
-                <div className="footer-logo mb-3">
-                  <span className="logo-ab text-success">AB</span>
-                  <span className="logo-ad text-primary">AD</span>
+                <div className="d-flex align-items-center mb-3">
+                  <img 
+                    src="/src/assets/images/abad-logo-seffaf-buyuk.png" 
+                    alt="ABAD Logo" 
+                    style={{ height: '50px', marginRight: '15px' }}
+                  />
+                  <div>
+                    <div style={{ 
+                      color: '#00baa3', 
+                      fontWeight: 'bold', 
+                      fontSize: '1.5rem',
+                      lineHeight: '1.2'
+                    }}>
+                      ABAD
+                    </div>
+                    <div style={{ 
+                      color: 'rgba(255,255,255,0.8)', 
+                      fontSize: '0.75rem',
+                      lineHeight: '1.2'
+                    }}>
+                      Anadolu Bilgelerini<br/>
+                      Araştırma Derneği
+                    </div>
+                  </div>
                 </div>
-                <h5 className="text-white mb-3">
-                  Anadolu Bilgelerini Araştırma Derneği
-                </h5>
-                <p className="text-white-50 mb-4">
-                  Doğayı korumak, gelecek nesillere yeşil bir dünya bırakmak
-                  için çalışıyoruz.
+                <p style={{ 
+                  color: 'rgba(255,255,255,0.8)', 
+                  marginBottom: '1.5rem',
+                  lineHeight: '1.5',
+                  fontSize: '0.95rem'
+                }}>
+                  Hiçbir yer, hiçbir gönül çorak kalmasın. Anadolu'nun bilgelerini 
+                  gelecek nesillere aktarıyor, doğaya sahip çıkıyoruz.
                 </p>
                 <div className="footer-social">
-                  <a href="#" className="social-link me-3">
+                  <a 
+                    href="#" 
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '45px',
+                      height: '45px',
+                      backgroundColor: 'rgba(0,186,163,0.2)',
+                      borderRadius: '50%',
+                      color: '#00baa3',
+                      textDecoration: 'none',
+                      marginRight: '10px',
+                      transition: 'all 0.3s ease',
+                      border: '2px solid rgba(0,186,163,0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = '#00baa3';
+                      e.target.style.color = 'white';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = 'rgba(0,186,163,0.2)';
+                      e.target.style.color = '#00baa3';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#" className="social-link me-3">
+                  <a 
+                    href="#" 
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '45px',
+                      height: '45px',
+                      backgroundColor: 'rgba(235,200,88,0.2)',
+                      borderRadius: '50%',
+                      color: '#ebc858',
+                      textDecoration: 'none',
+                      marginRight: '10px',
+                      transition: 'all 0.3s ease',
+                      border: '2px solid rgba(235,200,88,0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = '#ebc858';
+                      e.target.style.color = '#000';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = 'rgba(235,200,88,0.2)';
+                      e.target.style.color = '#ebc858';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href="#" className="social-link me-3">
+                  <a 
+                    href="#" 
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '45px',
+                      height: '45px',
+                      backgroundColor: 'rgba(235,137,88,0.2)',
+                      borderRadius: '50%',
+                      color: '#eb8958',
+                      textDecoration: 'none',
+                      marginRight: '10px',
+                      transition: 'all 0.3s ease',
+                      border: '2px solid rgba(235,137,88,0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = '#eb8958';
+                      e.target.style.color = 'white';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = 'rgba(235,137,88,0.2)';
+                      e.target.style.color = '#eb8958';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
-                  <a href="#" className="social-link">
+                  <a 
+                    href="#" 
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '45px',
+                      height: '45px',
+                      backgroundColor: 'rgba(0,186,163,0.2)',
+                      borderRadius: '50%',
+                      color: '#00baa3',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s ease',
+                      border: '2px solid rgba(0,186,163,0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = '#00baa3';
+                      e.target.style.color = 'white';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = 'rgba(0,186,163,0.2)';
+                      e.target.style.color = '#00baa3';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>
               </div>
             </Col>
             <Col lg={2} md={6} className="mb-4">
-              <h6 className="text-white mb-3">Hızlı Linkler</h6>
-              <ul className="footer-links">
-                <li>
-                  <a href="/">Ana Sayfa</a>
+              <h6 style={{ color: '#00baa3', fontWeight: 'bold', marginBottom: '1rem' }}>
+                Hızlı Linkler
+              </h6>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#00baa3'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    Ana Sayfa
+                  </a>
                 </li>
-                <li>
-                  <a href="/activities">Faaliyetler</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/activities" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#00baa3'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    Faaliyetler
+                  </a>
                 </li>
-                <li>
-                  <a href="/certificate">Bağış Yap</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/certificate" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#ebc858'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    Bağış Yap
+                  </a>
                 </li>
-                <li>
-                  <a href="/news">Haberler</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/news" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#00baa3'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    Haberler
+                  </a>
                 </li>
-                <li>
-                  <a href="/map">Harita</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/map" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#00baa3'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    Hakkımızda
+                  </a>
                 </li>
               </ul>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <h6 className="text-white mb-3">Faaliyetler</h6>
-              <ul className="footer-links">
-                <li>
-                  <a href="/activities">Doğa Faaliyetleri</a>
+              <h6 style={{ color: '#ebc858', fontWeight: 'bold', marginBottom: '1rem' }}>
+                Faaliyet Alanları
+              </h6>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/activities" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#00baa3'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    <i className="fas fa-seedling me-2" style={{ color: '#00baa3' }}></i>
+                    Doğa Faaliyetleri
+                  </a>
                 </li>
-                <li>
-                  <a href="/activities">Çocuk & Genç</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/activities" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#eb8958'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    <i className="fas fa-child me-2" style={{ color: '#eb8958' }}></i>
+                    Çocuk & Genç
+                  </a>
                 </li>
-                <li>
-                  <a href="/activities">Eğitim & Seminer</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/activities" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#ebc858'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    <i className="fas fa-graduation-cap me-2" style={{ color: '#ebc858' }}></i>
+                    Eğitim & Seminer
+                  </a>
                 </li>
-                <li>
-                  <a href="/certificate">Fidan Bağışı</a>
+                <li style={{ marginBottom: '0.5rem' }}>
+                  <a 
+                    href="/certificate" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#ebc858'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
+                    <i className="fas fa-heart me-2" style={{ color: '#ebc858' }}></i>
+                    Bağış Desteği
+                  </a>
                 </li>
               </ul>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <h6 className="text-white mb-3">İletişim</h6>
+              <h6 style={{ color: '#eb8958', fontWeight: 'bold', marginBottom: '1rem' }}>
+                İletişim Bilgileri
+              </h6>
               <div className="footer-contact">
-                <div className="contact-item mb-3">
-                  <i className="fas fa-phone text-success me-2"></i>
-                  <a href="tel:02128800000" className="text-white-50">
+                <div 
+                  className="contact-item mb-3" 
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <i 
+                    className="fas fa-phone me-3" 
+                    style={{ color: '#00baa3', fontSize: '1.1rem' }}
+                  ></i>
+                  <a 
+                    href="tel:+902128800000" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#00baa3'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
                     0212 880 00 00
                   </a>
                 </div>
-                <div className="contact-item mb-3">
-                  <i className="fas fa-envelope text-success me-2"></i>
-                  <a href="mailto:info@abad.org.tr" className="text-white-50">
+                <div 
+                  className="contact-item mb-3" 
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <i 
+                    className="fas fa-envelope me-3" 
+                    style={{ color: '#ebc858', fontSize: '1.1rem' }}
+                  ></i>
+                  <a 
+                    href="mailto:info@abad.org.tr" 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      textDecoration: 'none',
+                      fontSize: '0.9rem',
+                      transition: 'color 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#ebc858'}
+                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  >
                     info@abad.org.tr
                   </a>
                 </div>
-                <div className="contact-item">
-                  <i className="fas fa-map-marker-alt text-success me-2"></i>
-                  <span className="text-white-50">İstanbul, Türkiye</span>
+                <div 
+                  className="contact-item"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <i 
+                    className="fas fa-map-marker-alt me-3" 
+                    style={{ color: '#eb8958', fontSize: '1.1rem' }}
+                  ></i>
+                  <span 
+                    style={{ 
+                      color: 'rgba(255,255,255,0.7)', 
+                      fontSize: '0.9rem' 
+                    }}
+                  >
+                    İstanbul, Türkiye
+                  </span>
                 </div>
               </div>
             </Col>
           </Row>
         </Container>
       </div>
-      <div className="footer-bottom py-3">
+      <div 
+        className="footer-bottom py-3" 
+        style={{ 
+          backgroundColor: 'rgba(0,0,0,0.3)', 
+          borderTop: '1px solid rgba(255,255,255,0.1)' 
+        }}
+      >
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
-              <p className="mb-0 text-white-50">
-                © 2024 ABAD. Tüm hakları saklıdır.
+              <p 
+                className="mb-0" 
+                style={{ 
+                  color: 'rgba(255,255,255,0.6)', 
+                  fontSize: '0.85rem' 
+                }}
+              >
+                © 2024 ABAD - Anadolu Bilgelerini Araştırma Derneği. Tüm hakları saklıdır.
               </p>
             </Col>
             <Col md={6} className="text-md-end">
-              <p className="mb-0 text-white-50">
-                <i className="fas fa-heart text-danger me-1"></i>
-                Doğa sevgisiyle yapıldı
+              <p 
+                className="mb-0" 
+                style={{ 
+                  color: 'rgba(255,255,255,0.6)', 
+                  fontSize: '0.85rem' 
+                }}
+              >
+                <i className="fas fa-heart me-2" style={{ color: '#eb8958' }}></i>
+                Hiçbir yer, hiçbir gönül çorak kalmasın
               </p>
             </Col>
           </Row>

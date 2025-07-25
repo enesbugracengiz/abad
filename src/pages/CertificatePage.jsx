@@ -74,85 +74,174 @@ const CertificatePage = () => {
   };
 
   const handleLogin = () => {
-    // Simulate login redirect
     alert("Üye giriş sayfasına yönlendiriliyorsunuz...");
     setShowLoginModal(false);
   };
 
   return (
-    <div className="tema-donation-page">
+    <div className="tema-donation-page" style={{ fontFamily: 'Poppins, sans-serif' }}>
       {/* TEMA Benzeri Hero Section */}
-      <section className="tema-hero-section" style={{ 
-        background: 'linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%)',
-        minHeight: '70vh',
-        display: 'flex',
-        alignItems: 'center',
-        color: 'white'
-      }}>
+      <section 
+        className="tema-hero-section" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(0,186,163,0.9), rgba(0,140,122,0.9)), url('/src/assets/images/bagis.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          minHeight: '80vh',
+          display: 'flex',
+          alignItems: 'center',
+          color: 'white',
+          position: 'relative'
+        }}
+      >
         <Container>
           <Row className="justify-content-center text-center">
-            <Col lg={8}>
+            <Col lg={10}>
               <div className="tema-hero-content">
-                <h1 className="display-4 fw-bold mb-4" style={{ fontSize: '3.5rem' }}>
+                <div className="hero-badge mb-4">
+                  <span 
+                    className="badge px-4 py-3"
+                    style={{
+                      backgroundColor: 'rgba(235,200,88,0.9)',
+                      color: '#000',
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      borderRadius: '30px',
+                      border: '2px solid rgba(255,255,255,0.3)'
+                    }}
+                  >
+                    🌱 ABAD'a Bağış Yapın
+                  </span>
+                </div>
+                
+                <h1 
+                  className="display-3 fw-bold mb-4" 
+                  style={{ 
+                    fontSize: '3.5rem',
+                    lineHeight: '1.1',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                  }}
+                >
                   AYLIK DÜZENLİ BAĞIŞÇIMIZ OLUN
                 </h1>
-                <p className="lead mb-5" style={{ fontSize: '1.2rem', opacity: 0.9 }}>
+                
+                <p 
+                  className="lead mb-5" 
+                  style={{ 
+                    fontSize: '1.3rem', 
+                    opacity: 0.95,
+                    maxWidth: '800px',
+                    margin: '0 auto 3rem auto',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+                  }}
+                >
                   Başta toprak olmak üzere tüm doğal varlıklarımızı korumak için yürüttüğümüz çalışmalara
-                  destek olun.
+                  destek olun. Anadolu'nun bilgelerini gelecek nesillere aktarma misyonumuzda bize katılın.
                 </p>
                 
                 {/* TEMA'nın Tam Tutar Seçim Sistemi */}
                 <div className="tema-amount-selection mb-5">
-                  <div className="d-flex justify-content-center gap-3 mb-4">
+                  <div className="d-flex justify-content-center gap-3 mb-4 flex-wrap">
                     <Button
                       size="lg"
-                      variant={selectedAmount === '50' ? 'light' : 'outline-light'}
-                      className="px-4 py-3"
+                      className="tema-amount-btn"
                       style={{ 
-                        minWidth: '120px',
+                        minWidth: '140px',
+                        height: '70px',
                         fontWeight: 'bold',
-                        fontSize: '1.1rem',
-                        borderRadius: '25px'
+                        fontSize: '1.4rem',
+                        borderRadius: '35px',
+                        border: '3px solid white',
+                        backgroundColor: selectedAmount === '50' ? '#ebc858' : 'rgba(255,255,255,0.1)',
+                        color: selectedAmount === '50' ? '#000' : 'white',
+                        transition: 'all 0.3s ease',
+                        backdropFilter: 'blur(10px)'
                       }}
                       onClick={() => handleAmountSelect('50')}
+                      onMouseEnter={(e) => {
+                        if (selectedAmount !== '50') {
+                          e.target.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (selectedAmount !== '50') {
+                          e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                        }
+                      }}
                     >
                       50 ₺
                     </Button>
+                    
                     <Button
                       size="lg"
-                      variant={selectedAmount === '100' ? 'light' : 'outline-light'}
-                      className="px-4 py-3"
+                      className="tema-amount-btn"
                       style={{ 
-                        minWidth: '120px',
+                        minWidth: '140px',
+                        height: '70px',
                         fontWeight: 'bold',
-                        fontSize: '1.1rem',
-                        borderRadius: '25px'
+                        fontSize: '1.4rem',
+                        borderRadius: '35px',
+                        border: '3px solid white',
+                        backgroundColor: selectedAmount === '100' ? '#ebc858' : 'rgba(255,255,255,0.1)',
+                        color: selectedAmount === '100' ? '#000' : 'white',
+                        transition: 'all 0.3s ease',
+                        backdropFilter: 'blur(10px)'
                       }}
                       onClick={() => handleAmountSelect('100')}
+                      onMouseEnter={(e) => {
+                        if (selectedAmount !== '100') {
+                          e.target.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (selectedAmount !== '100') {
+                          e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                        }
+                      }}
                     >
                       100 ₺
                     </Button>
+                    
                     <Button
                       size="lg"
-                      variant={selectedAmount === '200' ? 'light' : 'outline-light'}
-                      className="px-4 py-3"
+                      className="tema-amount-btn tema-highlighted"
                       style={{ 
-                        minWidth: '120px',
+                        minWidth: '140px',
+                        height: '70px',
                         fontWeight: 'bold',
-                        fontSize: '1.1rem',
-                        borderRadius: '25px',
-                        backgroundColor: selectedAmount === '200' ? '#4CAF50' : 'transparent',
-                        borderColor: selectedAmount === '200' ? '#4CAF50' : 'white',
-                        color: selectedAmount === '200' ? 'white' : 'white'
+                        fontSize: '1.4rem',
+                        borderRadius: '35px',
+                        border: '3px solid white',
+                        backgroundColor: selectedAmount === '200' ? '#ebc858' : '#eb8958',
+                        color: selectedAmount === '200' ? '#000' : 'white',
+                        transition: 'all 0.3s ease',
+                        boxShadow: '0 6px 20px rgba(235,137,88,0.4)',
+                        position: 'relative'
                       }}
                       onClick={() => handleAmountSelect('200')}
                     >
                       200 ₺
+                      <span 
+                        style={{
+                          position: 'absolute',
+                          top: '-10px',
+                          right: '-10px',
+                          backgroundColor: '#ebc858',
+                          color: '#000',
+                          fontSize: '0.7rem',
+                          padding: '2px 8px',
+                          borderRadius: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        ÖNERİLEN
+                      </span>
                     </Button>
                   </div>
                   
-                  <div className="tema-custom-amount">
-                    <p className="mb-2" style={{ opacity: 0.8 }}>veya</p>
+                  <div className="tema-custom-amount text-center">
+                    <p className="mb-3" style={{ opacity: 0.9, fontSize: '1.1rem' }}>veya</p>
                     <Form.Control
                       type="number"
                       placeholder="Başka bir tutar girin"
@@ -160,33 +249,47 @@ const CertificatePage = () => {
                       onChange={handleCustomAmountChange}
                       className="text-center mx-auto"
                       style={{
-                        maxWidth: '250px',
-                        borderRadius: '25px',
-                        padding: '12px 20px',
-                        fontSize: '1.1rem',
-                        border: '2px solid white',
+                        maxWidth: '300px',
+                        height: '55px',
+                        borderRadius: '30px',
+                        padding: '15px 25px',
+                        fontSize: '1.2rem',
+                        border: '3px solid white',
                         backgroundColor: 'rgba(255,255,255,0.1)',
-                        color: 'white'
+                        color: 'white',
+                        backdropFilter: 'blur(10px)'
                       }}
                       min="1"
                     />
                   </div>
                 </div>
 
-                {/* TEMA Benzeri Ana Bağış Butonu */}
                 <Button
                   size="lg"
-                  className="tema-main-donate-btn px-5 py-3"
+                  className="tema-main-donate-btn"
                   style={{
-                    backgroundColor: '#FF6B35',
-                    borderColor: '#FF6B35',
-                    borderRadius: '25px',
+                    backgroundColor: '#ebc858',
+                    borderColor: '#ebc858',
+                    color: '#000',
+                    borderRadius: '35px',
                     fontWeight: 'bold',
-                    fontSize: '1.2rem',
-                    minWidth: '200px'
+                    fontSize: '1.3rem',
+                    minWidth: '280px',
+                    height: '70px',
+                    boxShadow: '0 8px 25px rgba(235,200,88,0.4)',
+                    transition: 'all 0.3s ease'
                   }}
                   onClick={() => setShowLoginModal(true)}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 12px 30px rgba(235,200,88,0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(235,200,88,0.4)';
+                  }}
                 >
+                  <i className="fas fa-heart me-3"></i>
                   HEMEN BAĞIŞ YAP
                 </Button>
               </div>
@@ -196,99 +299,176 @@ const CertificatePage = () => {
       </section>
 
       {/* Login/Guest Modal - TEMA Benzeri */}
-      <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)} centered size="md">
-        <Modal.Header closeButton style={{ backgroundColor: '#2E7D32', color: 'white' }}>
-          <Modal.Title>Giriş Yapın</Modal.Title>
+      <Modal 
+        show={showLoginModal} 
+        onHide={() => setShowLoginModal(false)} 
+        centered 
+        size="md"
+        style={{ zIndex: 9999 }}
+        backdrop={true}
+        keyboard={true}
+      >
+        <Modal.Header 
+          closeButton 
+          style={{ 
+            backgroundColor: '#00baa3', 
+            color: 'white',
+            borderBottom: 'none',
+            borderRadius: '20px 20px 0 0'
+          }}
+        >
+          <Modal.Title style={{ fontWeight: 'bold', fontFamily: 'Poppins, sans-serif' }}>
+            ABAD'a Hoşgeldiniz
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="p-4">
+        <Modal.Body className="p-4" style={{ backgroundColor: '#fafafa' }}>
           <div className="text-center mb-4">
-            <p className="text-muted">
-              Veya üzem kayıt olmak için işlem üz ilk bağışınızı yapmak için giriş yapın
-              o zaman detaylarınız bizim APP büründə saqland.
+            <img 
+              src="/src/assets/images/abad-logo-seffaf-buyuk.png"
+              alt="ABAD Logo"
+              style={{ height: '60px', marginBottom: '1rem' }}
+            />
+            <p className="text-muted" style={{ fontSize: '0.95rem', lineHeight: '1.4' }}>
+              Bağış yapmak için giriş yapabilir veya üye olmadan devam edebilirsiniz.
             </p>
           </div>
           
           <Form className="mb-4">
             <Form.Group className="mb-3">
-              <Form.Label>E-posta Adresiniz</Form.Label>
+              <Form.Label style={{ fontWeight: '600', color: '#727475' }}>
+                E-posta Adresiniz
+              </Form.Label>
               <Form.Control 
                 type="email" 
                 placeholder="ornek@email.com"
-                style={{ borderRadius: '8px' }}
+                style={{ 
+                  borderRadius: '12px',
+                  border: '2px solid #e9ecef',
+                  padding: '12px 15px',
+                  fontSize: '1rem'
+                }}
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Şifreniz</Form.Label>
+              <Form.Label style={{ fontWeight: '600', color: '#727475' }}>
+                Şifreniz
+              </Form.Label>
               <Form.Control 
                 type="password" 
-                placeholder="*******"
-                style={{ borderRadius: '8px' }}
+                placeholder="········"
+                style={{ 
+                  borderRadius: '12px',
+                  border: '2px solid #e9ecef',
+                  padding: '12px 15px',
+                  fontSize: '1rem'
+                }}
               />
             </Form.Group>
             <div className="d-flex justify-content-between align-items-center mb-3">
-              <Form.Check type="checkbox" label="Beni hatırla" />
-              <a href="#" className="text-decoration-none" style={{ color: '#2E7D32' }}>
-                Şifremi mi unutturum?
+              <Form.Check 
+                type="checkbox" 
+                label="Beni hatırla" 
+                style={{ fontSize: '0.9rem', color: '#727475' }}
+              />
+              <a 
+                href="#" 
+                className="text-decoration-none" 
+                style={{ color: '#00baa3', fontSize: '0.9rem' }}
+              >
+                Şifremi unuttum
               </a>
             </div>
           </Form>
           
-          <div className="d-grid gap-2">
+          <div className="d-grid gap-3">
             <Button 
-              variant="success" 
               size="lg"
               onClick={handleLogin}
               style={{ 
-                backgroundColor: '#2E7D32',
-                borderColor: '#2E7D32',
-                borderRadius: '8px'
+                backgroundColor: '#00baa3',
+                borderColor: '#00baa3',
+                borderRadius: '12px',
+                fontWeight: 'bold',
+                padding: '12px',
+                fontSize: '1.1rem'
               }}
             >
               GİRİŞ YAP
             </Button>
             <Button 
-              variant="outline-success" 
+              variant="outline-primary"
               size="lg"
               onClick={handleGuestContinue}
               style={{ 
-                borderColor: '#2E7D32',
-                color: '#2E7D32',
-                borderRadius: '8px'
+                borderColor: '#00baa3',
+                color: '#00baa3',
+                borderRadius: '12px',
+                fontWeight: 'bold',
+                padding: '12px',
+                fontSize: '1.1rem',
+                borderWidth: '2px'
               }}
             >
               ÜYE OLMADAN DEVAM ET
             </Button>
           </div>
           
-          <div className="text-center mt-3">
+          <div className="text-center mt-4">
             <small className="text-muted">
-              Hesabınız yok mu? <a href="#" style={{ color: '#2E7D32' }}>Şimdi kaydolun!</a>
+              Hesabınız yok mu? 
+              <a href="#" style={{ color: '#00baa3', textDecoration: 'none', marginLeft: '5px' }}>
+                Üye olun
+              </a>
             </small>
           </div>
         </Modal.Body>
       </Modal>
 
-      {/* Main Donation Form - Only show if guest or logged in */}
+      {/* Ana Bağış Formu */}
       {(isGuest || showSuccess) && (
-        <section className="tema-donation-form py-5" style={{ backgroundColor: '#f8f9fa' }}>
+        <section 
+          className="tema-donation-form py-5" 
+          style={{ backgroundColor: '#f8f9fa', minHeight: '100vh' }}
+        >
           <Container>
             <Row className="justify-content-center">
-              <Col lg={8}>
-                <Card className="shadow border-0" style={{ borderRadius: '15px' }}>
+              <Col lg={8} xl={7}>
+                <Card 
+                  className="shadow border-0" 
+                  style={{ 
+                    borderRadius: '25px',
+                    overflow: 'hidden'
+                  }}
+                >
                   <Card.Body className="p-5">
                     {showSuccess && (
-                      <Alert variant="success" className="mb-4" style={{ borderRadius: '10px' }}>
-                        <h5><i className="fas fa-check-circle me-2"></i>Bağış Tamamlandı!</h5>
-                        <p className="mb-1">İşlem No: {paymentResult?.transactionId}</p>
-                        <p className="mb-1">Tutar: {paymentResult?.amount}₺</p>
-                        <p className="mb-0">Teşekkür ederiz! Bağışınız için bir onay e-postası gönderilecektir.</p>
+                      <Alert 
+                        variant="success" 
+                        className="mb-4" 
+                        style={{ 
+                          borderRadius: '15px',
+                          border: 'none',
+                          backgroundColor: '#d4edda',
+                          color: '#155724'
+                        }}
+                      >
+                        <div className="d-flex align-items-center">
+                          <i className="fas fa-check-circle me-3" style={{ fontSize: '2rem' }}></i>
+                          <div>
+                            <h5 className="mb-1">Bağışınız Tamamlandı!</h5>
+                            <p className="mb-1">İşlem No: {paymentResult?.transactionId}</p>
+                            <p className="mb-1">Tutar: {paymentResult?.amount}₺</p>
+                            <p className="mb-0">ABAD ailesi olarak teşekkür ederiz!</p>
+                          </div>
+                        </div>
                       </Alert>
                     )}
 
-                    {/* Donation Type Selection */}
-                    <div className="tema-donation-type text-center mb-4">
-                      <h4 className="mb-4" style={{ color: '#2E7D32' }}>Bağış Türünü Seçin</h4>
-                      <div className="btn-group" role="group">
+                    <div className="text-center mb-5">
+                      <h4 className="mb-4" style={{ color: '#00baa3', fontWeight: 'bold', fontSize: '1.5rem' }}>
+                        Bağış Türünü Seçin
+                      </h4>
+                      <div className="btn-group w-100" role="group" style={{ borderRadius: '25px', overflow: 'hidden', maxWidth: '400px' }}>
                         <input 
                           type="radio" 
                           className="btn-check" 
@@ -299,9 +479,16 @@ const CertificatePage = () => {
                           onChange={(e) => setDonationType(e.target.value)}
                         />
                         <label 
-                          className="btn btn-outline-success px-4 py-2" 
+                          className="btn btn-outline-primary py-3" 
                           htmlFor="oneTime"
-                          style={{ borderRadius: '25px 0 0 25px', minWidth: '150px' }}
+                          style={{ 
+                            fontWeight: 'bold',
+                            fontSize: '1.1rem',
+                            borderColor: '#00baa3',
+                            color: donationType === 'oneTime' ? 'white' : '#00baa3',
+                            backgroundColor: donationType === 'oneTime' ? '#00baa3' : 'transparent',
+                            flex: 1
+                          }}
                         >
                           Tek Seferlik
                         </label>
@@ -316,23 +503,41 @@ const CertificatePage = () => {
                           onChange={(e) => setDonationType(e.target.value)}
                         />
                         <label 
-                          className="btn btn-outline-success px-4 py-2" 
+                          className="btn btn-outline-primary py-3" 
                           htmlFor="monthly"
-                          style={{ borderRadius: '0 25px 25px 0', minWidth: '150px' }}
+                          style={{ 
+                            fontWeight: 'bold',
+                            fontSize: '1.1rem',
+                            borderColor: '#00baa3',
+                            color: donationType === 'monthly' ? 'white' : '#00baa3',
+                            backgroundColor: donationType === 'monthly' ? '#00baa3' : 'transparent',
+                            flex: 1
+                          }}
                         >
                           Aylık
                         </label>
                       </div>
                     </div>
 
-                    {/* Payment Method Selection */}
-                    <div className="tema-payment-method mb-4">
-                      <h5 className="text-center mb-3" style={{ color: '#2E7D32' }}>Ödeme Yöntemi</h5>
+                    <div className="mb-5">
+                      <h5 className="text-center mb-4" style={{ color: '#00baa3', fontWeight: 'bold' }}>
+                        Ödeme Yöntemi Seçin
+                      </h5>
                       <Row>
                         <Col md={6} className="mb-3">
                           <div 
-                            className={`payment-option p-3 border rounded-3 text-center ${paymentMethod === 'creditCard' ? 'border-success bg-light' : 'border-secondary'}`}
-                            style={{ cursor: 'pointer', transition: 'all 0.3s' }}
+                            className={`payment-option p-4 border rounded-4 text-center position-relative ${paymentMethod === 'creditCard' ? 'border-primary bg-light' : 'border-secondary'}`}
+                            style={{ 
+                              cursor: 'pointer', 
+                              transition: 'all 0.3s ease',
+                              borderWidth: '3px',
+                              minHeight: '120px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              borderColor: paymentMethod === 'creditCard' ? '#00baa3' : '#dee2e6',
+                              backgroundColor: paymentMethod === 'creditCard' ? 'rgba(0,186,163,0.1)' : 'transparent'
+                            }}
                             onClick={() => handlePaymentMethodChange('creditCard')}
                           >
                             <input 
@@ -341,16 +546,38 @@ const CertificatePage = () => {
                               value="creditCard"
                               checked={paymentMethod === 'creditCard'}
                               onChange={() => handlePaymentMethodChange('creditCard')}
-                              className="me-2"
+                              style={{ 
+                                position: 'absolute',
+                                top: '15px',
+                                left: '15px',
+                                transform: 'scale(1.5)'
+                              }}
                             />
-                            <i className="fas fa-credit-card me-2 text-primary" style={{ fontSize: '1.2rem' }}></i>
-                            <strong>Kredi Kartı ile Öde</strong>
+                            <div>
+                              <i className="fas fa-credit-card mb-3" style={{ fontSize: '2.5rem', color: '#00baa3' }}></i>
+                              <div>
+                                <strong style={{ fontSize: '1.2rem', color: '#727475' }}>Kredi Kartı</strong>
+                                <div style={{ fontSize: '0.9rem', color: '#999', marginTop: '5px' }}>
+                                  Hızlı ve güvenli
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </Col>
                         <Col md={6} className="mb-3">
                           <div 
-                            className={`payment-option p-3 border rounded-3 text-center ${paymentMethod === 'bankTransfer' ? 'border-success bg-light' : 'border-secondary'}`}
-                            style={{ cursor: 'pointer', transition: 'all 0.3s' }}
+                            className={`payment-option p-4 border rounded-4 text-center position-relative ${paymentMethod === 'bankTransfer' ? 'border-primary bg-light' : 'border-secondary'}`}
+                            style={{ 
+                              cursor: 'pointer', 
+                              transition: 'all 0.3s ease',
+                              borderWidth: '3px',
+                              minHeight: '120px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              borderColor: paymentMethod === 'bankTransfer' ? '#ebc858' : '#dee2e6',
+                              backgroundColor: paymentMethod === 'bankTransfer' ? 'rgba(235,200,88,0.1)' : 'transparent'
+                            }}
                             onClick={() => handlePaymentMethodChange('bankTransfer')}
                           >
                             <input 
@@ -359,47 +586,86 @@ const CertificatePage = () => {
                               value="bankTransfer"
                               checked={paymentMethod === 'bankTransfer'}
                               onChange={() => handlePaymentMethodChange('bankTransfer')}
-                              className="me-2"
+                              style={{ 
+                                position: 'absolute',
+                                top: '15px',
+                                left: '15px',
+                                transform: 'scale(1.5)'
+                              }}
                             />
-                            <i className="fas fa-university me-2 text-warning" style={{ fontSize: '1.2rem' }}></i>
-                            <strong>Havale / EFT ile Öde</strong>
+                            <div>
+                              <i className="fas fa-university mb-3" style={{ fontSize: '2.5rem', color: '#ebc858' }}></i>
+                              <div>
+                                <strong style={{ fontSize: '1.2rem', color: '#727475' }}>Havale / EFT</strong>
+                                <div style={{ fontSize: '0.9rem', color: '#999', marginTop: '5px' }}>
+                                  Banka hesabından
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </Col>
                       </Row>
                     </div>
 
-                    {/* IBAN Information - Dynamic Display */}
                     {paymentMethod === 'bankTransfer' && (
-                      <div className="tema-iban-info mb-4 p-4 rounded-3" style={{ backgroundColor: '#e8f5e8', border: '1px solid #4CAF50' }}>
-                        <h6 style={{ color: '#2E7D32' }} className="mb-3">
+                      <div 
+                        className="tema-iban-info mb-5 p-4 rounded-4" 
+                        style={{ 
+                          backgroundColor: '#e8f5f3', 
+                          border: '2px solid #00baa3'
+                        }}
+                      >
+                        <h6 style={{ color: '#00baa3', fontWeight: 'bold' }} className="mb-3">
                           <i className="fas fa-university me-2"></i>
                           Havale / EFT Bilgileri
                         </h6>
                         <Row>
                           <Col md={8}>
                             <div className="iban-details">
-                              <p className="mb-2"><strong>IBAN:</strong> <code>TR33 0006 4000 0011 2345 6789 01</code></p>
-                              <p className="mb-2"><strong>Alıcı Adı:</strong> Anadolu Bilgelerini Araştırma Derneği</p>
-                              <p className="mb-2"><strong>Açıklama:</strong> {formData.name ? `${formData.name} ${formData.surname}` : '[Ad Soyad]'} - Bağış</p>
+                              <p className="mb-2">
+                                <strong>IBAN:</strong> 
+                                <code 
+                                  style={{ 
+                                    backgroundColor: '#fff', 
+                                    padding: '8px 12px', 
+                                    borderRadius: '8px',
+                                    marginLeft: '10px',
+                                    fontSize: '1.1rem',
+                                    letterSpacing: '1px'
+                                  }}
+                                >
+                                  TR33 0006 4000 0011 2345 6789 01
+                                </code>
+                              </p>
+                              <p className="mb-2">
+                                <strong>Alıcı:</strong> Anadolu Bilgelerini Araştırma Derneği
+                              </p>
+                              <p className="mb-2">
+                                <strong>Açıklama:</strong> {formData.name ? `${formData.name} ${formData.surname}` : '[Ad Soyad]'} - ABAD Bağış
+                              </p>
                             </div>
                           </Col>
                           <Col md={4}>
-                            <div className="alert alert-warning p-2 small">
-                              <strong>Not:</strong> Lütfen açıklama kısmına Ad Soyad ve 'Bağış' ibaresini ekleyin.
+                            <div 
+                              className="alert alert-warning p-3" 
+                              style={{ fontSize: '0.9rem', borderRadius: '12px' }}
+                            >
+                              <strong>Önemli:</strong> Havale açıklamasına adınızı ve "ABAD Bağış" yazınız.
                             </div>
                           </Col>
                         </Row>
                       </div>
                     )}
 
-                    {/* Donor Information Form */}
                     <Form>
-                      <h5 className="mb-4" style={{ color: '#2E7D32' }}>Destekçi Bilgileri</h5>
+                      <h5 className="mb-4" style={{ color: '#00baa3', fontWeight: 'bold' }}>
+                        İletişim Bilgileri
+                      </h5>
                       <Row>
                         <Col md={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label className="fw-semibold">
-                              <i className="fas fa-user me-2 text-success"></i>
+                            <Form.Label style={{ color: '#727475', fontWeight: '600' }}>
+                              <i className="fas fa-user me-2" style={{ color: '#00baa3' }}></i>
                               Adınız
                             </Form.Label>
                             <Form.Control
@@ -409,14 +675,19 @@ const CertificatePage = () => {
                               value={formData.name}
                               onChange={handleInputChange}
                               required
-                              style={{ borderRadius: '8px' }}
+                              style={{ 
+                                borderRadius: '12px',
+                                border: '2px solid #e9ecef',
+                                padding: '12px 15px',
+                                fontSize: '1rem'
+                              }}
                             />
                           </Form.Group>
                         </Col>
                         <Col md={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label className="fw-semibold">
-                              <i className="fas fa-user me-2 text-success"></i>
+                            <Form.Label style={{ color: '#727475', fontWeight: '600' }}>
+                              <i className="fas fa-user me-2" style={{ color: '#00baa3' }}></i>
                               Soyadınız
                             </Form.Label>
                             <Form.Control
@@ -426,7 +697,12 @@ const CertificatePage = () => {
                               value={formData.surname}
                               onChange={handleInputChange}
                               required
-                              style={{ borderRadius: '8px' }}
+                              style={{ 
+                                borderRadius: '12px',
+                                border: '2px solid #e9ecef',
+                                padding: '12px 15px',
+                                fontSize: '1rem'
+                              }}
                             />
                           </Form.Group>
                         </Col>
@@ -434,8 +710,8 @@ const CertificatePage = () => {
                       <Row>
                         <Col md={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label className="fw-semibold">
-                              <i className="fas fa-envelope me-2 text-primary"></i>
+                            <Form.Label style={{ color: '#727475', fontWeight: '600' }}>
+                              <i className="fas fa-envelope me-2" style={{ color: '#00baa3' }}></i>
                               E-posta
                             </Form.Label>
                             <Form.Control
@@ -445,14 +721,19 @@ const CertificatePage = () => {
                               value={formData.email}
                               onChange={handleInputChange}
                               required
-                              style={{ borderRadius: '8px' }}
+                              style={{ 
+                                borderRadius: '12px',
+                                border: '2px solid #e9ecef',
+                                padding: '12px 15px',
+                                fontSize: '1rem'
+                              }}
                             />
                           </Form.Group>
                         </Col>
                         <Col md={6}>
                           <Form.Group className="mb-3">
-                            <Form.Label className="fw-semibold">
-                              <i className="fas fa-phone me-2 text-warning"></i>
+                            <Form.Label style={{ color: '#727475', fontWeight: '600' }}>
+                              <i className="fas fa-phone me-2" style={{ color: '#ebc858' }}></i>
                               Telefon
                             </Form.Label>
                             <Form.Control
@@ -462,37 +743,51 @@ const CertificatePage = () => {
                               value={formData.phone}
                               onChange={handleInputChange}
                               required
-                              style={{ borderRadius: '8px' }}
+                              style={{ 
+                                borderRadius: '12px',
+                                border: '2px solid #e9ecef',
+                                padding: '12px 15px',
+                                fontSize: '1rem'
+                              }}
                             />
                           </Form.Group>
                         </Col>
                       </Row>
                       
                       <Form.Group className="mb-4">
-                        <Form.Label className="fw-semibold">
-                          <i className="fas fa-message me-2 text-info"></i>
-                          Özel Mesaj (Opsiyonel)
+                        <Form.Label style={{ color: '#727475', fontWeight: '600' }}>
+                          <i className="fas fa-message me-2" style={{ color: '#eb8958' }}></i>
+                          Mesajınız (Opsiyonel)
                         </Form.Label>
                         <Form.Control
                           as="textarea"
                           rows={3}
                           name="message"
-                          placeholder="Özel mesajınızı buraya yazabilirsiniz..."
+                          placeholder="ABAD'a iletmek istediğiniz mesajınız..."
                           value={formData.message}
                           onChange={handleInputChange}
-                          style={{ borderRadius: '8px' }}
+                          style={{ 
+                            borderRadius: '12px',
+                            border: '2px solid #e9ecef',
+                            padding: '12px 15px',
+                            fontSize: '1rem'
+                          }}
                         />
                       </Form.Group>
 
-                      {/* KVKK Consent */}
-                      <Form.Group className="mb-4">
+                      <Form.Group className="mb-5">
                         <Form.Check
                           type="checkbox"
                           id="kvkkConsent"
                           label={
-                            <span>
-                              <strong>KVKK Aydınlatma ve Rıza Metni</strong> kapsamında kişisel verilerimin işlenmesine onay veriyorum.
-                              <a href="/privacy-policy" className="ms-2" style={{ color: '#2E7D32' }} target="_blank">
+                            <span style={{ fontSize: '0.95rem', color: '#727475' }}>
+                              <strong>KVKK Aydınlatma Metni</strong>'ni okudum, kişisel verilerimin işlenmesine onay veriyorum.
+                              <a 
+                                href="/privacy-policy" 
+                                className="ms-2" 
+                                style={{ color: '#00baa3' }} 
+                                target="_blank"
+                              >
                                 Detayları oku
                               </a>
                             </span>
@@ -501,44 +796,65 @@ const CertificatePage = () => {
                         />
                       </Form.Group>
 
-                      {/* Payment Button */}
                       <div className="text-center">
                         {paymentMethod === 'bankTransfer' ? (
-                          // Bank Transfer Case
                           donationAmount > 0 ? (
                             <div>
                               <Button
-                                variant="warning"
                                 size="lg"
                                 className="px-5 py-3 mb-3"
-                                style={{ borderRadius: '25px', fontWeight: 'bold' }}
+                                style={{ 
+                                  borderRadius: '30px', 
+                                  fontWeight: 'bold',
+                                  fontSize: '1.2rem',
+                                  minWidth: '350px',
+                                  height: '60px',
+                                  backgroundColor: '#ebc858',
+                                  borderColor: '#ebc858',
+                                  color: '#000',
+                                  transition: 'all 0.3s ease'
+                                }}
                                 onClick={() => {
-                                  alert(`Bağış Tutarı: ${donationAmount}₺\n\nIBAN: TR33 0006 4000 0011 2345 6789 01\nAlıcı: Anadolu Bilgelerini Araştırma Derneği\nAçıklama: ${formData.name ? `${formData.name} ${formData.surname}` : '[Ad Soyad]'} - Bağış\n\nHavale/EFT işleminizi yaptıktan sonra bilgi@abad.org.tr adresine bilgi veriniz.`);
+                                  alert(`Bağış Tutarı: ${donationAmount}₺\n\nIBAN: TR33 0006 4000 0011 2345 6789 01\nAlıcı: Anadolu Bilgelerini Araştırma Derneği\nAçıklama: ${formData.name ? `${formData.name} ${formData.surname}` : '[Ad Soyad]'} - ABAD Bağış\n\nHavale/EFT işleminizi yaptıktan sonra info@abad.org.tr adresine bilgi veriniz.`);
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.target.style.transform = 'translateY(-2px)';
+                                  e.target.style.boxShadow = '0 8px 20px rgba(235,200,88,0.4)';
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.style.transform = 'translateY(0)';
+                                  e.target.style.boxShadow = 'none';
                                 }}
                               >
                                 <i className="fas fa-university me-2"></i>
-                                Havale/EFT Bilgilerini Göster - {donationAmount}₺
+                                Havale Bilgilerini Göster - {donationAmount}₺
                               </Button>
-                              <div className="mt-2">
-                                <small className="text-muted">
-                                  Havale/EFT işleminizi yaptıktan sonra onay e-postası gönderilecektir.
+                              <div className="mt-3">
+                                <small className="text-muted" style={{ fontSize: '0.95rem' }}>
+                                  Havale işleminizi yaptıktan sonra onay e-postası alacaksınız.
                                 </small>
                               </div>
                             </div>
                           ) : (
                             <Button
-                              variant="warning"
                               size="lg"
                               className="px-5 py-3"
-                              style={{ borderRadius: '25px' }}
+                              style={{ 
+                                borderRadius: '30px',
+                                fontSize: '1.2rem',
+                                minWidth: '350px',
+                                height: '60px',
+                                backgroundColor: '#dee2e6',
+                                borderColor: '#dee2e6',
+                                color: '#6c757d'
+                              }}
                               disabled
                             >
                               <i className="fas fa-university me-2"></i>
-                              Bağış Tutarını Seçin
+                              Tutarı Seçin
                             </Button>
                           )
                         ) : (
-                          // Credit Card Case
                           donationAmount > 0 ? (
                             <PaymentService
                               donationAmount={donationAmount}
@@ -548,18 +864,21 @@ const CertificatePage = () => {
                             />
                           ) : (
                             <Button
-                              variant="success"
                               size="lg"
                               className="px-5 py-3"
                               style={{ 
-                                backgroundColor: '#2E7D32',
-                                borderColor: '#2E7D32',
-                                borderRadius: '25px'
+                                backgroundColor: '#dee2e6',
+                                borderColor: '#dee2e6',
+                                color: '#6c757d',
+                                borderRadius: '30px',
+                                fontSize: '1.2rem',
+                                minWidth: '350px',
+                                height: '60px'
                               }}
                               disabled
                             >
                               <i className="fas fa-credit-card me-2"></i>
-                              Bağış Tutarını Seçin
+                              Tutarı Seçin
                             </Button>
                           )
                         )}

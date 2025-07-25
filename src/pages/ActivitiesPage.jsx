@@ -1,64 +1,163 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ActivitiesPage = () => {
   const activities = [
     {
       id: 1,
       title: "Doğa Faaliyetleri",
-      description:
-        "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli...",
-      image: "/nature-activities.jpg",
-      color: "success",
+      description: "Fidan dikimi, ağaçlandırma ve çevre koruma projeleri ile doğaya sahip çıkıyoruz. Ankara, Bursa, Kastamonu ve birçok ilde gerçekleştirdiğimiz fidan dikim etkinlikleri ile yeşil alanları artırıyoruz.",
+      image: "/src/assets/images/doga-faaliyetleri.jpg",
+      color: "#00baa3",
+      icon: "fa-seedling",
+      stats: "500+ Fidan",
+      projects: [
+        "Gazi Üniversitesi Fidan Dikimi",
+        "Ankara Meyve Fidanı Dikimi", 
+        "Bursa Ağaçlandırma Projesi",
+        "Kastamonu Orman Koruma"
+      ]
     },
     {
       id: 2,
       title: "Çocuk ve Genç Faaliyetleri",
-      description:
-        "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli...",
-      image: "/children-activities.jpg",
-      color: "warning",
+      description: "Yunus Emre Anaokulu projemiz ve çocukların gelecek için bilinçlendirilmesi faaliyetleri. Çocuk ve genç hikaye yarışmaları düzenleyerek kültürel değerlerin aktarımını sağlıyoruz.",
+      image: "/src/assets/images/cocuk-ve-genc-faaliyetleri.jpg",
+      color: "#eb8958",
+      icon: "fa-child",
+      stats: "1000+ Çocuk",
+      projects: [
+        "Yunus Emre Anaokulu",
+        "Çocuk Hikaye Yarışması",
+        "Aşık Veysel Hikaye Yarışması",
+        "Cumhuriyeti Anlamak Yarışması"
+      ]
     },
     {
       id: 3,
       title: "Eğitim ve Seminer Faaliyetleri",
-      description:
-        "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli...",
-      image: "/education-activities.jpg",
-      color: "info",
-    },
+      description: "Çocuk ve genç eğitimi, kültürel değerlerin aktarımı ve farkındalık seminerleri düzenliyoruz. Anadolu'nun bilgelerini gelecek nesillere aktarma misyonumuzun temel ayağıdır.",
+      image: "/src/assets/images/eğitim-ve-seminer.jpg",
+      color: "#ebc858",
+      icon: "fa-graduation-cap",
+      stats: "50+ Seminer",
+      projects: [
+        "Kültürel Değerler Semineri",
+        "Anadolu Bilgeleri Eğitimi",
+        "Çocuk Gelişimi Atölyeleri",
+        "Yunus'un İzinde Atölye"
+      ]
+    }
   ];
 
   return (
-    <div className="activities-page">
-      {/* Hero Section */}
-      <section className="activities-hero-section py-5">
+    <div className="activities-page" style={{ fontFamily: 'Poppins, sans-serif' }}>
+      {/* TEMA Benzeri Hero Section */}
+      <section 
+        className="activities-hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,186,163,0.9), rgba(0,140,122,0.9)), url('/src/assets/images/parallax-7.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          minHeight: '90vh',
+          display: 'flex',
+          alignItems: 'center',
+          color: 'white',
+          position: 'relative'
+        }}
+      >
         <Container>
-          <Row className="align-items-center min-vh-50">
-            <Col lg={12} className="text-center">
-              <div className="hero-badge mb-4">
-                <span className="badge bg-warning px-4 py-2 fs-5">
-                  🎯 HEDEF
-                </span>
-              </div>
-              <h1 className="display-2 fw-bold text-white mb-4 activities-title">
-                Faaliyetlerimiz
-              </h1>
-              <p className="lead text-white-50 mb-4 fs-3">
-                ABAD olarak topluma ve çevreye fayda sağlayan çeşitli
-                faaliyetler düzenlemekteyiz.
-              </p>
-              <div className="stats-row d-flex justify-content-center gap-4 mt-5">
-                <div className="stat-item text-center">
-                  <h3 className="text-warning fw-bold mb-1">3</h3>
-                  <span className="text-white-50">Kategori</span>
+          <Row className="justify-content-center text-center">
+            <Col lg={10}>
+              <div className="hero-content">
+                <div className="hero-badge mb-4">
+                  <span 
+                    className="badge px-4 py-3"
+                    style={{
+                      backgroundColor: 'rgba(235,200,88,0.9)',
+                      color: '#000',
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      borderRadius: '30px',
+                      border: '2px solid rgba(255,255,255,0.3)'
+                    }}
+                  >
+                    🎯 Faaliyetlerimiz
+                  </span>
                 </div>
-                <div className="stat-item text-center">
-                  <h3 className="text-warning fw-bold mb-1">127</h3>
-                  <span className="text-white-50">Etkinlik</span>
-                </div>
-                <div className="stat-item text-center">
-                  <h3 className="text-warning fw-bold mb-1">2340</h3>
-                  <span className="text-white-50">Katılımcı</span>
+                
+                <h1 
+                  className="display-2 fw-bold mb-4"
+                  style={{
+                    fontSize: '4rem',
+                    lineHeight: '1.1',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                  }}
+                >
+                  Doğa, Eğitim ve Gelecek İçin
+                  <br />
+                  <span style={{ color: '#ebc858' }}>Birlikte Çalışıyoruz</span>
+                </h1>
+                
+                <p 
+                  className="lead mb-5"
+                  style={{
+                    fontSize: '1.4rem',
+                    opacity: 0.95,
+                    maxWidth: '800px',
+                    margin: '0 auto 3rem auto',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+                  }}
+                >
+                  ABAD olarak topluma ve çevreye fayda sağlayan çeşitli faaliyetler düzenlemekteyiz. 
+                  Her proje, Anadolu'nun bilgelerini koruma misyonumuzun bir parçasıdır.
+                </p>
+                
+                {/* İstatistik Kartları */}
+                <div className="stats-row d-flex justify-content-center gap-4 flex-wrap">
+                  <div className="stat-card">
+                    <div 
+                      style={{ 
+                        backgroundColor: 'rgba(255,255,255,0.2)', 
+                        borderRadius: '20px', 
+                        padding: '20px 30px',
+                        backdropFilter: 'blur(10px)',
+                        border: '2px solid rgba(255,255,255,0.3)'
+                      }}
+                    >
+                      <h3 className="fw-bold mb-1" style={{ color: '#ebc858', fontSize: '2.5rem' }}>500+</h3>
+                      <p className="mb-0" style={{ fontSize: '1.1rem' }}>Dikilmiş Fidan</p>
+                    </div>
+                  </div>
+                  <div className="stat-card">
+                    <div 
+                      style={{ 
+                        backgroundColor: 'rgba(255,255,255,0.2)', 
+                        borderRadius: '20px', 
+                        padding: '20px 30px',
+                        backdropFilter: 'blur(10px)',
+                        border: '2px solid rgba(255,255,255,0.3)'
+                      }}
+                    >
+                      <h3 className="fw-bold mb-1" style={{ color: '#ebc858', fontSize: '2.5rem' }}>1000+</h3>
+                      <p className="mb-0" style={{ fontSize: '1.1rem' }}>Çocuk</p>
+                    </div>
+                  </div>
+                  <div className="stat-card">
+                    <div 
+                      style={{ 
+                        backgroundColor: 'rgba(255,255,255,0.2)', 
+                        borderRadius: '20px', 
+                        padding: '20px 30px',
+                        backdropFilter: 'blur(10px)',
+                        border: '2px solid rgba(255,255,255,0.3)'
+                      }}
+                    >
+                      <h3 className="fw-bold mb-1" style={{ color: '#ebc858', fontSize: '2.5rem' }}>50+</h3>
+                      <p className="mb-0" style={{ fontSize: '1.1rem' }}>Proje</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Col>
@@ -66,71 +165,206 @@ const ActivitiesPage = () => {
         </Container>
       </section>
 
-      {/* Activities Grid */}
-      <section className="activities-grid py-5 bg-light">
+      {/* Ana Faaliyetler Bölümü */}
+      <section className="activities-main py-5" style={{ backgroundColor: '#f8f9fa' }}>
         <Container>
           <Row>
-            <Col lg={12} className="text-center mb-5">
-              <div className="section-header">
-                <span className="text-success fw-bold">🎯 ALANLAR</span>
-                <h2 className="display-5 fw-bold text-dark mt-2">
-                  Faaliyet Kategorileri
-                </h2>
-                <div className="divider mx-auto my-3"></div>
-              </div>
+            <Col className="text-center mb-5">
+              <h2 
+                className="display-4 fw-bold mb-4"
+                style={{ color: '#00baa3' }}
+              >
+                Faaliyet Alanlarımız
+              </h2>
+              <div 
+                style={{
+                  width: '100px',
+                  height: '4px',
+                  backgroundColor: '#ebc858',
+                  margin: '0 auto',
+                  borderRadius: '2px'
+                }}
+              />
+              <p 
+                className="lead mt-4"
+                style={{
+                  color: '#727475',
+                  maxWidth: '700px',
+                  margin: '1rem auto'
+                }}
+              >
+                Her faaliyet alanımız, sürdürülebilir bir gelecek için atılmış adımlardır.
+              </p>
             </Col>
           </Row>
-          <Row>
-            {activities.map((activity) => (
-              <Col lg={4} md={6} key={activity.id} className="mb-4">
-                <Card className="h-100 shadow-lg border-0 activity-card-modern">
-                  <div
-                    className="card-image-container"
-                    style={{ height: "350px", position: "relative" }}
-                  >
-                    <div
-                      className={`card-image-modern bg-gradient-${activity.color}`}
-                      style={{
-                        height: "100%",
-                        borderRadius: "20px 20px 0 0",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        position: "relative",
-                        overflow: "hidden",
-                      }}
-                    >
-                      <div className="activity-icon-wrapper">
-                        <i
-                          className={`fas ${
-                            activity.id === 1
-                              ? "fa-leaf"
-                              : activity.id === 2
-                              ? "fa-child"
-                              : "fa-graduation-cap"
-                          } text-white activity-icon`}
-                        ></i>
+
+          <Row className="g-5">
+            {activities.map((activity, index) => (
+              <Col lg={12} key={activity.id} className="mb-5">
+                <Card 
+                  className="border-0 shadow-lg overflow-hidden"
+                  style={{ borderRadius: '25px' }}
+                >
+                  <Row className="g-0 align-items-center">
+                    <Col md={6} className={index % 2 === 0 ? 'order-1' : 'order-2'}>
+                      <div className="position-relative overflow-hidden h-100">
+                        <img 
+                          src={activity.image}
+                          alt={activity.title}
+                          style={{
+                            width: '100%',
+                            height: '400px',
+                            objectFit: 'cover'
+                          }}
+                        />
+                        <div 
+                          style={{
+                            position: 'absolute',
+                            top: '20px',
+                            left: '20px',
+                            backgroundColor: activity.color,
+                            color: 'white',
+                            padding: '10px 20px',
+                            borderRadius: '25px',
+                            fontWeight: 'bold',
+                            fontSize: '1rem'
+                          }}
+                        >
+                          <i className={`fas ${activity.icon} me-2`}></i>
+                          {activity.stats}
+                        </div>
                       </div>
-                      <div className="card-overlay-modern">
-                        <h3 className="text-white mb-0 fw-bold">
+                    </Col>
+                    <Col md={6} className={index % 2 === 0 ? 'order-2' : 'order-1'}>
+                      <Card.Body className="p-5">
+                        <div className="d-flex align-items-center mb-3">
+                          <div 
+                            style={{
+                              width: '60px',
+                              height: '60px',
+                              backgroundColor: activity.color,
+                              borderRadius: '50%',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              marginRight: '15px'
+                            }}
+                          >
+                            <i className={`fas ${activity.icon} text-white`} style={{ fontSize: '1.5rem' }}></i>
+                          </div>
+                          <div>
+                            <span 
+                              className="badge px-3 py-2"
+                              style={{
+                                backgroundColor: `${activity.color}20`,
+                                color: activity.color,
+                                fontSize: '0.8rem',
+                                borderRadius: '15px'
+                              }}
+                            >
+                              Faaliyet Alanı
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <h3 
+                          className="fw-bold mb-4"
+                          style={{ 
+                            color: activity.color,
+                            fontSize: '2rem'
+                          }}
+                        >
                           {activity.title}
                         </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <Card.Body className="p-4">
-                    <Card.Text className="text-muted mb-4 lh-base">
-                      {activity.description}
-                    </Card.Text>
-                    <Button
-                      variant={activity.color}
-                      className="w-100 btn-modern"
-                      size="lg"
-                    >
-                      <i className="fas fa-arrow-right me-2"></i>
-                      Detayları Gör
-                    </Button>
-                  </Card.Body>
+                        
+                        <p 
+                          className="mb-4"
+                          style={{ 
+                            color: '#727475',
+                            lineHeight: '1.7',
+                            fontSize: '1.1rem'
+                          }}
+                        >
+                          {activity.description}
+                        </p>
+
+                        <div className="mb-4">
+                          <h6 
+                            className="fw-bold mb-3" 
+                            style={{ color: '#727475' }}
+                          >
+                            Örnek Projelerimiz:
+                          </h6>
+                          <Row>
+                            {activity.projects.map((project, idx) => (
+                              <Col sm={6} key={idx} className="mb-2">
+                                <div className="d-flex align-items-center">
+                                  <i 
+                                    className="fas fa-check-circle me-2" 
+                                    style={{ color: activity.color, fontSize: '0.9rem' }}
+                                  ></i>
+                                  <span style={{ fontSize: '0.95rem', color: '#727475' }}>
+                                    {project}
+                                  </span>
+                                </div>
+                              </Col>
+                            ))}
+                          </Row>
+                        </div>
+                        
+                        <div className="d-flex gap-3 flex-wrap">
+                          <Button
+                            style={{
+                              backgroundColor: activity.color,
+                              borderColor: activity.color,
+                              borderRadius: '25px',
+                              padding: '12px 25px',
+                              fontWeight: 'bold',
+                              transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.target.style.transform = 'translateY(-2px)';
+                              e.target.style.boxShadow = `0 8px 20px ${activity.color}40`;
+                            }}
+                            onMouseLeave={(e) => {
+                              e.target.style.transform = 'translateY(0)';
+                              e.target.style.boxShadow = 'none';
+                            }}
+                          >
+                            Detayları İncele <i className="fas fa-arrow-right ms-2"></i>
+                          </Button>
+                          
+                          <Button
+                            as={Link}
+                            to="/certificate"
+                            variant="outline-primary"
+                            style={{
+                              borderColor: activity.color,
+                              color: activity.color,
+                              borderRadius: '25px',
+                              padding: '12px 25px',
+                              fontWeight: 'bold',
+                              borderWidth: '2px',
+                              transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.target.style.backgroundColor = activity.color;
+                              e.target.style.color = 'white';
+                              e.target.style.transform = 'translateY(-2px)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.target.style.backgroundColor = 'transparent';
+                              e.target.style.color = activity.color;
+                              e.target.style.transform = 'translateY(0)';
+                            }}
+                          >
+                            <i className="fas fa-heart me-2"></i>
+                            Destekle
+                          </Button>
+                        </div>
+                      </Card.Body>
+                    </Col>
+                  </Row>
                 </Card>
               </Col>
             ))}
@@ -138,80 +372,86 @@ const ActivitiesPage = () => {
         </Container>
       </section>
 
-      {/* Activity Details */}
-      <section className="activity-details py-5">
+      {/* Bağış Çağrısı */}
+      <section 
+        className="activities-donation py-5"
+        style={{
+          backgroundImage: `linear-gradient(rgba(235,137,88,0.9), rgba(213,83,66,0.9)), url('/src/assets/images/fidanBagisAbad.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white'
+        }}
+      >
         <Container>
-          <Row>
-            <Col lg={10} className="mx-auto">
-              <div className="text-center mb-5">
-                <span className="text-success fw-bold">⭐ AVANTAJLAR</span>
-                <h2 className="display-5 fw-bold text-dark mt-2 mb-3">
-                  Faaliyetlerimize Katılın
-                </h2>
-                <p className="lead text-muted">
-                  ABAD'ın düzenlediği etkinliklere katılmak için bizimle
-                  iletişime geçin.
-                </p>
-              </div>
-
-              <Row>
-                <Col md={4} className="text-center mb-4">
-                  <div className="feature-box-modern">
-                    <div className="feature-icon-modern bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
-                      <i
-                        className="fas fa-leaf"
-                        style={{ fontSize: "2rem" }}
-                      ></i>
-                    </div>
-                    <h4 className="h4 mb-3 text-success fw-bold">Doğa Dostu</h4>
-                    <p className="text-muted">
-                      Çevre bilinci ile yapılan faaliyetler. Doğayı korumak ve
-                      gelecek nesillere temiz bir çevre bırakmak.
-                    </p>
-                  </div>
-                </Col>
-                <Col md={4} className="text-center mb-4">
-                  <div className="feature-box-modern">
-                    <div className="feature-icon-modern bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
-                      <i
-                        className="fas fa-hands-helping"
-                        style={{ fontSize: "2rem" }}
-                      ></i>
-                    </div>
-                    <h4 className="h4 mb-3 text-warning fw-bold">
-                      Sosyal Sorumluluk
-                    </h4>
-                    <p className="text-muted">
-                      Topluma fayda sağlayan projeler. Birlikte daha güçlü bir
-                      toplum inşa etmek için çalışıyoruz.
-                    </p>
-                  </div>
-                </Col>
-                <Col md={4} className="text-center mb-4">
-                  <div className="feature-box-modern">
-                    <div className="feature-icon-modern bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
-                      <i
-                        className="fas fa-graduation-cap"
-                        style={{ fontSize: "2rem" }}
-                      ></i>
-                    </div>
-                    <h4 className="h4 mb-3 text-info fw-bold">Eğitim</h4>
-                    <p className="text-muted">
-                      Bilinçlendirme ve eğitim çalışmaları. Toplumsal
-                      farkındalığı artırmak için sürekli eğitim veriyoruz.
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-
-              <div className="text-center mt-5">
+          <Row className="text-center">
+            <Col lg={8} className="mx-auto">
+              <h3 
+                className="display-5 fw-bold mb-4"
+                style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
+              >
+                Bu Projelerin Devamı İçin Desteğinize İhtiyacımız Var
+              </h3>
+              <p 
+                className="lead mb-4"
+                style={{ 
+                  fontSize: '1.3rem',
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.3)' 
+                }}
+              >
+                Her bağışınız, bu değerli projelerin sürdürülmesi ve yeni projeler geliştirilmesi için önemlidir.
+              </p>
+              <div className="d-flex gap-3 justify-content-center flex-wrap">
                 <Button
-                  variant="success"
+                  as={Link}
+                  to="/certificate"
                   size="lg"
-                  className="px-5 py-3 btn-modern"
+                  style={{
+                    backgroundColor: '#ebc858',
+                    borderColor: '#ebc858',
+                    color: '#000',
+                    fontWeight: 'bold',
+                    padding: '15px 40px',
+                    borderRadius: '30px',
+                    fontSize: '1.2rem',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 12px 30px rgba(235,200,88,0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = 'none';
+                  }}
                 >
-                  <i className="fas fa-rocket me-2"></i>
-                  Hemen Katıl
+                  <i className="fas fa-heart me-2"></i>
+                  BAĞIŞ YAP
+                </Button>
+                
+                <Button
+                  as={Link}
+                  to="/"
+                  variant="outline-light"
+                  size="lg"
+                  style={{
+                    borderWidth: '2px',
+                    fontWeight: 'bold',
+                    padding: '15px 40px',
+                    borderRadius: '30px',
+                    fontSize: '1.2rem',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                    e.target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <i className="fas fa-users me-2"></i>
+                  GÖNÜLLÜ OL
                 </Button>
               </div>
             </Col>
