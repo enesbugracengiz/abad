@@ -1,4 +1,4 @@
-import './MapPageExact.css';
+import "./MapPageExact.css";
 
 const MapPage = () => {
   return (
@@ -15,9 +15,7 @@ const MapPage = () => {
         </div>
 
         {/* Phone Number - Sağ Üst */}
-        <div className="phone-exact">
-          0552 331 96 17
-        </div>
+        <div className="phone-exact">0552 331 96 17</div>
 
         {/* Navigation - Orta Üst */}
         <nav className="navigation-exact">
@@ -33,19 +31,17 @@ const MapPage = () => {
             <img
               src="/genel/arayuzver2-18.png"
               alt="Sepet İkonu"
-              className="icon-exact cart-icon-exact"
+              className="icon-exact"
             />
-            <button className="button-exact shop-button-exact">
-              Dükkan
-            </button>
+            <button className="button-exact shop-button-exact">Dükkan</button>
           </div>
 
           {/* Bağış Yapın Button */}
           <div className="button-wrapper-exact">
             <img
-              src="/harita/arayuzver2-08.png"
+              src="/genel/arayuzver2-17.png"
               alt="Kalp İkonu"
-              className="icon-exact heart-icon-exact"
+              className="icon-exact"
             />
             <button className="button-exact donate-button-exact">
               Bağış Yapın
@@ -78,9 +74,7 @@ const MapPage = () => {
               alt="Grup"
               className="category-icon-exact"
             />
-            <div className="category-number-exact">
-              1455
-            </div>
+            <div className="category-number-exact">1455</div>
           </div>
 
           {/* Ağaç */}
@@ -90,9 +84,7 @@ const MapPage = () => {
               alt="Ağaç"
               className="category-icon-exact"
             />
-            <div className="category-number-exact">
-              1455
-            </div>
+            <div className="category-number-exact">1455</div>
           </div>
 
           {/* Kitap */}
@@ -102,9 +94,7 @@ const MapPage = () => {
               alt="Kitap"
               className="category-icon-exact"
             />
-            <div className="category-number-exact">
-              1455
-            </div>
+            <div className="category-number-exact">1455</div>
           </div>
 
           {/* Kalp */}
@@ -114,9 +104,7 @@ const MapPage = () => {
               alt="Kalp"
               className="category-icon-exact"
             />
-            <div className="category-number-exact">
-              1455
-            </div>
+            <div className="category-number-exact">1455</div>
           </div>
         </div>
       </div>
