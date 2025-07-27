@@ -1,6 +1,6 @@
-const express = require("express");
-const Iyzipay = require("iyzipay");
-const cors = require("cors");
+import express from "express";
+import Iyzipay from "iyzipay";
+import cors from "cors";
 const app = express();
 const port = 5001;
 

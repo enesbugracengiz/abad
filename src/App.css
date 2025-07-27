@@ -53,7 +53,7 @@
   font-size: 2rem;
   font-weight: bold;
   line-height: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo-ab {
@@ -68,7 +68,7 @@
   color: #727475;
   font-size: 0.8rem;
   margin-top: 2px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ABAD Button Styles */
@@ -76,7 +76,7 @@
   background-color: #00baa3;
   border-color: #00baa3;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   border-radius: 25px;
   transition: all 0.3s ease;
@@ -86,14 +86,14 @@
   background-color: #008c7a;
   border-color: #007562;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,186,163,0.4);
+  box-shadow: 0 6px 20px rgba(0, 186, 163, 0.4);
 }
 
 .btn-abad-secondary {
   background-color: #ebc858;
   border-color: #ebc858;
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   border-radius: 25px;
   transition: all 0.3s ease;
@@ -103,7 +103,7 @@
   background-color: #d9b347;
   border-color: #c7a03c;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(235,200,88,0.4);
+  box-shadow: 0 6px 20px rgba(235, 200, 88, 0.4);
 }
 
 /* Timeline Styles */
@@ -901,7 +901,11 @@
 
 /* Bounce Animation */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0) translateX(-50%);
   }
   40% {
@@ -915,10 +919,10 @@
 /* TEMA Donation Page Styles */
 .tema-donation-page .tema-amount-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .tema-main-donate-btn:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 12px 30px rgba(235,200,88,0.5) !important;
+  box-shadow: 0 12px 30px rgba(235, 200, 88, 0.5) !important;
 }
