@@ -42,6 +42,63 @@
 
 /* ABAD Custom Styles */
 
+/* Header Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0 !important;
+  }
+
+  header > div {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  header > div > div:first-child {
+    justify-content: center !important;
+  }
+
+  header > div > div:nth-child(2) {
+    order: 3 !important;
+  }
+
+  header > div > div:last-child {
+    order: 2 !important;
+    align-items: center !important;
+  }
+
+  header img[alt="ABAD Logo"] {
+    height: 60px !important;
+  }
+
+  header span[style*="fontSize: 2.5rem"] {
+    font-size: 2rem !important;
+  }
+
+  header > div > div:nth-child(2) > div {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  header > div > div:last-child > div:last-child {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header span[style*="fontSize: 2.5rem"] {
+    font-size: 1.5rem !important;
+  }
+
+  header span[style*="fontSize: 1rem"] {
+    font-size: 0.8rem !important;
+  }
+
+  header span[style*="fontSize: 0.9rem"] {
+    font-size: 0.7rem !important;
+  }
+}
+
 /* ABAD Logo Styles */
 .logo-container {
   display: flex;

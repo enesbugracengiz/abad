@@ -1,195 +1,239 @@
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const Header = () => {
-  const [expanded, setExpanded] = useState(false);
-
   return (
-    <header>
-      {/* ABAD'ın gerçek tasarımına uygun header */}
-      <Navbar
-        className="abad-header shadow-sm"
-        expand="lg"
-        expanded={expanded}
-        onToggle={setExpanded}
+    <header
+      style={{
+        backgroundColor: "#ffffff",
+        padding: "30px 0",
+      }}
+    >
+      <div
         style={{
-          backgroundColor: '#ffffff',
-          borderBottom: '1px solid #e9ecef',
-          padding: '1rem 0'
+          maxWidth: "1400px",
+          margin: "0 auto",
+          padding: "0 40px",
+          position: "relative",
         }}
       >
-        <Container>
-          {/* ABAD Logosu */}
-          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-            <img 
-              src="/src/assets/images/abad-logo-seffaf-buyuk.png" 
-              alt="ABAD Logo" 
+        {/* Telefon numarası - Sağ üst köşe */}
+        <div
+          style={{
+            position: "absolute",
+            top: "0",
+            right: "40px",
+            color: "#2c5aa0",
+            fontSize: "18px",
+            fontFamily: "Open Sans, sans-serif",
+            fontWeight: "400",
+          }}
+        >
+          0212 880 00 00
+        </div>
+
+        {/* Ana header içeriği */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: "30px",
+          }}
+        >
+          {/* Sol taraf - Logo */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"
+              alt="ABAD Logo"
               style={{
-                height: '60px',
-                width: 'auto'
+                height: "140px",
+                width: "auto",
               }}
             />
-            <div className="ms-3">
-              <div 
+          </div>
+
+          {/* Orta kısım - Navigasyon linkleri */}
+          <div
+            style={{
+              display: "flex",
+              gap: "60px",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <Link
+                to="/"
                 style={{
-                  color: '#00baa3',
-                  fontWeight: 'bold',
-                  fontSize: '1.4rem',
-                  lineHeight: '1.2'
+                  color: "#2c5aa0",
+                  textDecoration: "none",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "400",
+                  transition: "color 0.3s ease",
                 }}
               >
                 ABAD
-              </div>
-              <div 
+              </Link>
+              <div
                 style={{
-                  color: '#727475',
-                  fontSize: '0.85rem',
-                  lineHeight: '1.2'
+                  width: "50px",
+                  height: "2px",
+                  backgroundColor: "#D4A574",
                 }}
-              >
-                Anadolu Bilgelerini
-                <br />
-                Araştırma Derneği
-              </div>
+              />
             </div>
-          </Navbar.Brand>
 
-          <Navbar.Toggle 
-            aria-controls="basic-navbar-nav"
-            style={{
-              borderColor: '#00baa3',
-              color: '#00baa3'
-            }}
-          />
-          
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto align-items-center">
-              <Nav.Link
-                as={Link}
-                to="/"
-                style={{
-                  color: '#727475',
-                  fontWeight: '500',
-                  fontSize: '1rem',
-                  marginRight: '1.5rem',
-                  transition: 'color 0.3s ease'
-                }}
-                onMouseEnter={(e) => e.target.style.color = '#00baa3'}
-                onMouseLeave={(e) => e.target.style.color = '#727475'}
-              >
-                Ana Sayfa
-              </Nav.Link>
-              
-              <Nav.Link
-                as={Link}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <Link
                 to="/activities"
                 style={{
-                  color: '#727475',
-                  fontWeight: '500',
-                  fontSize: '1rem',
-                  marginRight: '1.5rem',
-                  transition: 'color 0.3s ease'
+                  color: "#2c5aa0",
+                  textDecoration: "none",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "400",
+                  transition: "color 0.3s ease",
                 }}
-                onMouseEnter={(e) => e.target.style.color = '#00baa3'}
-                onMouseLeave={(e) => e.target.style.color = '#727475'}
               >
-                Faaliyetler
-              </Nav.Link>
-              
-              <Nav.Link
-                as={Link}
-                to="/news"
+                Harekete Geçin
+              </Link>
+              <div
                 style={{
-                  color: '#727475',
-                  fontWeight: '500',
-                  fontSize: '1rem',
-                  marginRight: '1.5rem',
-                  transition: 'color 0.3s ease'
+                  width: "130px",
+                  height: "2px",
+                  backgroundColor: "#D4A574",
                 }}
-                onMouseEnter={(e) => e.target.style.color = '#00baa3'}
-                onMouseLeave={(e) => e.target.style.color = '#727475'}
-              >
-                Haberler
-              </Nav.Link>
-              
-              <Nav.Link
-                as={Link}
-                to="/map"
+              />
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <Link
+                to="/kindergarten"
                 style={{
-                  color: '#727475',
-                  fontWeight: '500',
-                  fontSize: '1rem',
-                  marginRight: '1.5rem',
-                  transition: 'color 0.3s ease'
+                  color: "#2c5aa0",
+                  textDecoration: "none",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "400",
+                  transition: "color 0.3s ease",
                 }}
-                onMouseEnter={(e) => e.target.style.color = '#00baa3'}
-                onMouseLeave={(e) => e.target.style.color = '#727475'}
               >
-                Hakkımızda
-              </Nav.Link>
-              
-              {/* ABAD Dükkan Butonu */}
-              <Button
-                as={Link}
+                Yunus Emre Anaokulu
+              </Link>
+              <div
+                style={{
+                  width: "200px",
+                  height: "2px",
+                  backgroundColor: "#D4A574",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Sağ taraf - İkonlar ve Butonlar */}
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              alignItems: "center",
+            }}
+          >
+            {/* Dükkan - İkon ve Buton */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
+              <img
+                src="/src/assets/genel/arayuzver2-18.png"
+                alt="Dükkan İkonu"
+                style={{
+                  width: "24px",
+                  height: "24px",
+                }}
+              />
+              <Link
                 to="/shop"
-                variant="outline-warning"
-                className="me-3"
                 style={{
-                  borderColor: '#ebc858',
-                  color: '#ebc858',
-                  fontWeight: '600',
-                  padding: '8px 20px',
-                  borderRadius: '25px',
-                  borderWidth: '2px',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#ebc858';
-                  e.target.style.color = '#ffffff';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.color = '#ebc858';
+                  backgroundColor: "#2B5F7F",
+                  color: "#ffffff",
+                  padding: "10px 20px",
+                  borderRadius: "15px",
+                  textDecoration: "none",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "400",
+                  fontSize: "16px",
+                  transition: "all 0.3s ease",
                 }}
               >
-                <i className="fas fa-store me-2"></i>
                 Dükkan
-              </Button>
-              
-              {/* ABAD Bağış Butonu */}
-              <Button
-                as={Link}
-                to="/certificate"
-                className="abad-donate-btn"
+              </Link>
+            </div>
+
+            {/* Bağış - İkon ve Buton */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
+              <img
+                src="/src/assets/genel/arayuzver2-17.png"
+                alt="Bağış İkonu"
                 style={{
-                  backgroundColor: '#00baa3',
-                  borderColor: '#00baa3',
-                  color: '#ffffff',
-                  fontWeight: '600',
-                  padding: '10px 25px',
-                  borderRadius: '25px',
-                  boxShadow: '0 4px 15px rgba(0,186,163,0.3)',
-                  transition: 'all 0.3s ease'
+                  width: "24px",
+                  height: "24px",
                 }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#008c7a';
-                  e.target.style.transform = 'translateY(-2px)';
-                  e.target.style.boxShadow = '0 6px 20px rgba(0,186,163,0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#00baa3';
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 4px 15px rgba(0,186,163,0.3)';
+              />
+              <Link
+                to="/donate"
+                style={{
+                  backgroundColor: "#2E8B57",
+                  color: "#ffffff",
+                  padding: "10px 20px",
+                  borderRadius: "15px",
+                  textDecoration: "none",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "400",
+                  fontSize: "16px",
+                  transition: "all 0.3s ease",
                 }}
               >
-                <i className="fas fa-heart me-2"></i>
                 Bağış Yapın
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
