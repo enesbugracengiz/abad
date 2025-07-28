@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import MapSection from "../components/MapSection";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -9,13 +10,8 @@ const HomePage = () => {
 
       {/* Main Content */}
       <main className="main-content">
-        <h1 className="main-title">ÖNE ÇIKAN PROJELER</h1>
-
-        {/* Section 1 */}
-        <section className="content-section">
-          <h2>Section 1</h2>
-          <p>Bu bölüm daha sonra oluşturulacak.</p>
-        </section>
+        {/* Section 1 - Harita */}
+        <MapSection />
 
         {/* Section 2 */}
         <section className="content-section">

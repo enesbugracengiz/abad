@@ -154,9 +154,9 @@
 
 /* Main Content */
 .main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .main-title {
@@ -169,10 +169,13 @@
 }
 
 .content-section {
-  margin-bottom: 60px;
-  padding: 30px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-section h2 {
