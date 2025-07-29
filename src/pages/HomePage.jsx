@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import MapSection from "../components/MapSection";
+import FeaturedProjects from "../components/FeaturedProjects";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -13,11 +14,8 @@ const HomePage = () => {
         {/* Section 1 - Harita */}
         <MapSection />
 
-        {/* Section 2 */}
-        <section className="content-section">
-          <h2>Section 2</h2>
-          <p>Bu bölüm daha sonra oluşturulacak.</p>
-        </section>
+        {/* Section 2 - Öne Çıkan Projeler */}
+        <FeaturedProjects />
 
         {/* Section 3 */}
         <section className="content-section">
