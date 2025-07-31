@@ -33,9 +33,28 @@ const FeaturedProjects = () => {
         <Row className="g-4 align-items-start">
           {/* Sol taraf - Ana proje içeriği */}
           <Col lg={8}>
-            <div className="h-100">
+            <div className="h-100" style={{ position: "relative" }}>
+              {/* Arka plan görseli */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "-50px",
+                  top: "-60px",
+                  width: "200px",
+                  height: "200px",
+                  backgroundImage: `url("/src/assets/genel/arayuzver2-14.png")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "contain",
+                  zIndex: "1",
+                }}
+              />
+
               {/* Ana proje içeriği */}
-              <div className="mb-4">
+              <div
+                className="mb-4"
+                style={{ position: "relative", zIndex: "2" }}
+              >
                 <h3
                   className="fw-bold mb-3"
                   style={{
@@ -66,7 +85,7 @@ const FeaturedProjects = () => {
               </div>
 
               {/* Buton */}
-              <div>
+              <div style={{ position: "relative", zIndex: "2" }}>
                 <Button
                   className="border-0 text-uppercase fw-semibold"
                   style={{
