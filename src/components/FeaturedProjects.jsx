@@ -31,13 +31,6 @@ const FeaturedProjects = () => {
                 Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi
               </p>
             </div>
-            <div className="small-project-image">
-              <img 
-                src="/src/assets/genel/arayuzver2-14.png" 
-                alt="Proje ikonu"
-                className="project-icon"
-              />
-            </div>
           </div>
         </div>
         
