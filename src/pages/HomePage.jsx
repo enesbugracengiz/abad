@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import Header from "../components/Header";
 import MapSection from "../components/MapSection";
 import FeaturedProjects from "../components/FeaturedProjects";
+import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 
 const HomePage = () => {
@@ -18,19 +19,8 @@ const HomePage = () => {
         {/* Section 2 - Öne Çıkan Projeler */}
         <FeaturedProjects />
 
-        {/* Section 3 */}
-        <section className="py-5 bg-light">
-          <Container>
-            <div className="text-center">
-              <h2 className="text-primary mb-4" style={{ fontFamily: "Roboto Condensed, sans-serif", color: "#00baa3" }}>
-                Section 3
-              </h2>
-              <p className="text-muted" style={{ fontFamily: "Open Sans, sans-serif" }}>
-                Bu bölüm daha sonra oluşturulacak.
-              </p>
-            </div>
-          </Container>
-        </section>
+        {/* Section 3 - Categories */}
+        <Categories />
 
         {/* Section 4 */}
         <section className="py-5 bg-white">
