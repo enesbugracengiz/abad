@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
 const FeaturedProjects = () => {
   return (
-    <section 
+    <section
       className="py-5"
       style={{
         backgroundColor: "#f8f9fa",
@@ -17,7 +17,7 @@ const FeaturedProjects = () => {
       <Container style={{ maxWidth: "1200px" }}>
         <Row className="mb-5">
           <Col>
-            <h2 
+            <h2
               className="text-center fw-semibold mb-5"
               style={{
                 fontSize: "2.5rem",
@@ -36,7 +36,7 @@ const FeaturedProjects = () => {
             <div className="h-100">
               {/* Ana proje içeriği */}
               <div className="mb-4">
-                <h3 
+                <h3
                   className="fw-bold mb-3"
                   style={{
                     fontSize: "1.8rem",
@@ -48,7 +48,7 @@ const FeaturedProjects = () => {
                   <br />
                   Gazi'nin Toprağı ile Buluşuyor
                 </h3>
-                <p 
+                <p
                   className="text-muted mb-5"
                   style={{
                     fontSize: "1rem",
@@ -56,11 +56,12 @@ const FeaturedProjects = () => {
                     textAlign: "justify",
                   }}
                 >
-                  Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim
-                  Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör
-                  Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller Yüksekokulu
-                  Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek
-                  Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı...
+                  Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD
+                  Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi
+                  Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller
+                  Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık
+                  Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere,
+                  Müdür Yardımcısı...
                 </p>
               </div>
 
@@ -79,7 +80,8 @@ const FeaturedProjects = () => {
                   onMouseEnter={(e) => {
                     e.target.style.backgroundColor = "#4a5a47";
                     e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow = "0 8px 20px rgba(90, 108, 87, 0.4)";
+                    e.target.style.boxShadow =
+                      "0 8px 20px rgba(90, 108, 87, 0.4)";
                   }}
                   onMouseLeave={(e) => {
                     e.target.style.backgroundColor = "#5a6c57";
@@ -97,7 +99,7 @@ const FeaturedProjects = () => {
           <Col lg={4}>
             <div className="d-flex flex-column gap-3 h-100">
               {/* Üst boş kart */}
-              <Card 
+              <Card
                 className="border-2"
                 style={{
                   borderColor: "#5a6c57",
@@ -109,7 +111,7 @@ const FeaturedProjects = () => {
               </Card>
 
               {/* Alt küçük proje kartı */}
-              <Card 
+              <Card
                 className="border-2 h-100"
                 style={{
                   borderColor: "#5a6c57",
@@ -118,7 +120,8 @@ const FeaturedProjects = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.boxShadow = "0 15px 35px rgba(0, 0, 0, 0.15)";
+                  e.currentTarget.style.boxShadow =
+                    "0 15px 35px rgba(0, 0, 0, 0.15)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
@@ -126,7 +129,7 @@ const FeaturedProjects = () => {
                 }}
               >
                 <Card.Body className="p-4">
-                  <Card.Title 
+                  <Card.Title
                     className="text-center fw-semibold mb-4"
                     style={{
                       fontSize: "1.1rem",
@@ -136,7 +139,7 @@ const FeaturedProjects = () => {
                   >
                     ÖNE ÇIKAN PROJELER
                   </Card.Title>
-                  <Card.Text 
+                  <Card.Text
                     className="text-center text-muted"
                     style={{
                       fontSize: "0.9rem",
