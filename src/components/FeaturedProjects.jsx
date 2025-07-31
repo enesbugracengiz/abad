@@ -21,15 +21,22 @@ const FeaturedProjects = () => {
             </div>
           </div>
 
-          {/* Sağ taraf - Küçük proje kartı */}
-          <div className="small-project-card">
-            <div className="small-project-header">
-              <h3 className="small-project-title">ÖNE ÇIKAN PROJELER</h3>
+          {/* Sağ taraf - Kartlar */}
+          <div className="right-cards-container">
+            {/* Üst boş kart */}
+            <div className="empty-top-card">
             </div>
-            <div className="small-project-content">
-              <p className="small-project-description">
-                Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi
-              </p>
+
+            {/* Alt küçük proje kartı */}
+            <div className="small-project-card">
+              <div className="small-project-header">
+                <h3 className="small-project-title">ÖNE ÇIKAN PROJELER</h3>
+              </div>
+              <div className="small-project-content">
+                <p className="small-project-description">
+                  Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi
+                </p>
+              </div>
             </div>
           </div>
         </div>

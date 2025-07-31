@@ -103,16 +103,35 @@
   box-shadow: 0 8px 20px rgba(90, 108, 87, 0.4);
 }
 
+/* Sağ taraf kartlar container */
+.right-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  height: 100%;
+}
+
+/* Üst boş kart */
+.empty-top-card {
+  background: white;
+  border: 2px solid #5a6c57;
+  border-radius: 15px;
+  height: 120px;
+}
+
 /* Sağ taraf - Küçük proje kartı */
 .small-project-card {
   background: white;
-  border-radius: 20px;
+  border: 2px solid #5a6c57;
+  border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   height: fit-content;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 4px);
 }
 
 .small-project-card:hover {
