@@ -1,0 +1,166 @@
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+
+const ECertificate = () => {
+  return (
+    <section
+      className="py-5 position-relative"
+      style={{
+        backgroundColor: "#f8f9fa",
+        backgroundImage: `url("/src/assets/genel/arayuzver2-19.png")`,
+        backgroundRepeat: "repeat-x",
+        backgroundPosition: "bottom",
+        paddingTop: "80px",
+        paddingBottom: "200px",
+        minHeight: "600px",
+      }}
+    >
+      <Container 
+        style={{ maxWidth: "1200px", position: "relative", zIndex: 2 }}
+      >
+        <Row className="align-items-center g-5" style={{ marginBottom: "150px" }}>
+          {/* Sol taraf - Toprak tutan eller görseli ve alıntı */}
+          <Col lg={6} className="text-start">
+            <div className="position-relative">
+              {/* Toprak tutan eller görseli */}
+              <div
+                className="mb-4"
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "3px solid #5a6c57",
+                    boxShadow: "0 10px 30px rgba(90, 108, 87, 0.3)",
+                  }}
+                >
+                  <img
+                    src="/src/assets/genel/toprak.jpg"
+                    alt="Toprak tutan eller"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Alıntı metni */}
+              <div className="mb-4">
+                <h3
+                  className="mb-4"
+                  style={{
+                    fontSize: "1.8rem",
+                    color: "#5a6c57",
+                    fontStyle: "italic",
+                    fontFamily: "Georgia, serif",
+                    lineHeight: "1.4",
+                    fontWeight: "400",
+                  }}
+                >
+                  "Baban İçin Toprağa Hayat,
+                  <br />
+                  Gökyüzüne Umut."
+                </h3>
+                
+                <p
+                  style={{
+                    fontSize: "1.1rem",
+                    color: "#5a6c57",
+                    fontFamily: "Open Sans, sans-serif",
+                    fontWeight: "500",
+                    marginTop: "20px",
+                  }}
+                >
+                  E-sertifikan Babanın İsmiyle Yeşersin!
+                </p>
+              </div>
+            </div>
+          </Col>
+
+          {/* Sağ taraf - e-Sertifikalı başlığı ve sertifika görseli */}
+          <Col lg={6}>
+            <div className="text-center">
+              {/* e-Sertifikalı başlığı */}
+              <div className="mb-4">
+                <div
+                  className="d-inline-block px-4 py-2 mb-3"
+                  style={{
+                    backgroundColor: "#5a6c57",
+                    borderRadius: "25px",
+                    boxShadow: "0 5px 15px rgba(90, 108, 87, 0.3)",
+                  }}
+                >
+                  <h2
+                    className="mb-0"
+                    style={{
+                      color: "white",
+                      fontSize: "1.8rem",
+                      fontWeight: "600",
+                      fontFamily: "Poppins, sans-serif",
+                    }}
+                  >
+                    e-Sertifikalı
+                  </h2>
+                </div>
+                
+                <h3
+                  style={{
+                    color: "#5a6c57",
+                    fontSize: "1.4rem",
+                    fontWeight: "500",
+                    fontFamily: "Open Sans, sans-serif",
+                    marginBottom: "30px",
+                  }}
+                >
+                  Meyve Fidan Bağışları
+                </h3>
+              </div>
+
+              {/* Babalar günü sertifikası görseli */}
+              <div
+                className="position-relative"
+                style={{
+                  display: "inline-block",
+                  boxShadow: "0 15px 40px rgba(0, 0, 0, 0.15)",
+                  borderRadius: "15px",
+                  overflow: "hidden",
+                  transform: "rotate(-2deg)",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "rotate(0deg) scale(1.05)";
+                  e.currentTarget.style.boxShadow = "0 20px 50px rgba(0, 0, 0, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "rotate(-2deg) scale(1)";
+                  e.currentTarget.style.boxShadow = "0 15px 40px rgba(0, 0, 0, 0.15)";
+                }}
+              >
+                <img
+                  src="/src/assets/genel/babalar-gunu-sertifikasi.jpg"
+                  alt="Babalar Günü Meyve Fidanı Bağışı Sertifikası"
+                  style={{
+                    width: "350px",
+                    height: "auto",
+                    display: "block",
+                  }}
+                />
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
+
+export default ECertificate;

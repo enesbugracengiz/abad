@@ -36,7 +36,6 @@ const Categories = () => {
         backgroundPosition: "bottom",
         paddingTop: "60px",
         paddingBottom: "250px",
-        marginBottom: "40px",
         minHeight: "800px",
       }}
     >
