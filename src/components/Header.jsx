@@ -3,12 +3,12 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <header className="bg-white py-4 border-bottom shadow-sm">
+    <header className="bg-white py-4 shadow-sm">
       <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
         {/* Telefon numarası - Sağ üst köşe */}
         <Row>
           <Col className="text-end">
-            <div 
+            <div
               className="text-primary fw-normal"
               style={{
                 color: "#2c5aa0 !important",
