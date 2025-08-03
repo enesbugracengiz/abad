@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "totalCount": 7,
+    "totalKatilimci": 1833
+  },
+  "data": [
+    {
+      "tarih": "28 Mart 2021",
+      "yer": "Biyonik Kulak Derneği",
+      "ogrenciSayisi": 0,
+      "notlar": ""
+    },
+    {
+      "tarih": "14-15-16 Nisan 2021",
+      "yer": "Hakkari",
+      "ogrenciSayisi": 100,
+      "notlar": "100 adet Her Genç Bir Yunus Kitabı"
+    },
+    {
+      "tarih": "26-27-28 Mayıs 2021",
+      "yer": "Ardahan",
+      "ogrenciSayisi": 100,
+      "notlar": "118 adet Yunusun Denizinde Kitabı"
+    },
+    {
+      "tarih": "3-4 Haziran 2021",
+      "yer": "Gümüşhane ",
+      "ogrenciSayisi": 55,
+      "notlar": "Kitapları Gümüşhane Belediyesi satın aldı"
+    },
+    {
+      "tarih": "6 Aralık 2021",
+      "yer": "Tekirdağ",
+      "ogrenciSayisi": 140,
+      "notlar": "140 adet Her Genç Bir Yunus Kitabı"
+    },
+    {
+      "tarih": "19-20 Ocak 2022",
+      "yer": "Erzincan",
+      "ogrenciSayisi": 238,
+      "notlar": "240 adet Her Genç Bir Yunus"
+    },
+    {
+      "tarih": "15-16 Mart 2022",
+      "yer": "Afyon",
+      "ogrenciSayisi": 1200,
+      "notlar": "600 adet Her Genç Bir Yunus, 600 adet Yunusun Denizinde"
+    }
+  ]
+}

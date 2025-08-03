@@ -1,0 +1,139 @@
+{
+  "koordinatlar": {
+    "İstanbul": {
+      "top": "35%",
+      "left": "25%",
+      "bolge": "Marmara"
+    },
+    "Ankara": {
+      "top": "45%",
+      "left": "35%",
+      "bolge": "İç Anadolu"
+    },
+    "İzmir": {
+      "top": "60%",
+      "left": "15%",
+      "bolge": "Ege"
+    },
+    "Adana": {
+      "top": "70%",
+      "left": "42%",
+      "bolge": "Akdeniz"
+    },
+    "Antalya": {
+      "top": "75%",
+      "left": "32%",
+      "bolge": "Akdeniz"
+    },
+    "Bursa": {
+      "top": "40%",
+      "left": "20%",
+      "bolge": "Marmara"
+    },
+    "Gaziantep": {
+      "top": "65%",
+      "left": "45%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Konya": {
+      "top": "60%",
+      "left": "35%",
+      "bolge": "İç Anadolu"
+    },
+    "Kayseri": {
+      "top": "55%",
+      "left": "42%",
+      "bolge": "İç Anadolu"
+    },
+    "Erzurum": {
+      "top": "42%",
+      "left": "65%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Trabzon": {
+      "top": "25%",
+      "left": "70%",
+      "bolge": "Karadeniz"
+    },
+    "Samsun": {
+      "top": "30%",
+      "left": "42%",
+      "bolge": "Karadeniz"
+    },
+    "Eskişehir": {
+      "top": "50%",
+      "left": "32%",
+      "bolge": "İç Anadolu"
+    },
+    "Afyon": {
+      "top": "55%",
+      "left": "28%",
+      "bolge": "İç Anadolu"
+    },
+    "Kırıkkale": {
+      "top": "48%",
+      "left": "38%",
+      "bolge": "İç Anadolu"
+    },
+    "Manisa": {
+      "top": "58%",
+      "left": "18%",
+      "bolge": "Ege"
+    },
+    "Denizli": {
+      "top": "70%",
+      "left": "22%",
+      "bolge": "Ege"
+    },
+    "Mersin": {
+      "top": "75%",
+      "left": "40%",
+      "bolge": "Akdeniz"
+    },
+    "Hatay": {
+      "top": "82%",
+      "left": "45%",
+      "bolge": "Akdeniz"
+    },
+    "Van": {
+      "top": "55%",
+      "left": "78%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Diyarbakır": {
+      "top": "60%",
+      "left": "55%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Şanlıurfa": {
+      "top": "65%",
+      "left": "50%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Malatya": {
+      "top": "55%",
+      "left": "50%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Elazığ": {
+      "top": "52%",
+      "left": "52%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Adıyaman": {
+      "top": "62%",
+      "left": "48%",
+      "bolge": "Güneydoğu Anadolu"
+    }
+  },
+  "renkler": {
+    "aktifSehir": "#c67366",
+    "pasifSehir": "#6c757d",
+    "hoverRenk": "#a85d52"
+  },
+  "boyutlar": {
+    "noktaBoyutu": 14,
+    "hoverBoyutu": 18,
+    "maxHaritaGenisligi": 800
+  }
+}

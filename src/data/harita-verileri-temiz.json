@@ -1,0 +1,3130 @@
+{
+  "meta": {
+    "version": "2.0",
+    "createdAt": "2025-08-03T01:17:10.104Z",
+    "description": "ABAD Türkiye Haritası Faaliyet Verileri - Temizlenmiş ve Organize Edilmiş",
+    "totalCities": 75,
+    "dataSource": [
+      "web türkiye haritasına eklenecek faaliyetler.xlsx",
+      "FAALİYET HARİTASI_2019-2024.x.xlsx"
+    ]
+  },
+  "sehirler": [
+    {
+      "id": 1,
+      "ad": "Adana",
+      "kitapSayisi": 273,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 5,
+        "giyecek": 10,
+        "esya": "6 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 2,
+      "ad": "Adıyaman",
+      "kitapSayisi": 412,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 3,
+      "ad": "Afyon",
+      "kitapSayisi": 0,
+      "fidanlar": {
+        "ceviz": "Kasım 2022 800 adet dikildi.",
+        "erik": "Kasım 2022 320 adet dikildi.",
+        "badem": "Kasım 2022 200 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "15-16 Mart 2022 1200 öğrenciye 600 adet \"Her Genç Bir Yunus\", 600 adet \"Yunusun Denizinde\" kitapları verildi.",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 4,
+      "ad": "Afyonkarahisar",
+      "kitapSayisi": 1,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 1,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 5,
+      "ad": "Ağrı",
+      "kitapSayisi": 37,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 3,
+        "giyecek": 6,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 10
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 6,
+      "ad": "Aksaray",
+      "kitapSayisi": 29,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "30/31 Ağustos/1 Eylül 2019 Kırşehir/Nevşehir/Aksaray seyahati yapıldı."
+      }
+    },
+    {
+      "id": 7,
+      "ad": "Ankara",
+      "kitapSayisi": 275,
+      "fidanlar": {
+        "ceviz": "Mart 2022 10 adet dikildi. Ekim 2022 Gazi Üniversitesi 10 adet dikildi. Aralık 2023 20 adet dikildi.",
+        "ahlat": "Mart 2022 250 adet dikildi. Ekim 2022 Gazi Üniversitesi 45 adet dikildi.",
+        "erik": "Mart 2022 1000 adet dikildi. Ekim 2022 Gazi Üniversitesi 250 adet dikildi.",
+        "kestane": "Aralık 2023 50 adet dikildi.",
+        "uvez": "Mart 2022 250 adet dikildi. Ekim 2022 Gazi Üniversitesi 45 adet dikildi.",
+        "ladin": "Aralık 2022 60 adet dikildi.",
+        "mese": "Aralık 2023 30 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 112,
+        "giyecek": 28,
+        "esya": "67 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Çocuklarda; Mansiyon Nezahat Tatcı 500 Tl nakit ödül verildi. Gençlerde; 1. Gönül Ceren Kanmaz 1 adet Monster Bilgisayar verildi. Gençlerde; Mansiyon Dilaray Şaşmaz 500 Tl nakit ödül verildi. Yarışmaya katılan çocuklara 12 adet giyecek verildi. ",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "20 Nisan 2019 Ankara/Bolu seyahati yapıldı. 7/8 Mart 2020 Ankara/Nallıhan seyahati yapıldı."
+      }
+    },
+    {
+      "id": 8,
+      "ad": "Antalya",
+      "kitapSayisi": 170,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 74,
+        "esya": "16 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 9,
+      "ad": "Ardahan",
+      "kitapSayisi": 30,
+      "fidanlar": {
+        "sariCam": "Haziran 2022 100 adet dikildi.",
+        "hus": "Haziran 2022 100 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "15 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "26-27-28 Mayıs 2021 100 öğrenciye 100 adet \"Yunusun Denizinde\" kitabı verildi.",
+        "seyyahSeyahatleri": "1/2/3/4/5 Temmuz 2021 Kars/Ardahan/Artvin/Trabzon seyahati yapıldı."
+      }
+    },
+    {
+      "id": 10,
+      "ad": "Aydın",
+      "kitapSayisi": 83,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 13,
+        "giyecek": 10,
+        "esya": " 11 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 11,
+      "ad": "Balıkesir",
+      "kitapSayisi": 125,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 21,
+        "giyecek": 16,
+        "esya": " 16 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 12,
+      "ad": "Bartın",
+      "kitapSayisi": 232,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": "Çocuklarda; 3. Yiğit Çalışkan 2500 Tl nakit ödül verildi."
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 13,
+      "ad": "Batman",
+      "kitapSayisi": 53,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 42,
+        "giyecek": 9,
+        "esya": " 5 adet Kupa",
+        "temizlikMalzemesi": 16
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 14,
+      "ad": "Bilecek",
+      "kitapSayisi": 16,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 8,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 15,
+      "ad": "Bitlis",
+      "kitapSayisi": 4,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 16,
+      "ad": "Bolu",
+      "kitapSayisi": 0,
+      "fidanlar": {
+        "karisikMeyve": "Haziran 2020 Göynük'te 125 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "21 Nisan 2019 Ankara/Bolu seyahati yapıldı. 4 Ekim 2019 Bolu/Kastamonu seyahati yapıldı. 29/30/31 Ekim 2021 Bolu/Eskişehir/Manisa seyahati yapıldı. 28/29/30 Ağustos 2021 Bolu/Kastamonu/Çankırı/Karabük seyahati yapıldı."
+      }
+    },
+    {
+      "id": 17,
+      "ad": "Burdur",
+      "kitapSayisi": 34,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 4,
+        "giyecek": 3,
+        "esya": " 5 adet Kupa",
+        "temizlikMalzemesi": 10
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 18,
+      "ad": "Bursa",
+      "kitapSayisi": 84,
+      "fidanlar": {
+        "ceviz": "Mart 2022 500 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 22,
+        "giyecek": 19,
+        "esya": " 8 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Çocuklarda; 1. Yaren Dedebek 1 tablet bilgisayar, 1 Kitap, 2 hediyelik eşya verildi.",
+        "cocukGenclik2022": "Gençlerde; 2. Oya Naz Öztürk 1 adet tablet bilgisayar verildi.",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 19,
+      "ad": "Çanakkale",
+      "kitapSayisi": 29,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 0,
+        "esya": " 5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 20,
+      "ad": "Çankırı",
+      "kitapSayisi": 31,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 1,
+        "giyecek": 0,
+        "esya": " 5 adet Kupa",
+        "temizlikMalzemesi": 5
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "28/29/30 Ağustos 2021 Bolu/Kastamonu/Çankırı/Karabük seyahati yapıldı."
+      }
+    },
+    {
+      "id": 21,
+      "ad": "Çorum",
+      "kitapSayisi": 89,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 29,
+        "giyecek": 42,
+        "esya": " 7 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 22,
+      "ad": "Denizli",
+      "kitapSayisi": 40,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 4,
+        "giyecek": 0,
+        "esya": " 5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 23,
+      "ad": "Diyarbakır",
+      "kitapSayisi": 49,
+      "fidanlar": {
+        "ceviz": "Aralık 2022 Diyarbakır Dicle Üniversitesi 100 adet dikildi.",
+        "badem": "Aralık 2022 Diyarbakır Dicle Üniversitesi 200 adet dikildi.",
+        "antepFistigi": "Aralık 2022 Diyarbakır Dicle Üniversitesi 100 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 15,
+        "giyecek": 14,
+        "esya": " 6 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Yarışmaya katılan çocuklara 12 adet giyecek verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 24,
+      "ad": "Düzce",
+      "kitapSayisi": 2,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 1,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 25,
+      "ad": "Edirne",
+      "kitapSayisi": 34,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 0,
+        "esya": " 5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 26,
+      "ad": "Elazığ",
+      "kitapSayisi": 80,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 8,
+        "giyecek": 15,
+        "esya": "12 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 27,
+      "ad": "Erzincan",
+      "kitapSayisi": 466,
+      "fidanlar": {
+        "ceviz": "Kasım 2020 150 adet dikildi. Nisan 2022 250 adet dikildi",
+        "ahlat": "Kasım 2020 150 adet dikildi. Nisan 2022 250 adet dikildi"
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "14 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Gençlerde; 2. Deniz Kurt 1 tablet bilgisayar verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "19-20 Ocak 2022 238 öğrenciye 240 adet \"Her Genç Bir Yunus\" kitabı verildi. ",
+        "seyyahSeyahatleri": "12 Temmuz 2019 Erzincan/Erzurum/Kars seyahati yapıldı."
+      }
+    },
+    {
+      "id": 28,
+      "ad": "Erzurum",
+      "kitapSayisi": 243,
+      "fidanlar": {
+        "ahlat": "Nisan 2021 500 adet dikildi.",
+        "kayisiZerdali": "Ekim 2022 250 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "13 Temmuz 2019 Erzincan/Erzurum/Kars seyahati yapıldı."
+      }
+    },
+    {
+      "id": 29,
+      "ad": "Eskişehir",
+      "kitapSayisi": 116,
+      "fidanlar": {
+        "ahlat": "Aralık 2021 200 adet dikildi.",
+        "murver": "Aralık 2021 100 adet dikildi.",
+        "erik": "Aralık 2021 200 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 128,
+        "giyecek": 88,
+        "esya": " 8 adet Kupa",
+        "temizlikMalzemesi": 6
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "29/30/31 Ekim 2021 Bolu/Eskişehir/Manisa seyahati yapıldı."
+      }
+    },
+    {
+      "id": 30,
+      "ad": "Gaziantep",
+      "kitapSayisi": 145,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 30,
+        "giyecek": 16,
+        "esya": "16 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 31,
+      "ad": "Giresun",
+      "kitapSayisi": 31,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 3,
+        "giyecek": 4,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 32,
+      "ad": "Gümüşhane",
+      "kitapSayisi": 2,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 1,
+        "giyecek": 0,
+        "esya": "11 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "3-4 Haziran 2021 55 öğrenciye 55 adet kitap verildi.",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 33,
+      "ad": "Hakkari",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "14-15-16 Nisan 2021 100 öğrenciye 100 adet \"Her Genç Bir Yunus\" kitabı verildi.",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 34,
+      "ad": "Hatay",
+      "kitapSayisi": 165,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 3,
+        "giyecek": 265,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 35,
+      "ad": "Isparta",
+      "kitapSayisi": 42,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 1,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": "Çocuklarda; 2. Elif Toy 1 tablet bilgisayar, 1500 Tl nakit ödül verildi."
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 36,
+      "ad": "İstanbul",
+      "kitapSayisi": 773,
+      "fidanlar": {
+        "erik": "Mayıs 2024 Beykoz 3 adet dikildi.",
+        "ayva": "Mayıs 2024 Beykoz 10 adet dikildi.",
+        "armut": "Mayıs 2024 Beykoz 9 adet dikildi.",
+        "elma": "Mayıs 2024 Beykoz 3 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 103,
+        "giyecek": 120,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Çocuklarda; 2. Fatma Dila Özarslan 1 tablet bilgisayar verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": "Gençlerde; 3. Burcu Durak 2500 Tl. nakit ödül verildi."
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 37,
+      "ad": "İzmir",
+      "kitapSayisi": 235,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 76,
+        "giyecek": 73,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": "Gençlerde; 2. Duru Çınar 1 tablet bilgisayar, 1500 Tl nakit ödül verildi."
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 38,
+      "ad": "Kahramanmaraş",
+      "kitapSayisi": 278,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 13,
+        "giyecek": 7,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 10
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 39,
+      "ad": "Karabük",
+      "kitapSayisi": 33,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 3,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "28/29/30 Ağustos 2021 Bolu/Kastamonu/Çankırı/Karabük seyahati yapıldı."
+      }
+    },
+    {
+      "id": 40,
+      "ad": "Karaman",
+      "kitapSayisi": 8,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 4,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Gençlerde; 3. Mehmet Furkan Şaşma 1000 Tl nakit ödül verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 41,
+      "ad": "Kars",
+      "kitapSayisi": 1,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "14 Temmuz 2019 Erzincan/Erzurum/Kars seyahati yapıldı. 1/2/3/4/5 Temmuz 2021 Kars/Ardahan/Artvin/Trabzon seyahati yapıldı."
+      }
+    },
+    {
+      "id": 42,
+      "ad": "Kastamonu",
+      "kitapSayisi": 51,
+      "fidanlar": {
+        "ceviz": "Mart 2020 Taşköprü'de 50 adet dikildi.",
+        "ihlamur": "Aralık 2021 200 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "5/6 Ekim 2019 Bolu/Kastamonu seyahati yapıldı. 28/29/30 Ağustos 2021 Bolu/Kastamonu/Çankırı/Karabük seyahati yapıldı."
+      }
+    },
+    {
+      "id": 43,
+      "ad": "Kayseri",
+      "kitapSayisi": 112,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 48,
+        "giyecek": 27,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 10
+      },
+      "yarismalar": {
+        "yunus2021": "Yarışmaya katılan çocuklara 6 adet giyecek verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 44,
+      "ad": "Kırıkkale",
+      "kitapSayisi": 59,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 50,
+        "giyecek": 6,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 56
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 45,
+      "ad": "Kilis",
+      "kitapSayisi": 31,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 46,
+      "ad": "Kocaeli",
+      "kitapSayisi": 125,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 48,
+        "giyecek": 4,
+        "esya": "15 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 47,
+      "ad": "Konya",
+      "kitapSayisi": 234,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 38,
+        "giyecek": 11,
+        "esya": "17 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": "Gençlerde; 1. Elif Beyza Çelik 1 tablet bilgisayar, 2500 Tl nakit ödül verildi."
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 48,
+      "ad": "Kütahya",
+      "kitapSayisi": 1,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 49,
+      "ad": "Malatya",
+      "kitapSayisi": 0,
+      "fidanlar": {
+        "ceviz": "Aralık 2022 25 adet dikildi.",
+        "badem": "Aralık 2022 25 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 50,
+      "ad": "Manisa",
+      "kitapSayisi": 141,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 8,
+        "giyecek": 5,
+        "esya": "15 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "29/30/31 Ekim 2021 Bolu/Eskişehir/Manisa seyahati yapıldı."
+      }
+    },
+    {
+      "id": 51,
+      "ad": "Mardin",
+      "kitapSayisi": 66,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 5,
+        "giyecek": 6,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 52,
+      "ad": "Mersin",
+      "kitapSayisi": 99,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 97,
+        "giyecek": 14,
+        "esya": "12 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 53,
+      "ad": "Muğla",
+      "kitapSayisi": 47,
+      "fidanlar": {
+        "ceviz": "Şubat 2022 300 adet dikildi.",
+        "kestane": "Şubat 2022 46 adet dikildi.",
+        "keciBoyunuzu": "Şubat 2022 60 adet dikildi.",
+        "hunnap": "Şubat 2022 250 adet dikildi.",
+        "fistikCami": "Şubat 2022 500 adet dikildi.",
+        "dut": "Şubat 2022 400 adet dikildi."
+      },
+      "yardimlar": {
+        "oyuncak": 6,
+        "giyecek": 4,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 54,
+      "ad": "Nallıhan",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 55,
+      "ad": "Nevşehir",
+      "kitapSayisi": 41,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 5,
+        "giyecek": 9,
+        "esya": "6 adet Kupa",
+        "temizlikMalzemesi": 10
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "30/31 Ağustos/1 Eylül 2019 Kırşehir/Nevşehir/Aksaray seyahati yapıldı."
+      }
+    },
+    {
+      "id": 56,
+      "ad": "Ordu",
+      "kitapSayisi": 34,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 3,
+        "giyecek": 4,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 57,
+      "ad": "Osmaniye",
+      "kitapSayisi": 2,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 1,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 58,
+      "ad": "Rize",
+      "kitapSayisi": 31,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 59,
+      "ad": "Sakarya",
+      "kitapSayisi": 185,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 103,
+        "giyecek": 70,
+        "esya": "14 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 60,
+      "ad": "Samsun",
+      "kitapSayisi": 35,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 4,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 61,
+      "ad": "Siirt",
+      "kitapSayisi": 682,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 4,
+        "giyecek": 54,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 62,
+      "ad": "Sivas",
+      "kitapSayisi": 123,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 11,
+        "giyecek": 125,
+        "esya": "10 adet Kupa",
+        "temizlikMalzemesi": 43
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 63,
+      "ad": "Şanlıurfa",
+      "kitapSayisi": 104,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 39,
+        "giyecek": 4,
+        "esya": "12 adet Kupa",
+        "temizlikMalzemesi": 15
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 64,
+      "ad": "Şırnak",
+      "kitapSayisi": 226,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 4,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 65,
+      "ad": "Tarsus",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Yarışmaya katılan çocuklara 6 adet giyecek verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 66,
+      "ad": "Tekirdağ",
+      "kitapSayisi": 41,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 6,
+        "giyecek": 8,
+        "esya": "6 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "6 Aralık 2021 140 öğrenciye 140 adet \"Her Genç Bir Yunus\" kitabı verildi. ",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 67,
+      "ad": "Tokat",
+      "kitapSayisi": 31,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 3,
+        "giyecek": 4,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 68,
+      "ad": "Trabzon",
+      "kitapSayisi": 100,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": "Çocuklarda; 1. Eylül Mina Çelik 1 tablet bilgisayar, 2500 Tl nakit ödül verildi. "
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "1/2/3/4/5 Temmuz 2021 Kars/Ardahan/Artvin/Trabzon seyahati yapıldı."
+      }
+    },
+    {
+      "id": 69,
+      "ad": "Uşak",
+      "kitapSayisi": 36,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 6,
+        "giyecek": 0,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 70,
+      "ad": "Van",
+      "kitapSayisi": 177,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 8,
+        "giyecek": 22,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 20
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 71,
+      "ad": "Yozgat",
+      "kitapSayisi": 29,
+      "fidanlar": {
+        "cam": "19 Aralık 2019 yılında Yozgat Bozok Üniversitesi'nde 600 adet Çam fidanı dikildi"
+      },
+      "yardimlar": {
+        "oyuncak": 2,
+        "giyecek": 2,
+        "esya": "5 adet Kupa",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 72,
+      "ad": "Zonguldak",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "Çocuklarda; 3. Yusuf Yılmaz (Alaplı) 1000 Tl nakit ödül verildi.",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": ""
+      }
+    },
+    {
+      "id": 73,
+      "ad": "Kıbrıs (Lefkoşe/Girne)",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "5/6 Nisan 2019 Kıbrıs (Lefkoşe/Girne) seyahati yapıldı."
+      }
+    },
+    {
+      "id": 74,
+      "ad": "Kırşehir",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "30/31 Ağustos/1 Eylül 2019 Kırşehir/Nevşehir/Aksaray seyahati yapıldı."
+      }
+    },
+    {
+      "id": 75,
+      "ad": "Artvin",
+      "kitapSayisi": 0,
+      "fidanlar": {},
+      "yardimlar": {
+        "oyuncak": 0,
+        "giyecek": 0,
+        "esya": "",
+        "temizlikMalzemesi": 0
+      },
+      "yarismalar": {
+        "yunus2021": "",
+        "cocukGenclik2022": "",
+        "cumhuriyet2023": ""
+      },
+      "faaliyetler": {
+        "anadoluSeminerleri": "",
+        "seyyahSeyahatleri": "1/2/3/4/5 Temmuz 2021 Kars/Ardahan/Artvin/Trabzon seyahati yapıldı."
+      }
+    }
+  ],
+  "detayliVeriler": {
+    "fidanDikimi": [
+      {
+        "yil": 2019,
+        "tarih": 43800,
+        "yer": "Yozgat Bozok Üniversitesi",
+        "tur": "Çam",
+        "adet": 600
+      },
+      {
+        "yil": 2020,
+        "tarih": 43891,
+        "yer": "Kastamonu Taşköprü",
+        "tur": "Ceviz",
+        "adet": 50
+      },
+      {
+        "tarih": 43983,
+        "yer": "Bolu Göynük",
+        "tur": "Karışık Meyve",
+        "adet": 125
+      },
+      {
+        "tarih": 44136,
+        "yer": "Erzincan",
+        "tur": "Ceviz",
+        "adet": 150
+      },
+      {
+        "yil": 2021,
+        "tarih": 44287,
+        "yer": "Erzurum",
+        "tur": "Ahlat",
+        "adet": 500
+      },
+      {
+        "tarih": 44531,
+        "yer": "Kastamonu  ",
+        "tur": "Ihlamur",
+        "adet": 200
+      },
+      {
+        "tarih": 44531,
+        "yer": "Eskişehir",
+        "tur": "Mürver",
+        "adet": 100
+      },
+      {
+        "yil": 2022,
+        "tarih": 44593,
+        "yer": "Muğla",
+        "tur": "Kestane",
+        "adet": 46
+      },
+      {
+        "tarih": 44621,
+        "yer": "Ankara (1)",
+        "tur": "Üvez",
+        "adet": 250
+      },
+      {
+        "tarih": 44621,
+        "yer": "Bursa",
+        "tur": "Ceviz",
+        "adet": 500
+      },
+      {
+        "tarih": 44652,
+        "yer": "Erzincan",
+        "tur": "Ceviz",
+        "adet": 250
+      },
+      {
+        "tarih": 44713,
+        "yer": "Ardahan",
+        "tur": "Sarıçam",
+        "adet": 100
+      },
+      {
+        "tarih": 44835,
+        "yer": "Ankara Gazi Üniversitesi",
+        "tur": "Üvez",
+        "adet": 45
+      },
+      {
+        "tarih": 44835,
+        "yer": "Erzurum",
+        "tur": "Kayısı (zerdali)",
+        "adet": 250
+      },
+      {
+        "tarih": 44866,
+        "yer": "Afyon",
+        "tur": "Ceviz",
+        "adet": 800
+      },
+      {
+        "tarih": 44896,
+        "yer": "Malatya",
+        "tur": "Badem",
+        "adet": 25
+      },
+      {
+        "tarih": 44896,
+        "yer": "Ankara  ",
+        "tur": "Ladin",
+        "adet": 60
+      },
+      {
+        "tarih": 44896,
+        "yer": "Diyarbakır Dicle Üniversitesi",
+        "tur": "Antep fıstığı",
+        "adet": 100
+      },
+      {
+        "tarih": 44896,
+        "yer": "Çanakkale 18 Mart Üniversitesi (2)",
+        "tur": "Ceviz",
+        "adet": 100
+      },
+      {
+        "yil": 2023,
+        "tarih": 45261,
+        "yer": "Ankara",
+        "tur": "Ceviz",
+        "adet": 20
+      },
+      {
+        "yil": 2024,
+        "tarih": 45413,
+        "yer": "İstanbul Beykoz",
+        "tur": "Ayva",
+        "adet": 10
+      }
+    ],
+    "seminerler": [
+      {
+        "tarih": "28 Mart 2021",
+        "yer": "Biyonik Kulak Derneği",
+        "ogrenciSayisi": 0,
+        "notlar": ""
+      },
+      {
+        "tarih": "14-15-16 Nisan 2021",
+        "yer": "Hakkari",
+        "ogrenciSayisi": 100,
+        "notlar": "100 adet Her Genç Bir Yunus Kitabı"
+      },
+      {
+        "tarih": "26-27-28 Mayıs 2021",
+        "yer": "Ardahan",
+        "ogrenciSayisi": 100,
+        "notlar": "118 adet Yunusun Denizinde Kitabı"
+      },
+      {
+        "tarih": "3-4 Haziran 2021",
+        "yer": "Gümüşhane ",
+        "ogrenciSayisi": 55,
+        "notlar": "Kitapları Gümüşhane Belediyesi satın aldı"
+      },
+      {
+        "tarih": "6 Aralık 2021",
+        "yer": "Tekirdağ",
+        "ogrenciSayisi": 140,
+        "notlar": "140 adet Her Genç Bir Yunus Kitabı"
+      },
+      {
+        "tarih": "19-20 Ocak 2022",
+        "yer": "Erzincan",
+        "ogrenciSayisi": 238,
+        "notlar": "240 adet Her Genç Bir Yunus"
+      },
+      {
+        "tarih": "15-16 Mart 2022",
+        "yer": "Afyon",
+        "ogrenciSayisi": 1200,
+        "notlar": "600 adet Her Genç Bir Yunus, 600 adet Yunusun Denizinde"
+      }
+    ],
+    "kitapDagitimi": [
+      {
+        "sira": 1,
+        "yer": "Adana",
+        "kitapAdeti": 273,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 2,
+        "yer": "Adıyaman",
+        "kitapAdeti": 412,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 3,
+        "yer": "Afyonkarahisar",
+        "kitapAdeti": 1,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 4,
+        "yer": "Ağrı",
+        "kitapAdeti": 37,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 5,
+        "yer": "Aksaray",
+        "kitapAdeti": 29,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 6,
+        "yer": "Ankara",
+        "kitapAdeti": 275,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 7,
+        "yer": "Antalya",
+        "kitapAdeti": 170,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 8,
+        "yer": "Ardahan",
+        "kitapAdeti": 30,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 9,
+        "yer": "Aydın",
+        "kitapAdeti": 83,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 10,
+        "yer": "Balıkesir",
+        "kitapAdeti": 125,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 11,
+        "yer": "Bartın",
+        "kitapAdeti": 232,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 12,
+        "yer": "Batman",
+        "kitapAdeti": 53,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 13,
+        "yer": "Bilecik",
+        "kitapAdeti": 16,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 14,
+        "yer": "Bitlis",
+        "kitapAdeti": 4,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 15,
+        "yer": "Burdur",
+        "kitapAdeti": 34,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 16,
+        "yer": "Bursa",
+        "kitapAdeti": 84,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 17,
+        "yer": "Çanakkale",
+        "kitapAdeti": 29,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 18,
+        "yer": "Çankırı",
+        "kitapAdeti": 31,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 19,
+        "yer": "Çorum",
+        "kitapAdeti": 89,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 20,
+        "yer": "Denizli",
+        "kitapAdeti": 40,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 21,
+        "yer": "Diyarbakır",
+        "kitapAdeti": 49,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 22,
+        "yer": "Düzce",
+        "kitapAdeti": 2,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 23,
+        "yer": "Edirne",
+        "kitapAdeti": 34,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 24,
+        "yer": "Elazığ",
+        "kitapAdeti": 80,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 25,
+        "yer": "Erzincan",
+        "kitapAdeti": 466,
+        "tabletBilgisayar": 10
+      },
+      {
+        "sira": 26,
+        "yer": "Erzurum",
+        "kitapAdeti": 243,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 27,
+        "yer": "Eskişehir",
+        "kitapAdeti": 116,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 28,
+        "yer": "Gaziantep",
+        "kitapAdeti": 145,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 29,
+        "yer": "Giresun",
+        "kitapAdeti": 31,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 30,
+        "yer": "Gümüşhane",
+        "kitapAdeti": 2,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 31,
+        "yer": "Hatay",
+        "kitapAdeti": 165,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 32,
+        "yer": "Isparta",
+        "kitapAdeti": 42,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 33,
+        "yer": "İstanbul",
+        "kitapAdeti": 773,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 34,
+        "yer": "İzmir",
+        "kitapAdeti": 235,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 35,
+        "yer": "Kahramanmaraş",
+        "kitapAdeti": 278,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 36,
+        "yer": "Karabük",
+        "kitapAdeti": 33,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 37,
+        "yer": "Karaman",
+        "kitapAdeti": 8,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 38,
+        "yer": "Kars",
+        "kitapAdeti": 1,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 39,
+        "yer": "Kastamonu",
+        "kitapAdeti": 51,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 40,
+        "yer": "Kayseri",
+        "kitapAdeti": 112,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 41,
+        "yer": "Kırıkkale",
+        "kitapAdeti": 59,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 42,
+        "yer": "Kilis",
+        "kitapAdeti": 31,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 43,
+        "yer": "Kocaeli",
+        "kitapAdeti": 125,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 44,
+        "yer": "Konya",
+        "kitapAdeti": 234,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 45,
+        "yer": "Kütahya",
+        "kitapAdeti": 1,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 46,
+        "yer": "Manisa",
+        "kitapAdeti": 140,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 47,
+        "yer": "Manisa",
+        "kitapAdeti": 1,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 48,
+        "yer": "Mardin",
+        "kitapAdeti": 66,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 49,
+        "yer": "Mersin",
+        "kitapAdeti": 99,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 50,
+        "yer": "Muğla",
+        "kitapAdeti": 47,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 51,
+        "yer": "Nevşehir",
+        "kitapAdeti": 41,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 52,
+        "yer": "Ordu",
+        "kitapAdeti": 34,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 53,
+        "yer": "Osmaniye",
+        "kitapAdeti": 2,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 54,
+        "yer": "Rize",
+        "kitapAdeti": 31,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 55,
+        "yer": "Sakarya",
+        "kitapAdeti": 185,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 56,
+        "yer": "Samsun",
+        "kitapAdeti": 35,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 57,
+        "yer": "Siirt",
+        "kitapAdeti": 682,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 58,
+        "yer": "Sivas",
+        "kitapAdeti": 123,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 59,
+        "yer": "Şanlıurfa",
+        "kitapAdeti": 104,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 60,
+        "yer": "Şırnak",
+        "kitapAdeti": 226,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 61,
+        "yer": "Tekirdağ",
+        "kitapAdeti": 41,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 62,
+        "yer": "Tokat",
+        "kitapAdeti": 31,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 63,
+        "yer": "Trabzon ",
+        "kitapAdeti": 100,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 64,
+        "yer": "Uşak",
+        "kitapAdeti": 36,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 65,
+        "yer": "Van",
+        "kitapAdeti": 177,
+        "tabletBilgisayar": 0
+      },
+      {
+        "sira": 66,
+        "yer": "Yozgat",
+        "kitapAdeti": 29,
+        "tabletBilgisayar": 0
+      },
+      {
+        "yer": "TOPLAM",
+        "kitapAdeti": 7593,
+        "tabletBilgisayar": 10
+      },
+      {
+        "yer": "BİR BAŞTAN BİR BAŞA ANADOLU",
+        "kitapAdeti": 1833,
+        "tabletBilgisayar": 0
+      },
+      {
+        "yer": "HİKAYE YARIŞMALARI *",
+        "kitapAdeti": 79,
+        "tabletBilgisayar": 0
+      },
+      {
+        "yer": "GENEL TOPLAM",
+        "kitapAdeti": 9505,
+        "tabletBilgisayar": 0
+      }
+    ],
+    "digerYardimlar": [
+      {
+        "sira": 1,
+        "yer": "Adana",
+        "oyuncak": 5,
+        "giyecek": 10,
+        "kupa": 6,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 2,
+        "yer": "Afyonkarahisar",
+        "oyuncak": 1,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 3,
+        "yer": "Ağrı ",
+        "oyuncak": 3,
+        "giyecek": 6,
+        "kupa": 5,
+        "temizlikMalzeme": 10
+      },
+      {
+        "sira": 4,
+        "yer": "Aksaray",
+        "oyuncak": 2,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 5,
+        "yer": "Ankara",
+        "oyuncak": 112,
+        "giyecek": 28,
+        "kupa": 67,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 6,
+        "yer": "Antalya",
+        "oyuncak": 0,
+        "giyecek": 74,
+        "kupa": 16,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 7,
+        "yer": "Ardahan",
+        "oyuncak": 0,
+        "giyecek": 0,
+        "kupa": 15,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 8,
+        "yer": "Aydın",
+        "oyuncak": 13,
+        "giyecek": 10,
+        "kupa": 11,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 9,
+        "yer": "Balıkesir",
+        "oyuncak": 21,
+        "giyecek": 16,
+        "kupa": 16,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 10,
+        "yer": "Batman",
+        "oyuncak": 42,
+        "giyecek": 9,
+        "kupa": 5,
+        "temizlikMalzeme": 16
+      },
+      {
+        "sira": 11,
+        "yer": "Bilecik",
+        "oyuncak": 8,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 12,
+        "yer": "Bitlis",
+        "oyuncak": 2,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 13,
+        "yer": "Burdur",
+        "oyuncak": 4,
+        "giyecek": 3,
+        "kupa": 5,
+        "temizlikMalzeme": 10
+      },
+      {
+        "sira": 14,
+        "yer": "Bursa",
+        "oyuncak": 22,
+        "giyecek": 19,
+        "kupa": 8,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 15,
+        "yer": "Çanakkale",
+        "oyuncak": 2,
+        "giyecek": 0,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 16,
+        "yer": "Çankırı",
+        "oyuncak": 1,
+        "giyecek": 0,
+        "kupa": 5,
+        "temizlikMalzeme": 5
+      },
+      {
+        "sira": 17,
+        "yer": "Çorum",
+        "oyuncak": 29,
+        "giyecek": 42,
+        "kupa": 7,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 18,
+        "yer": "Denizli",
+        "oyuncak": 4,
+        "giyecek": 0,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 19,
+        "yer": "Diyarbakır",
+        "oyuncak": 15,
+        "giyecek": 14,
+        "kupa": 6,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 20,
+        "yer": "Düzce",
+        "oyuncak": 1,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 21,
+        "yer": "Edirne",
+        "oyuncak": 2,
+        "giyecek": 0,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 22,
+        "yer": "Elazığ",
+        "oyuncak": 8,
+        "giyecek": 15,
+        "kupa": 12,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 23,
+        "yer": "Erzincan",
+        "oyuncak": 0,
+        "giyecek": 0,
+        "kupa": 14,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 24,
+        "yer": "Eskişehir",
+        "oyuncak": 128,
+        "giyecek": 88,
+        "kupa": 8,
+        "temizlikMalzeme": 6
+      },
+      {
+        "sira": 25,
+        "yer": "Gaziantep",
+        "oyuncak": 30,
+        "giyecek": 16,
+        "kupa": 16,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 26,
+        "yer": "Giresun",
+        "oyuncak": 3,
+        "giyecek": 4,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 27,
+        "yer": "Gümüşhane",
+        "oyuncak": 1,
+        "giyecek": 0,
+        "kupa": 11,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 28,
+        "yer": "Hakkari",
+        "oyuncak": 0,
+        "giyecek": 0,
+        "kupa": 10,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 29,
+        "yer": "Hatay",
+        "oyuncak": 3,
+        "giyecek": 265,
+        "kupa": 10,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 30,
+        "yer": "Isparta",
+        "oyuncak": 1,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 31,
+        "yer": "İstanbul ",
+        "oyuncak": 103,
+        "giyecek": 120,
+        "kupa": 10,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 32,
+        "yer": "İzmir",
+        "oyuncak": 76,
+        "giyecek": 73,
+        "kupa": 10,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 33,
+        "yer": "Kahramanmaraş",
+        "oyuncak": 13,
+        "giyecek": 7,
+        "kupa": 10,
+        "temizlikMalzeme": 10
+      },
+      {
+        "sira": 34,
+        "yer": "Karabük",
+        "oyuncak": 3,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 35,
+        "yer": "Karaman",
+        "oyuncak": 4,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 36,
+        "yer": "Kayseri",
+        "oyuncak": 48,
+        "giyecek": 27,
+        "kupa": 10,
+        "temizlikMalzeme": 10
+      },
+      {
+        "sira": 37,
+        "yer": "Kırıkkale ",
+        "oyuncak": 50,
+        "giyecek": 6,
+        "kupa": 5,
+        "temizlikMalzeme": 56
+      },
+      {
+        "sira": 38,
+        "yer": "Kilis",
+        "oyuncak": 2,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 39,
+        "yer": "Kocaeli",
+        "oyuncak": 48,
+        "giyecek": 4,
+        "kupa": 15,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 40,
+        "yer": "Konya",
+        "oyuncak": 38,
+        "giyecek": 11,
+        "kupa": 17,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 41,
+        "yer": "Manisa",
+        "oyuncak": 8,
+        "giyecek": 5,
+        "kupa": 15,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 42,
+        "yer": "Mardin",
+        "oyuncak": 5,
+        "giyecek": 6,
+        "kupa": 10,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 43,
+        "yer": "Mersin",
+        "oyuncak": 97,
+        "giyecek": 14,
+        "kupa": 12,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 44,
+        "yer": "Muğla",
+        "oyuncak": 6,
+        "giyecek": 4,
+        "kupa": 10,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 45,
+        "yer": "Nevşehir",
+        "oyuncak": 5,
+        "giyecek": 9,
+        "kupa": 6,
+        "temizlikMalzeme": 10
+      },
+      {
+        "sira": 46,
+        "yer": "Ordu",
+        "oyuncak": 3,
+        "giyecek": 4,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 47,
+        "yer": "Osmaniye",
+        "oyuncak": 1,
+        "giyecek": 0,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 48,
+        "yer": "Rize",
+        "oyuncak": 2,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 49,
+        "yer": "Sakarya",
+        "oyuncak": 103,
+        "giyecek": 70,
+        "kupa": 14,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 50,
+        "yer": "Samsun",
+        "oyuncak": 4,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 51,
+        "yer": "Siirt",
+        "oyuncak": 4,
+        "giyecek": 54,
+        "kupa": 0,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 52,
+        "yer": "Sivas",
+        "oyuncak": 11,
+        "giyecek": 125,
+        "kupa": 10,
+        "temizlikMalzeme": 43
+      },
+      {
+        "sira": 53,
+        "yer": "Şanlıurfa",
+        "oyuncak": 39,
+        "giyecek": 4,
+        "kupa": 12,
+        "temizlikMalzeme": 15
+      },
+      {
+        "sira": 54,
+        "yer": "Şırnak",
+        "oyuncak": 4,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 55,
+        "yer": "Tekirdağ",
+        "oyuncak": 6,
+        "giyecek": 8,
+        "kupa": 6,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 56,
+        "yer": "Tokat",
+        "oyuncak": 3,
+        "giyecek": 4,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 57,
+        "yer": "Uşak",
+        "oyuncak": 6,
+        "giyecek": 0,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "sira": 58,
+        "yer": "Van",
+        "oyuncak": 8,
+        "giyecek": 22,
+        "kupa": 5,
+        "temizlikMalzeme": 20
+      },
+      {
+        "sira": 59,
+        "yer": "Yozgat",
+        "oyuncak": 2,
+        "giyecek": 2,
+        "kupa": 5,
+        "temizlikMalzeme": 0
+      },
+      {
+        "yer": "TOPLAM",
+        "oyuncak": 1165,
+        "giyecek": 1210,
+        "kupa": 500,
+        "temizlikMalzeme": 211
+      }
+    ],
+    "hikayeYarismalari": [
+      {
+        "sira": "1.",
+        "isim": "Yaren Dedebek (Bursa )",
+        "tabletBilgisayar": 1,
+        "kitap": 1,
+        "hediyeEsya": 2,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "2.",
+        "isim": "Fatma Dila Özarslan (İstanbul )",
+        "tabletBilgisayar": 1,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "3.",
+        "isim": "Yusuf Yılmaz (Zonguldak/ Alaplı)",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": "1000 TL"
+      },
+      {
+        "sira": "Mansiyon",
+        "isim": "Nezahat Tatcı (Ankara)",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": "500 TL"
+      },
+      {
+        "isim": "Gençlerde;",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": "Monster Bilgisayar"
+      },
+      {
+        "sira": "1.",
+        "isim": "Gönül Ceren Kanmaz (Ankara)",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": 1
+      },
+      {
+        "sira": "2.",
+        "isim": "Deniz Kurt (Erzincan)",
+        "tabletBilgisayar": 1,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "3.",
+        "isim": "Mehmet Furkan Şaşma (Karaman)",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "Mansiyon",
+        "isim": "Dilaray Şaşmaz (Ankara)",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": 44378,
+        "isim": "Kayseri Çocuk ve Gençlik C.İ.K.",
+        "tabletBilgisayar": 6,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Diyarbakır Çocuk ve Gençlik C.İ.K.",
+        "tabletBilgisayar": 12,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Tarsus Çocuk ve Gençlik C.İ.K.",
+        "tabletBilgisayar": 6,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Ankara Çocuk ve Gençlik C.İ.K.",
+        "tabletBilgisayar": 12,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "2022 Çocuk ve Gençlik Hikaye Yarışması ",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Gençlerde;",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "1.",
+        "isim": "Yazara ulaşılamadı",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "2.",
+        "isim": "Oya Naz Öztürk (Bursa)",
+        "tabletBilgisayar": 1,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Çocuklarda katılım az olduğundan ödüllendirmeye layık eser bulunamamıştır.",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Çocuklarda yarışmaya katılan 9 adet öğrenciye toplam 18 kitap",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Gençlerde yarışmaya katılan 15 adet öğrenciye toplam 60 adet kitap",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "(Listelere ve yarışmaya katılan öğrencilerin katıldığı yerlere ulaşılamadı)",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "2024 Çocuk ve Gençlik Hikaye Yarışması ",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Çocuklarda;",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "1.",
+        "isim": "Eylül Mina Çelik (Trabzon)",
+        "tabletBilgisayar": 1,
+        "kitap": 2500,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "2.",
+        "isim": "Elif Toy (Isparta)",
+        "tabletBilgisayar": 1,
+        "kitap": 1500,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "3.",
+        "isim": "Yiğit Çalışkan (Bartın)",
+        "tabletBilgisayar": 0,
+        "kitap": 2500,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "isim": "Gençlerde;",
+        "tabletBilgisayar": 0,
+        "kitap": 0,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "1.",
+        "isim": "Elif Beyza Çelik (Konya)",
+        "tabletBilgisayar": 1,
+        "kitap": 2500,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "2.",
+        "isim": "Duru Çınar (İzmir)",
+        "tabletBilgisayar": 1,
+        "kitap": 1500,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      },
+      {
+        "sira": "3.",
+        "isim": "Burcu Durak (İstanbul)",
+        "tabletBilgisayar": 0,
+        "kitap": 2500,
+        "hediyeEsya": 0,
+        "nakitOdul": ""
+      }
+    ]
+  },
+  "istatistikler": {
+    "toplamSehir": 75,
+    "toplamKitap": 7593,
+    "toplamOyuncak": 1165,
+    "toplamGiyecek": 1210,
+    "toplamTemizlik": 211,
+    "toplamFidan": 4281,
+    "aktifSehirSayisi": 65
+  },
+  "haritaKoordinatlari": {
+    "İstanbul": {
+      "top": "35%",
+      "left": "25%",
+      "bolge": "Marmara"
+    },
+    "Ankara": {
+      "top": "45%",
+      "left": "35%",
+      "bolge": "İç Anadolu"
+    },
+    "İzmir": {
+      "top": "60%",
+      "left": "15%",
+      "bolge": "Ege"
+    },
+    "Adana": {
+      "top": "70%",
+      "left": "42%",
+      "bolge": "Akdeniz"
+    },
+    "Antalya": {
+      "top": "75%",
+      "left": "32%",
+      "bolge": "Akdeniz"
+    },
+    "Bursa": {
+      "top": "40%",
+      "left": "20%",
+      "bolge": "Marmara"
+    },
+    "Gaziantep": {
+      "top": "65%",
+      "left": "45%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Konya": {
+      "top": "60%",
+      "left": "35%",
+      "bolge": "İç Anadolu"
+    },
+    "Kayseri": {
+      "top": "55%",
+      "left": "42%",
+      "bolge": "İç Anadolu"
+    },
+    "Erzurum": {
+      "top": "42%",
+      "left": "65%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Trabzon": {
+      "top": "25%",
+      "left": "70%",
+      "bolge": "Karadeniz"
+    },
+    "Samsun": {
+      "top": "30%",
+      "left": "42%",
+      "bolge": "Karadeniz"
+    },
+    "Eskişehir": {
+      "top": "50%",
+      "left": "32%",
+      "bolge": "İç Anadolu"
+    },
+    "Afyon": {
+      "top": "55%",
+      "left": "28%",
+      "bolge": "İç Anadolu"
+    },
+    "Kırıkkale": {
+      "top": "48%",
+      "left": "38%",
+      "bolge": "İç Anadolu"
+    },
+    "Manisa": {
+      "top": "58%",
+      "left": "18%",
+      "bolge": "Ege"
+    },
+    "Denizli": {
+      "top": "70%",
+      "left": "22%",
+      "bolge": "Ege"
+    },
+    "Mersin": {
+      "top": "75%",
+      "left": "40%",
+      "bolge": "Akdeniz"
+    },
+    "Hatay": {
+      "top": "82%",
+      "left": "45%",
+      "bolge": "Akdeniz"
+    },
+    "Van": {
+      "top": "55%",
+      "left": "78%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Diyarbakır": {
+      "top": "60%",
+      "left": "55%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Şanlıurfa": {
+      "top": "65%",
+      "left": "50%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Malatya": {
+      "top": "55%",
+      "left": "50%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Elazığ": {
+      "top": "52%",
+      "left": "52%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Adıyaman": {
+      "top": "62%",
+      "left": "48%",
+      "bolge": "Güneydoğu Anadolu"
+    }
+  },
+  "kategoriler": {
+    "fidanTurleri": [
+      "karisikMeyve",
+      "cam",
+      "ceviz",
+      "ahlat",
+      "ihlamur",
+      "murver",
+      "erik",
+      "kestane",
+      "keciBoyunuzu",
+      "hunnap",
+      "fistikCami",
+      "dut",
+      "uvez",
+      "sariCam",
+      "hus",
+      "kayisiZerdali",
+      "badem",
+      "ladin",
+      "antepFistigi",
+      "zakkum",
+      "lavanta",
+      "mese",
+      "ayva",
+      "armut",
+      "elma"
+    ],
+    "yardimTurleri": [
+      "oyuncak",
+      "giyecek",
+      "esya",
+      "temizlikMalzemesi"
+    ],
+    "yarismaTurleri": [
+      "yunus2021",
+      "cocukGenclik2022",
+      "cumhuriyet2023"
+    ],
+    "faaliyetTurleri": [
+      "anadoluSeminerleri",
+      "seyyahSeyahatleri"
+    ]
+  }
+}

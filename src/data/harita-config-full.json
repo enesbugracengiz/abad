@@ -1,0 +1,429 @@
+{
+  "koordinatlar": {
+    "İstanbul": {
+      "top": "35%",
+      "left": "25%",
+      "bolge": "Marmara"
+    },
+    "Bursa": {
+      "top": "40%",
+      "left": "20%",
+      "bolge": "Marmara"
+    },
+    "Tekirdağ": {
+      "top": "30%",
+      "left": "18%",
+      "bolge": "Marmara"
+    },
+    "Kırklareli": {
+      "top": "25%",
+      "left": "15%",
+      "bolge": "Marmara"
+    },
+    "Edirne": {
+      "top": "22%",
+      "left": "12%",
+      "bolge": "Marmara"
+    },
+    "Çanakkale": {
+      "top": "50%",
+      "left": "12%",
+      "bolge": "Marmara"
+    },
+    "Balıkesir": {
+      "top": "48%",
+      "left": "18%",
+      "bolge": "Marmara"
+    },
+    "Yalova": {
+      "top": "37%",
+      "left": "22%",
+      "bolge": "Marmara"
+    },
+    "Kocaeli": {
+      "top": "32%",
+      "left": "22%",
+      "bolge": "Marmara"
+    },
+    "Sakarya": {
+      "top": "32%",
+      "left": "25%",
+      "bolge": "Marmara"
+    },
+    "Bilecik": {
+      "top": "43%",
+      "left": "25%",
+      "bolge": "Marmara"
+    },
+    "İzmir": {
+      "top": "60%",
+      "left": "15%",
+      "bolge": "Ege"
+    },
+    "Manisa": {
+      "top": "58%",
+      "left": "18%",
+      "bolge": "Ege"
+    },
+    "Aydın": {
+      "top": "68%",
+      "left": "18%",
+      "bolge": "Ege"
+    },
+    "Muğla": {
+      "top": "75%",
+      "left": "20%",
+      "bolge": "Ege"
+    },
+    "Denizli": {
+      "top": "70%",
+      "left": "22%",
+      "bolge": "Ege"
+    },
+    "Uşak": {
+      "top": "58%",
+      "left": "22%",
+      "bolge": "Ege"
+    },
+    "Kütahya": {
+      "top": "50%",
+      "left": "25%",
+      "bolge": "Ege"
+    },
+    "Afyon": {
+      "top": "55%",
+      "left": "28%",
+      "bolge": "Ege"
+    },
+    "Antalya": {
+      "top": "75%",
+      "left": "32%",
+      "bolge": "Akdeniz"
+    },
+    "Adana": {
+      "top": "70%",
+      "left": "42%",
+      "bolge": "Akdeniz"
+    },
+    "Mersin": {
+      "top": "75%",
+      "left": "40%",
+      "bolge": "Akdeniz"
+    },
+    "Hatay": {
+      "top": "82%",
+      "left": "45%",
+      "bolge": "Akdeniz"
+    },
+    "Osmaniye": {
+      "top": "72%",
+      "left": "44%",
+      "bolge": "Akdeniz"
+    },
+    "Kahramanmaraş": {
+      "top": "65%",
+      "left": "45%",
+      "bolge": "Akdeniz"
+    },
+    "Isparta": {
+      "top": "68%",
+      "left": "28%",
+      "bolge": "Akdeniz"
+    },
+    "Burdur": {
+      "top": "72%",
+      "left": "25%",
+      "bolge": "Akdeniz"
+    },
+    "Ankara": {
+      "top": "45%",
+      "left": "35%",
+      "bolge": "İç Anadolu"
+    },
+    "Konya": {
+      "top": "60%",
+      "left": "35%",
+      "bolge": "İç Anadolu"
+    },
+    "Kayseri": {
+      "top": "55%",
+      "left": "42%",
+      "bolge": "İç Anadolu"
+    },
+    "Sivas": {
+      "top": "45%",
+      "left": "45%",
+      "bolge": "İç Anadolu"
+    },
+    "Yozgat": {
+      "top": "50%",
+      "left": "40%",
+      "bolge": "İç Anadolu"
+    },
+    "Kırıkkale": {
+      "top": "48%",
+      "left": "38%",
+      "bolge": "İç Anadolu"
+    },
+    "Kırşehir": {
+      "top": "52%",
+      "left": "38%",
+      "bolge": "İç Anadolu"
+    },
+    "Aksaray": {
+      "top": "58%",
+      "left": "38%",
+      "bolge": "İç Anadolu"
+    },
+    "Nevşehir": {
+      "top": "55%",
+      "left": "40%",
+      "bolge": "İç Anadolu"
+    },
+    "Niğde": {
+      "top": "65%",
+      "left": "40%",
+      "bolge": "İç Anadolu"
+    },
+    "Karaman": {
+      "top": "70%",
+      "left": "38%",
+      "bolge": "İç Anadolu"
+    },
+    "Eskişehir": {
+      "top": "50%",
+      "left": "32%",
+      "bolge": "İç Anadolu"
+    },
+    "Trabzon": {
+      "top": "25%",
+      "left": "70%",
+      "bolge": "Karadeniz"
+    },
+    "Samsun": {
+      "top": "30%",
+      "left": "42%",
+      "bolge": "Karadeniz"
+    },
+    "Ordu": {
+      "top": "28%",
+      "left": "48%",
+      "bolge": "Karadeniz"
+    },
+    "Giresun": {
+      "top": "26%",
+      "left": "52%",
+      "bolge": "Karadeniz"
+    },
+    "Rize": {
+      "top": "23%",
+      "left": "68%",
+      "bolge": "Karadeniz"
+    },
+    "Artvin": {
+      "top": "20%",
+      "left": "65%",
+      "bolge": "Karadeniz"
+    },
+    "Gümüşhane": {
+      "top": "28%",
+      "left": "58%",
+      "bolge": "Karadeniz"
+    },
+    "Bayburt": {
+      "top": "30%",
+      "left": "62%",
+      "bolge": "Karadeniz"
+    },
+    "Tokat": {
+      "top": "42%",
+      "left": "42%",
+      "bolge": "Karadeniz"
+    },
+    "Amasya": {
+      "top": "38%",
+      "left": "42%",
+      "bolge": "Karadeniz"
+    },
+    "Çorum": {
+      "top": "42%",
+      "left": "38%",
+      "bolge": "Karadeniz"
+    },
+    "Sinop": {
+      "top": "25%",
+      "left": "38%",
+      "bolge": "Karadeniz"
+    },
+    "Kastamonu": {
+      "top": "32%",
+      "left": "35%",
+      "bolge": "Karadeniz"
+    },
+    "Bartın": {
+      "top": "28%",
+      "left": "35%",
+      "bolge": "Karadeniz"
+    },
+    "Karabük": {
+      "top": "30%",
+      "left": "37%",
+      "bolge": "Karadeniz"
+    },
+    "Zonguldak": {
+      "top": "32%",
+      "left": "30%",
+      "bolge": "Karadeniz"
+    },
+    "Bolu": {
+      "top": "38%",
+      "left": "32%",
+      "bolge": "Karadeniz"
+    },
+    "Düzce": {
+      "top": "35%",
+      "left": "30%",
+      "bolge": "Karadeniz"
+    },
+    "Erzurum": {
+      "top": "42%",
+      "left": "65%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Van": {
+      "top": "55%",
+      "left": "78%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Ağrı": {
+      "top": "45%",
+      "left": "75%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Kars": {
+      "top": "35%",
+      "left": "75%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Ardahan": {
+      "top": "32%",
+      "left": "72%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Iğdır": {
+      "top": "38%",
+      "left": "78%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Erzincan": {
+      "top": "45%",
+      "left": "58%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Tunceli": {
+      "top": "50%",
+      "left": "60%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Bingöl": {
+      "top": "52%",
+      "left": "62%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Muş": {
+      "top": "52%",
+      "left": "68%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Bitlis": {
+      "top": "55%",
+      "left": "70%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Malatya": {
+      "top": "55%",
+      "left": "50%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Elazığ": {
+      "top": "52%",
+      "left": "52%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Hakkari": {
+      "top": "65%",
+      "left": "80%",
+      "bolge": "Doğu Anadolu"
+    },
+    "Diyarbakır": {
+      "top": "60%",
+      "left": "55%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Şanlıurfa": {
+      "top": "65%",
+      "left": "50%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Gaziantep": {
+      "top": "68%",
+      "left": "47%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Adıyaman": {
+      "top": "62%",
+      "left": "48%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Mardin": {
+      "top": "65%",
+      "left": "60%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Batman": {
+      "top": "58%",
+      "left": "62%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Şırnak": {
+      "top": "62%",
+      "left": "68%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Siirt": {
+      "top": "60%",
+      "left": "65%",
+      "bolge": "Güneydoğu Anadolu"
+    },
+    "Kilis": {
+      "top": "72%",
+      "left": "47%",
+      "bolge": "Güneydoğu Anadolu"
+    }
+  },
+  "renkler": {
+    "aktifSehir": "#c67366",
+    "pasifSehir": "#6c757d",
+    "hoverRenk": "#a85d52",
+    "cokAktifSehir": "#b85a4d",
+    "ortaAktifSehir": "#c67366",
+    "azAktifSehir": "#d48c82"
+  },
+  "boyutlar": {
+    "noktaBoyutu": 12,
+    "hoverBoyutu": 16,
+    "cokAktifBoyut": 16,
+    "ortaAktifBoyut": 14,
+    "azAktifBoyut": 12,
+    "maxHaritaGenisligi": 800
+  },
+  "bolgeRenkleri": {
+    "Marmara": "#3498db",
+    "Ege": "#2ecc71",
+    "Akdeniz": "#e74c3c",
+    "İç Anadolu": "#f39c12",
+    "Karadeniz": "#34495e",
+    "Doğu Anadolu": "#9b59b6",
+    "Güneydoğu Anadolu": "#e67e22"
+  }
+}

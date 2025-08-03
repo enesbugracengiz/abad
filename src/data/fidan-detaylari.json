@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "totalCount": 21,
+    "totalFidanSayisi": 4281
+  },
+  "data": [
+    {
+      "yil": 2019,
+      "tarih": 43800,
+      "yer": "Yozgat Bozok Üniversitesi",
+      "tur": "Çam",
+      "adet": 600
+    },
+    {
+      "yil": 2020,
+      "tarih": 43891,
+      "yer": "Kastamonu Taşköprü",
+      "tur": "Ceviz",
+      "adet": 50
+    },
+    {
+      "tarih": 43983,
+      "yer": "Bolu Göynük",
+      "tur": "Karışık Meyve",
+      "adet": 125
+    },
+    {
+      "tarih": 44136,
+      "yer": "Erzincan",
+      "tur": "Ceviz",
+      "adet": 150
+    },
+    {
+      "yil": 2021,
+      "tarih": 44287,
+      "yer": "Erzurum",
+      "tur": "Ahlat",
+      "adet": 500
+    },
+    {
+      "tarih": 44531,
+      "yer": "Kastamonu  ",
+      "tur": "Ihlamur",
+      "adet": 200
+    },
+    {
+      "tarih": 44531,
+      "yer": "Eskişehir",
+      "tur": "Mürver",
+      "adet": 100
+    },
+    {
+      "yil": 2022,
+      "tarih": 44593,
+      "yer": "Muğla",
+      "tur": "Kestane",
+      "adet": 46
+    },
+    {
+      "tarih": 44621,
+      "yer": "Ankara (1)",
+      "tur": "Üvez",
+      "adet": 250
+    },
+    {
+      "tarih": 44621,
+      "yer": "Bursa",
+      "tur": "Ceviz",
+      "adet": 500
+    },
+    {
+      "tarih": 44652,
+      "yer": "Erzincan",
+      "tur": "Ceviz",
+      "adet": 250
+    },
+    {
+      "tarih": 44713,
+      "yer": "Ardahan",
+      "tur": "Sarıçam",
+      "adet": 100
+    },
+    {
+      "tarih": 44835,
+      "yer": "Ankara Gazi Üniversitesi",
+      "tur": "Üvez",
+      "adet": 45
+    },
+    {
+      "tarih": 44835,
+      "yer": "Erzurum",
+      "tur": "Kayısı (zerdali)",
+      "adet": 250
+    },
+    {
+      "tarih": 44866,
+      "yer": "Afyon",
+      "tur": "Ceviz",
+      "adet": 800
+    },
+    {
+      "tarih": 44896,
+      "yer": "Malatya",
+      "tur": "Badem",
+      "adet": 25
+    },
+    {
+      "tarih": 44896,
+      "yer": "Ankara  ",
+      "tur": "Ladin",
+      "adet": 60
+    },
+    {
+      "tarih": 44896,
+      "yer": "Diyarbakır Dicle Üniversitesi",
+      "tur": "Antep fıstığı",
+      "adet": 100
+    },
+    {
+      "tarih": 44896,
+      "yer": "Çanakkale 18 Mart Üniversitesi (2)",
+      "tur": "Ceviz",
+      "adet": 100
+    },
+    {
+      "yil": 2023,
+      "tarih": 45261,
+      "yer": "Ankara",
+      "tur": "Ceviz",
+      "adet": 20
+    },
+    {
+      "yil": 2024,
+      "tarih": 45413,
+      "yer": "İstanbul Beykoz",
+      "tur": "Ayva",
+      "adet": 10
+    }
+  ]
+}
