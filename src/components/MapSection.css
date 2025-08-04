@@ -1,0 +1,247 @@
+/* MapSection Styles */
+.map-section {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.map-container {
+  position: relative;
+  display: inline-block;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.turkey-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.city-marker {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #c67366;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.city-marker:hover {
+  width: 18px;
+  height: 18px;
+  background-color: #a85d52;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+.city-marker.inactive {
+  background-color: #6c757d;
+  opacity: 0.7;
+}
+
+.city-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.city-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.city-marker:hover .city-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.stats-container {
+  margin-top: 3rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-icon-container {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-icon-container:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.stat-button {
+  background-color: #c67366 !important;
+  border: none !important;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 80px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stat-button:hover {
+  background-color: #a85d52 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(198, 115, 102, 0.3);
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #c67366;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .map-section {
+    padding: 2rem 0;
+  }
+
+  .city-marker {
+    width: 12px;
+    height: 12px;
+  }
+
+  .city-marker:hover {
+    width: 16px;
+    height: 16px;
+  }
+
+  .stat-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stat-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .stat-button {
+    font-size: 14px;
+    padding: 6px 16px;
+    min-width: 70px;
+  }
+
+  .city-tooltip {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-container .row {
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation for loading states */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(198, 115, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(198, 115, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(198, 115, 102, 0);
+  }
+}
