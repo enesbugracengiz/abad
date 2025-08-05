@@ -4,7 +4,7 @@ import MapSection from "../components/MapSection";
 import FeaturedProjects from "../components/FeaturedProjects";
 import Categories from "../components/Categories";
 import ECertificate from "../components/ECertificate";
-import News from "../components/News";
+// import News from "../components/News";
 import ProjectGallery from "../components/ProjectGallery";
 
 const HomePage = () => {
@@ -27,7 +27,7 @@ const HomePage = () => {
         <ECertificate />
 
         {/* Section 5 - Bizden Haberler */}
-        <News />
+        {/* <News /> */}
 
         {/* Section 6 - Proje Galerisi */}
         <ProjectGallery />

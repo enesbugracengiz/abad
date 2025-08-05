@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import CertificatePage from "./pages/CertificatePage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import NewsPage from "./pages/NewsPage";
-import MapPage from "./pages/MapPage";
 import "./App.css";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/map" element={<MapPage />} />
+        <Route path="/map" element={<HomePage />} />
         <Route path="/certificate" element={<CertificatePage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
         <Route path="/news" element={<NewsPage />} />
