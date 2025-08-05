@@ -20,18 +20,28 @@ const ECertificate = () => {
         style={{ maxWidth: "1200px", position: "relative", zIndex: 2 }}
       >
         <Row
-          className="align-items-center g-5"
-          style={{ marginBottom: "150px" }}
+          className="align-items-center g-5 justify-content-center"
+          style={{
+            marginBottom: "150px",
+            marginLeft: "0",
+            marginRight: "0",
+          }}
         >
           {/* Sol taraf - Toprak tutan eller görseli ve alıntı */}
-          <Col lg={6} className="text-start">
+          <Col
+            lg={6}
+            md={8}
+            sm={10}
+            xs={12}
+            className="text-center text-lg-start"
+          >
             <div className="position-relative">
               {/* Toprak tutan eller görseli */}
               <div
                 className="mb-4"
                 style={{
                   display: "flex",
-                  justifyContent: "flex-start",
+                  justifyContent: "center",
                   alignItems: "center",
                 }}
               >
@@ -62,7 +72,7 @@ const ECertificate = () => {
                 <h3
                   className="mb-4"
                   style={{
-                    fontSize: "1.8rem",
+                    fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
                     color: "#5a6c57",
                     fontStyle: "italic",
                     fontFamily: "Georgia, serif",
@@ -91,7 +101,7 @@ const ECertificate = () => {
           </Col>
 
           {/* Sağ taraf - e-Sertifikalı başlığı ve sertifika görseli */}
-          <Col lg={6}>
+          <Col lg={6} md={8} sm={10} xs={12}>
             <div className="text-center">
               {/* e-Sertifikalı başlığı */}
               <div className="mb-4">

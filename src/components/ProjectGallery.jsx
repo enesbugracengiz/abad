@@ -20,11 +20,14 @@ const ProjectGallery = () => {
         style={{ maxWidth: "1200px", position: "relative", zIndex: 2 }}
       >
         {/* Ana Grid Layout - 2x3 yapısı */}
-        <Row className="g-3" style={{ marginBottom: "150px" }}>
+        <Row
+          className="g-3 justify-content-center"
+          style={{ marginBottom: "150px" }}
+        >
           {/* Üst Satır */}
-          <Row className="g-3 mb-3">
+          <Row className="g-3 mb-3 justify-content-center">
             {/* Sol: Orman manzarası */}
-            <Col lg={4}>
+            <Col lg={4} md={6} sm={8} xs={12}>
               <Card
                 className="border-0 h-100"
                 style={{
@@ -47,7 +50,7 @@ const ProjectGallery = () => {
             </Col>
 
             {/* Orta: Bizden Haberler başlığı ve metin */}
-            <Col lg={4}>
+            <Col lg={4} md={6} sm={8} xs={12}>
               <Card
                 className="border-0 h-100 d-flex align-items-center justify-content-center"
                 style={{
@@ -98,7 +101,7 @@ const ProjectGallery = () => {
             </Col>
 
             {/* Sağ: Düz yeşil alan */}
-            <Col lg={4}>
+            <Col lg={4} md={6} sm={8} xs={12}>
               <Card
                 className="border-0 h-100"
                 style={{
@@ -111,9 +114,9 @@ const ProjectGallery = () => {
           </Row>
 
           {/* Alt Satır */}
-          <Row className="g-3">
+          <Row className="g-3 justify-content-center">
             {/* Sol: Düz yeşil alan */}
-            <Col lg={4}>
+            <Col lg={4} md={6} sm={8} xs={12}>
               <Card
                 className="border-0 h-100"
                 style={{
@@ -125,7 +128,7 @@ const ProjectGallery = () => {
             </Col>
 
             {/* Orta: Metin içeriği */}
-            <Col lg={4}>
+            <Col lg={4} md={6} sm={8} xs={12}>
               <Card
                 className="border-0 h-100 d-flex align-items-center justify-content-center"
                 style={{
@@ -165,7 +168,7 @@ const ProjectGallery = () => {
             </Col>
 
             {/* Sağ: Uzun metin bloğu */}
-            <Col lg={4}>
+            <Col lg={4} md={6} sm={8} xs={12}>
               <Card
                 className="border-0 h-100 d-flex flex-column justify-content-between"
                 style={{

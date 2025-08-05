@@ -20,7 +20,7 @@ const FeaturedProjects = () => {
             <h2
               className="text-center fw-semibold mb-5"
               style={{
-                fontSize: "2.5rem",
+                fontSize: "clamp(1.8rem, 5vw, 2.5rem)",
                 color: "#5a6c57",
                 letterSpacing: "1px",
               }}
@@ -30,12 +30,13 @@ const FeaturedProjects = () => {
           </Col>
         </Row>
 
-        <Row className="g-4 align-items-start">
+        <Row className="g-4 align-items-start justify-content-center">
           {/* Sol taraf - Ana proje içeriği */}
-          <Col lg={8}>
+          <Col lg={8} md={10} sm={12} xs={12}>
             <div className="h-100" style={{ position: "relative" }}>
               {/* Arka plan görseli */}
               <div
+                className="d-none d-lg-block"
                 style={{
                   position: "absolute",
                   left: "-50px",
@@ -56,9 +57,9 @@ const FeaturedProjects = () => {
                 style={{ position: "relative", zIndex: "2" }}
               >
                 <h3
-                  className="fw-bold mb-3"
+                  className="fw-bold mb-3 text-center text-lg-start"
                   style={{
-                    fontSize: "1.8rem",
+                    fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
                     color: "#2c5282",
                     lineHeight: "1.3",
                   }}
@@ -115,7 +116,7 @@ const FeaturedProjects = () => {
           </Col>
 
           {/* Sağ taraf - Kartlar */}
-          <Col lg={4}>
+          <Col lg={4} md={8} sm={10} xs={12} className="mx-auto">
             <div className="d-flex flex-column gap-3 h-100">
               {/* Üst boş kart */}
               <Card
