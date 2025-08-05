@@ -63,7 +63,11 @@ const MapSection = () => {
 
   const handleCityClick = (cityName) => {
     const cityData = sehirlerData.data.find((city) => city.ad === cityName);
-    setSelectedCity(cityData || null);
+    if (selectedCity?.ad === cityName) {
+      setSelectedCity(null);
+    } else {
+      setSelectedCity(cityData || null);
+    }
   };
 
   if (loading) {
@@ -88,7 +92,10 @@ const MapSection = () => {
   }
 
   return (
-    <section className="map-section text-center" style={{ paddingTop: "0px" }}>
+    <section
+      className="map-section text-center"
+      style={{ paddingTop: "0px", marginTop: "-150px", marginBottom: "-90px" }}
+    >
       <Container style={{ maxWidth: "1200px" }}>
         {/* Türkiye Haritası */}
         <Row className="justify-content-center mb-3">

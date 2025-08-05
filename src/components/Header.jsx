@@ -29,7 +29,7 @@ const Header = () => {
               <img
                 src="/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"
                 alt="ABAD Logo"
-                style={{ height: "140px", width: "auto" }}
+                style={{ height: "180px", width: "auto" }}
                 className="img-fluid"
               />
             </Link>
