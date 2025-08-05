@@ -10,15 +10,19 @@ const ECertificate = () => {
         backgroundImage: `url("/src/assets/genel/arayuzver2-19.png")`,
         backgroundRepeat: "repeat-x",
         backgroundPosition: "bottom",
+        backgroundSize: "auto 130px",
         paddingTop: "80px",
         paddingBottom: "200px",
         minHeight: "600px",
       }}
     >
-      <Container 
+      <Container
         style={{ maxWidth: "1200px", position: "relative", zIndex: 2 }}
       >
-        <Row className="align-items-center g-5" style={{ marginBottom: "150px" }}>
+        <Row
+          className="align-items-center g-5"
+          style={{ marginBottom: "150px" }}
+        >
           {/* Sol taraf - Toprak tutan eller görseli ve alıntı */}
           <Col lg={6} className="text-start">
             <div className="position-relative">
@@ -70,7 +74,7 @@ const ECertificate = () => {
                   <br />
                   Gökyüzüne Umut."
                 </h3>
-                
+
                 <p
                   style={{
                     fontSize: "1.1rem",
@@ -111,7 +115,7 @@ const ECertificate = () => {
                     e-Sertifikalı
                   </h2>
                 </div>
-                
+
                 <h3
                   style={{
                     color: "#5a6c57",
@@ -138,11 +142,13 @@ const ECertificate = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "rotate(0deg) scale(1.05)";
-                  e.currentTarget.style.boxShadow = "0 20px 50px rgba(0, 0, 0, 0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "0 20px 50px rgba(0, 0, 0, 0.2)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "rotate(-2deg) scale(1)";
-                  e.currentTarget.style.boxShadow = "0 15px 40px rgba(0, 0, 0, 0.15)";
+                  e.currentTarget.style.boxShadow =
+                    "0 15px 40px rgba(0, 0, 0, 0.15)";
                 }}
               >
                 <img

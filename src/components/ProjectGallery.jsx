@@ -10,6 +10,7 @@ const ProjectGallery = () => {
         backgroundImage: `url("/src/assets/genel/arayuzver2-19.png")`,
         backgroundRepeat: "repeat-x",
         backgroundPosition: "bottom",
+        backgroundSize: "auto 130px",
         paddingTop: "80px",
         paddingBottom: "200px",
         minHeight: "600px",

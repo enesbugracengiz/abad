@@ -10,7 +10,7 @@ const FeaturedProjects = () => {
         backgroundImage: `url("/src/assets/genel/arayuzver2_calismayuzeyicopy.png"), url("/src/assets/genel/arayuzver2-19.png")`,
         backgroundRepeat: "repeat, repeat-x",
         backgroundPosition: "center, bottom",
-        backgroundSize: "auto, auto",
+        backgroundSize: "auto, auto 130px",
         paddingBottom: "120px",
       }}
     >
