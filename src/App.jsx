@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import CertificatePage from "./pages/CertificatePage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import NewsPage from "./pages/NewsPage";
+import AdminPage from "./pages/AdminPage";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/shop" element={<HomePage />} />
         <Route path="/donate" element={<CertificatePage />} />
         <Route path="/projects" element={<ActivitiesPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
 
       {/* Toast Bildirimleri */}
