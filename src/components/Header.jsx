@@ -28,9 +28,9 @@ const Header = () => {
             <div
               className="text-primary fw-normal"
               style={{
-                color: "#2c5aa0 !important",
-                fontSize: "18px",
-                fontFamily: "Open Sans, sans-serif",
+                color: content?.header?.styles?.phone?.color || "#2c5aa0",
+                fontSize: `${content?.header?.styles?.phone?.fontSize || 18}px`,
+                fontFamily: content?.header?.styles?.phone?.fontFamily || "Open Sans, sans-serif",
               }}
             >
               {content?.header?.phone || "0212 880 00 00"}
@@ -46,7 +46,10 @@ const Header = () => {
               <img
                 src={content?.header?.logo?.src || "/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"}
                 alt={content?.header?.logo?.alt || "ABAD Logo"}
-                style={{ height: "180px", width: "auto" }}
+                style={{ 
+                  height: `${content?.header?.logo?.height || 180}px`, 
+                  width: "auto" 
+                }}
                 className="img-fluid"
               />
             </Link>
@@ -60,9 +63,9 @@ const Header = () => {
                   to={content?.header?.navigation?.home?.path || "/"}
                   className="text-decoration-none fw-normal"
                   style={{
-                    color: "#2c5aa0",
-                    fontSize: "20px",
-                    fontFamily: "Open Sans, sans-serif",
+                    color: content?.header?.styles?.navigation?.color || "#2c5aa0",
+                    fontSize: `${content?.header?.styles?.navigation?.fontSize || 20}px`,
+                    fontFamily: content?.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif",
                     transition: "color 0.3s ease",
                   }}
                 >
@@ -72,7 +75,7 @@ const Header = () => {
                   style={{
                     width: "50px",
                     height: "2px",
-                    backgroundColor: "#D4A574",
+                    backgroundColor: content?.header?.styles?.navigation?.underlineColor || "#D4A574",
                   }}
                   className="mt-2"
                 />
@@ -83,9 +86,9 @@ const Header = () => {
                   to=""
                   className="text-decoration-none fw-normal"
                   style={{
-                    color: "#2c5aa0",
-                    fontSize: "20px",
-                    fontFamily: "Open Sans, sans-serif",
+                    color: content?.header?.styles?.navigation?.color || "#2c5aa0",
+                    fontSize: `${content?.header?.styles?.navigation?.fontSize || 20}px`,
+                    fontFamily: content?.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif",
                     transition: "color 0.3s ease",
                   }}
                 >
@@ -95,7 +98,7 @@ const Header = () => {
                   style={{
                     width: "130px",
                     height: "2px",
-                    backgroundColor: "#D4A574",
+                    backgroundColor: content?.header?.styles?.navigation?.underlineColor || "#D4A574",
                   }}
                   className="mt-2"
                 />
@@ -106,9 +109,9 @@ const Header = () => {
                   to=""
                   className="text-decoration-none fw-normal"
                   style={{
-                    color: "#2c5aa0",
-                    fontSize: "20px",
-                    fontFamily: "Open Sans, sans-serif",
+                    color: content?.header?.styles?.navigation?.color || "#2c5aa0",
+                    fontSize: `${content?.header?.styles?.navigation?.fontSize || 20}px`,
+                    fontFamily: content?.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif",
                     transition: "color 0.3s ease",
                   }}
                 >
@@ -118,7 +121,7 @@ const Header = () => {
                   style={{
                     width: "200px",
                     height: "2px",
-                    backgroundColor: "#D4A574",
+                    backgroundColor: content?.header?.styles?.navigation?.underlineColor || "#D4A574",
                   }}
                   className="mt-2"
                 />
@@ -139,10 +142,10 @@ const Header = () => {
                 to="/shop"
                 className="btn text-white text-decoration-none"
                 style={{
-                  backgroundColor: "#2B5F7F",
+                  backgroundColor: content?.header?.styles?.buttons?.shop?.backgroundColor || "#2B5F7F",
                   borderRadius: "15px",
                   fontFamily: "Open Sans, sans-serif",
-                  fontSize: "16px",
+                  fontSize: `${content?.header?.styles?.buttons?.fontSize || 16}px`,
                   padding: "10px 20px",
                   transition: "all 0.3s ease",
                 }}
@@ -162,10 +165,10 @@ const Header = () => {
                 to="/donate"
                 className="btn text-white text-decoration-none"
                 style={{
-                  backgroundColor: "#2E8B57",
+                  backgroundColor: content?.header?.styles?.buttons?.donate?.backgroundColor || "#2E8B57",
                   borderRadius: "15px",
                   fontFamily: "Open Sans, sans-serif",
-                  fontSize: "16px",
+                  fontSize: `${content?.header?.styles?.buttons?.fontSize || 16}px`,
                   padding: "10px 20px",
                   transition: "all 0.3s ease",
                 }}

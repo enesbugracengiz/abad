@@ -13,12 +13,13 @@ const FeaturedProjects = () => {
     <section
       className="py-5"
       style={{
-        backgroundColor: "#f8f9fa",
+        backgroundColor: featuredProjects?.styles?.backgroundColor || "#f8f9fa",
         backgroundImage: `url("${featuredProjects?.backgroundPattern || "/src/assets/genel/arayuzver2_calismayuzeyicopy.png"}"), url("${featuredProjects?.bottomPattern || "/src/assets/genel/arayuzver2-19.png"}")`,
         backgroundRepeat: "repeat, repeat-x",
         backgroundPosition: "center, bottom",
         backgroundSize: "auto, auto 130px",
-        paddingBottom: "120px",
+        paddingTop: `${featuredProjects?.styles?.paddingTop || 80}px`,
+        paddingBottom: `${featuredProjects?.styles?.paddingBottom || 120}px`,
       }}
     >
       <Container style={{ maxWidth: "1200px" }}>
@@ -28,7 +29,8 @@ const FeaturedProjects = () => {
               className="text-center fw-semibold mb-5"
               style={{
                 fontSize: "clamp(1.8rem, 5vw, 2.5rem)",
-                color: "#5a6c57",
+                color: featuredProjects?.styles?.title?.color || "#5a6c57",
+                fontFamily: featuredProjects?.styles?.title?.fontFamily || "Open Sans, sans-serif",
                 letterSpacing: "1px",
               }}
             >
@@ -69,7 +71,8 @@ const FeaturedProjects = () => {
                   className="fw-bold mb-3 text-center text-lg-start"
                   style={{
                     fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
-                    color: "#2c5282",
+                    color: featuredProjects?.styles?.projectTitle?.color || "#2c5282",
+                    fontFamily: featuredProjects?.styles?.projectTitle?.fontFamily || "Open Sans, sans-serif",
                     lineHeight: "1.3",
                   }}
                 >
@@ -92,6 +95,7 @@ const FeaturedProjects = () => {
                     fontSize: "1rem",
                     lineHeight: "1.6",
                     textAlign: "justify",
+                    color: featuredProjects?.styles?.description?.color || "#6c757d",
                   }}
                 >
                   {featuredProjects?.mainProject?.description || 
@@ -106,9 +110,10 @@ const FeaturedProjects = () => {
                   className="border-0 text-uppercase fw-semibold"
                   style={{
                     backgroundColor: featuredProjects?.mainProject?.buttonColor || "#5a6c57",
+                    fontFamily: featuredProjects?.styles?.button?.fontFamily || "Open Sans, sans-serif",
                     padding: "15px 35px",
-                    borderRadius: "0",
-                    fontSize: "1rem",
+                    borderRadius: `${featuredProjects?.styles?.button?.borderRadius || 0}px`,
+                    fontSize: `${featuredProjects?.styles?.button?.fontSize || 1.0}rem`,
                     letterSpacing: "1px",
                     transition: "all 0.3s ease",
                   }}

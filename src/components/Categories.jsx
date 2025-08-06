@@ -27,13 +27,13 @@ const Categories = () => {
     <section
       className="py-5 position-relative"
       style={{
-        backgroundColor: "#f8f9fa",
+        backgroundColor: content?.categories?.styles?.backgroundColor || "#f8f9fa",
         backgroundImage: `url("${backgroundImage}")`,
         backgroundRepeat: "repeat-x",
         backgroundPosition: "bottom",
         backgroundSize: "auto 130px",
-        paddingTop: "60px",
-        paddingBottom: "250px",
+        paddingTop: `${content?.categories?.styles?.paddingTop || 60}px`,
+        paddingBottom: `${content?.categories?.styles?.paddingBottom || 250}px`,
         minHeight: "800px",
       }}
     >
@@ -58,23 +58,23 @@ const Categories = () => {
                 <Card
                   className="h-100 border-0 shadow"
                   style={{
-                    borderRadius: "20px",
+                    borderRadius: `${content?.categories?.styles?.card?.borderRadius || 20}px`,
                     overflow: "hidden",
                     transition: "all 0.3s ease",
                     backgroundColor: "white",
-                    border: "2px solid #e8f5e8",
+                    border: `2px solid ${content?.categories?.styles?.card?.borderColor || "#e8f5e8"}`,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-8px)";
                     e.currentTarget.style.boxShadow =
                       "0 15px 40px rgba(90, 108, 87, 0.2)";
-                    e.currentTarget.style.borderColor = "#5a6c57";
+                    e.currentTarget.style.borderColor = content?.categories?.styles?.card?.hoverBorderColor || "#5a6c57";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
                     e.currentTarget.style.boxShadow =
                       "0 5px 20px rgba(0,0,0,0.1)";
-                    e.currentTarget.style.borderColor = "#e8f5e8";
+                    e.currentTarget.style.borderColor = content?.categories?.styles?.card?.borderColor || "#e8f5e8";
                   }}
                 >
                   {/* Görsel bölümü */}
@@ -127,10 +127,10 @@ const Categories = () => {
                     <Card.Title
                       className="text-center mb-3"
                       style={{
-                        color: "#5a6c57",
-                        fontSize: "1.3rem",
+                        color: content?.categories?.styles?.card?.titleColor || "#5a6c57",
+                        fontSize: `${content?.categories?.styles?.card?.titleFontSize || 1.3}rem`,
                         fontWeight: "600",
-                        fontFamily: "Poppins, sans-serif",
+                        fontFamily: content?.categories?.styles?.card?.titleFontFamily || "Poppins, sans-serif",
                         lineHeight: "1.3",
                       }}
                     >
@@ -140,10 +140,10 @@ const Categories = () => {
                     <Card.Text
                       className="text-center"
                       style={{
-                        color: "#666",
-                        fontSize: "0.95rem",
+                        color: content?.categories?.styles?.card?.contentColor || "#666",
+                        fontSize: `${content?.categories?.styles?.card?.contentFontSize || 0.95}rem`,
                         lineHeight: "1.6",
-                        fontFamily: "Open Sans, sans-serif",
+                        fontFamily: content?.categories?.styles?.card?.contentFontFamily || "Open Sans, sans-serif",
                       }}
                     >
                       {category.description}

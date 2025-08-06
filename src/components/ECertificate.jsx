@@ -27,13 +27,13 @@ const ECertificate = () => {
     <section
       className="py-5 position-relative"
       style={{
-        backgroundColor: "#f8f9fa",
+        backgroundColor: content?.ecertificate?.styles?.backgroundColor || "#f8f9fa",
         backgroundImage: `url("${backgroundImage}")`,
         backgroundRepeat: "repeat-x",
         backgroundPosition: "bottom",
         backgroundSize: "auto 130px",
-        paddingTop: "80px",
-        paddingBottom: "200px",
+        paddingTop: `${content?.ecertificate?.styles?.paddingTop || 80}px`,
+        paddingBottom: `${content?.ecertificate?.styles?.paddingBottom || 200}px`,
         minHeight: "600px",
       }}
     >
@@ -72,7 +72,7 @@ const ECertificate = () => {
                     height: "200px",
                     borderRadius: "50%",
                     overflow: "hidden",
-                    border: "3px solid #5a6c57",
+                    border: `3px solid ${content?.ecertificate?.styles?.leftSection?.imageBorderColor || "#5a6c57"}`,
                     boxShadow: "0 10px 30px rgba(90, 108, 87, 0.3)",
                   }}
                 >
@@ -94,9 +94,9 @@ const ECertificate = () => {
                   className="mb-4"
                   style={{
                     fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
-                    color: "#5a6c57",
+                    color: content?.ecertificate?.styles?.leftSection?.quoteColor || "#5a6c57",
                     fontStyle: "italic",
-                    fontFamily: "Georgia, serif",
+                    fontFamily: content?.ecertificate?.styles?.leftSection?.quoteFontFamily || "Georgia, serif",
                     lineHeight: "1.4",
                     fontWeight: "400",
                   }}
@@ -118,8 +118,8 @@ const ECertificate = () => {
                 <p
                   style={{
                     fontSize: "1.1rem",
-                    color: "#5a6c57",
-                    fontFamily: "Open Sans, sans-serif",
+                    color: content?.ecertificate?.styles?.leftSection?.subtitleColor || "#5a6c57",
+                    fontFamily: content?.ecertificate?.styles?.leftSection?.subtitleFontFamily || "Open Sans, sans-serif",
                     fontWeight: "500",
                     marginTop: "20px",
                   }}
@@ -138,7 +138,7 @@ const ECertificate = () => {
                 <div
                   className="d-inline-block px-4 py-2 mb-3"
                   style={{
-                    backgroundColor: "#5a6c57",
+                    backgroundColor: content?.ecertificate?.styles?.rightSection?.titleBackgroundColor || "#5a6c57",
                     borderRadius: "25px",
                     boxShadow: "0 5px 15px rgba(90, 108, 87, 0.3)",
                   }}
@@ -149,7 +149,7 @@ const ECertificate = () => {
                       color: "white",
                       fontSize: "1.8rem",
                       fontWeight: "600",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: content?.ecertificate?.styles?.rightSection?.titleFontFamily || "Poppins, sans-serif",
                     }}
                   >
 {ecertificate.rightSection?.title || "e-Sertifikalı"}
@@ -158,10 +158,10 @@ const ECertificate = () => {
 
                 <h3
                   style={{
-                    color: "#5a6c57",
+                    color: content?.ecertificate?.styles?.rightSection?.subtitleColor || "#5a6c57",
                     fontSize: "1.4rem",
                     fontWeight: "500",
-                    fontFamily: "Open Sans, sans-serif",
+                    fontFamily: content?.ecertificate?.styles?.rightSection?.subtitleFontFamily || "Open Sans, sans-serif",
                     marginBottom: "30px",
                   }}
                 >
@@ -195,7 +195,7 @@ const ECertificate = () => {
                   src={ecertificate.rightSection?.certificateImage || "/src/assets/genel/babalar-gunu-sertifikasi.jpg"}
                   alt={ecertificate.rightSection?.certificateAlt || "Babalar Günü Meyve Fidanı Bağışı Sertifikası"}
                   style={{
-                    width: "350px",
+                    width: `${content?.ecertificate?.styles?.rightSection?.certificateWidth || 350}px`,
                     height: "auto",
                     display: "block",
                   }}

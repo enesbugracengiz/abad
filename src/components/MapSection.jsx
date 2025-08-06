@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./MapSection.css";
+import useContent from "../hooks/useContent";
 
 // Data imports
 import haritaConfig from "../data/harita-config.json";
@@ -8,6 +9,7 @@ import istatistiklerData from "../data/istatistikler.json";
 import sehirlerData from "../data/sehirler.json";
 
 const MapSection = () => {
+  const { content } = useContent();
   const [selectedCity, setSelectedCity] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -94,7 +96,11 @@ const MapSection = () => {
   return (
     <section
       className="map-section text-center"
-      style={{ paddingTop: "0px", marginTop: "-150px", marginBottom: "-90px" }}
+      style={{ 
+        paddingTop: `${content?.mapSection?.styles?.paddingTop || 0}px`, 
+        marginTop: `${content?.mapSection?.styles?.marginTop || -150}px`, 
+        marginBottom: `${content?.mapSection?.styles?.marginBottom || -90}px` 
+      }}
     >
       <Container style={{ maxWidth: "1200px" }}>
         {/* Türkiye Haritası */}
@@ -102,7 +108,7 @@ const MapSection = () => {
           <Col xs={12} lg={10} xl={8}>
             <div className="map-container fade-in">
               <img
-                src="/src/assets/harita/turkey-map.png"
+                src={content?.mapSection?.mapImage || "/src/assets/harita/turkey-map.png"}
                 alt="Türkiye Haritası"
                 className="turkey-map"
               />
