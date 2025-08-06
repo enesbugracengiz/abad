@@ -1747,6 +1747,375 @@ const ContentManager = () => {
           </Accordion>
         </Tab>
 
+        {/* News Tab */}
+        <Tab eventKey="news" title="Bizden Haberler">
+          <Accordion defaultActiveKey="0">
+            {/* News İçerik */}
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Bizden Haberler İçerik Ayarları</Accordion.Header>
+              <Accordion.Body>
+                <Row className="g-3 mb-4">
+                  <Col md={6}>
+                    <Form.Group>
+                      <Form.Label>Başlık</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={content.news?.title || ""}
+                        onChange={(e) =>
+                          updateContent("news.title", e.target.value)
+                        }
+                        placeholder="Bizden Haberler"
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={6}>
+                    <Form.Group>
+                      <Form.Label>Buton Metni</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={content.news?.buttonText || ""}
+                        onChange={(e) =>
+                          updateContent("news.buttonText", e.target.value)
+                        }
+                        placeholder="DAHA FAZLA BİLGİ EDİNİN"
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row className="g-3 mb-4">
+                  <Col md={12}>
+                    <Form.Group>
+                      <Form.Label>İçerik Metni</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={5}
+                        value={content.news?.content || ""}
+                        onChange={(e) =>
+                          updateContent("news.content", e.target.value)
+                        }
+                        placeholder="Haber içeriği..."
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row className="g-3">
+                  <Col md={6}>
+                    <ImageField
+                      label="Arkaplan Görseli"
+                      value={content.news?.backgroundImage || ""}
+                      onChange={(value) => updateContent("news.backgroundImage", value)}
+                      placeholder="Arkaplan görseli"
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <ImageField
+                      label="Portre Görseli"
+                      value={content.news?.portraitImage || ""}
+                      onChange={(value) => updateContent("news.portraitImage", value)}
+                      placeholder="Kişi portre görseli"
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <ImageField
+                      label="Logo Görseli"
+                      value={content.news?.logoImage || ""}
+                      onChange={(value) => updateContent("news.logoImage", value)}
+                      placeholder="ABAD logo görseli"
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <Form.Group>
+                      <Form.Label>Buton Linki</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={content.news?.buttonLink || ""}
+                        onChange={(e) =>
+                          updateContent("news.buttonLink", e.target.value)
+                        }
+                        placeholder="/news veya https://example.com"
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+              </Accordion.Body>
+            </Accordion.Item>
+
+            {/* News Stil Ayarları */}
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Bizden Haberler Stil Ayarları</Accordion.Header>
+              <Accordion.Body>
+                <Row className="g-3 mb-4">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Arkaplan Rengi</Form.Label>
+                      <Form.Control
+                        type="color"
+                        value={content.news?.styles?.backgroundColor || "#f8f9fa"}
+                        onChange={(e) =>
+                          updateContent("news.styles.backgroundColor", e.target.value)
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Padding Top (px)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={content.news?.styles?.paddingTop || 80}
+                        onChange={(e) =>
+                          updateContent("news.styles.paddingTop", parseInt(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Padding Bottom (px)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={content.news?.styles?.paddingBottom || 200}
+                        onChange={(e) =>
+                          updateContent("news.styles.paddingBottom", parseInt(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <h6 className="mb-3">Başlık Stilleri</h6>
+                <Row className="g-3 mb-4">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Başlık Font Ailesi</Form.Label>
+                      <Form.Select
+                        value={content.news?.styles?.title?.fontFamily || "Poppins, sans-serif"}
+                        onChange={(e) =>
+                          updateContent("news.styles.title.fontFamily", e.target.value)
+                        }
+                      >
+                        <option value="Poppins, sans-serif">Poppins</option>
+                        <option value="Open Sans, sans-serif">Open Sans</option>
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Helvetica, sans-serif">Helvetica</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Roboto, sans-serif">Roboto</option>
+                      </Form.Select>
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Başlık Font Boyutu (rem)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        step="0.1"
+                        value={content.news?.styles?.title?.fontSize || 3.2}
+                        onChange={(e) =>
+                          updateContent("news.styles.title.fontSize", parseFloat(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Başlık Rengi</Form.Label>
+                      <Form.Control
+                        type="color"
+                        value={content.news?.styles?.title?.color || "#2c5f88"}
+                        onChange={(e) =>
+                          updateContent("news.styles.title.color", e.target.value)
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <h6 className="mb-3">İçerik Stilleri</h6>
+                <Row className="g-3 mb-4">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>İçerik Font Ailesi</Form.Label>
+                      <Form.Select
+                        value={content.news?.styles?.content?.fontFamily || "Open Sans, sans-serif"}
+                        onChange={(e) =>
+                          updateContent("news.styles.content.fontFamily", e.target.value)
+                        }
+                      >
+                        <option value="Open Sans, sans-serif">Open Sans</option>
+                        <option value="Poppins, sans-serif">Poppins</option>
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Helvetica, sans-serif">Helvetica</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Roboto, sans-serif">Roboto</option>
+                      </Form.Select>
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>İçerik Font Boyutu (rem)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        step="0.1"
+                        value={content.news?.styles?.content?.fontSize || 1.1}
+                        onChange={(e) =>
+                          updateContent("news.styles.content.fontSize", parseFloat(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>İçerik Rengi</Form.Label>
+                      <Form.Control
+                        type="color"
+                        value={content.news?.styles?.content?.color || "#333333"}
+                        onChange={(e) =>
+                          updateContent("news.styles.content.color", e.target.value)
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <h6 className="mb-3">Portre Stilleri</h6>
+                <Row className="g-3 mb-4">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Portre Boyutu (px)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={content.news?.styles?.portraitSize || 350}
+                        onChange={(e) =>
+                          updateContent("news.styles.portraitSize", parseInt(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Portre Border Rengi</Form.Label>
+                      <Form.Control
+                        type="color"
+                        value={content.news?.styles?.portraitBorderColor || "#f5f5dc"}
+                        onChange={(e) =>
+                          updateContent("news.styles.portraitBorderColor", e.target.value)
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Portre Border Genişliği (px)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={content.news?.styles?.portraitBorderWidth || 8}
+                        onChange={(e) =>
+                          updateContent("news.styles.portraitBorderWidth", parseInt(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <h6 className="mb-3">Logo Stilleri</h6>
+                <Row className="g-3 mb-4">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Logo Genişliği (px)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={content.news?.styles?.logoWidth || 300}
+                        onChange={(e) =>
+                          updateContent("news.styles.logoWidth", parseInt(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Logo Opaklığı</Form.Label>
+                      <Form.Control
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="1"
+                        value={content.news?.styles?.logoOpacity || 0.1}
+                        onChange={(e) =>
+                          updateContent("news.styles.logoOpacity", parseFloat(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <h6 className="mb-3">Buton Stilleri</h6>
+                <Row className="g-3">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Buton Arkaplan Rengi</Form.Label>
+                      <Form.Control
+                        type="color"
+                        value={content.news?.styles?.button?.backgroundColor || "#5a6c57"}
+                        onChange={(e) =>
+                          updateContent("news.styles.button.backgroundColor", e.target.value)
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Buton Font Ailesi</Form.Label>
+                      <Form.Select
+                        value={content.news?.styles?.button?.fontFamily || "Open Sans, sans-serif"}
+                        onChange={(e) =>
+                          updateContent("news.styles.button.fontFamily", e.target.value)
+                        }
+                      >
+                        <option value="Open Sans, sans-serif">Open Sans</option>
+                        <option value="Poppins, sans-serif">Poppins</option>
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Helvetica, sans-serif">Helvetica</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Roboto, sans-serif">Roboto</option>
+                      </Form.Select>
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Buton Font Boyutu (rem)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        step="0.1"
+                        value={content.news?.styles?.button?.fontSize || 0.9}
+                        onChange={(e) =>
+                          updateContent("news.styles.button.fontSize", parseFloat(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Buton Border Radius (px)</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={content.news?.styles?.button?.borderRadius || 5}
+                        onChange={(e) =>
+                          updateContent("news.styles.button.borderRadius", parseInt(e.target.value))
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </Tab>
+
         {/* Payment Service Tab */}
         <Tab eventKey="paymentService" title="Ödeme Servisi">
           <Accordion defaultActiveKey="0">

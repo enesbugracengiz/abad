@@ -180,5 +180,40 @@
       "activities": "/src/assets/harita/arayuzver2-11.png",
       "support": "/src/assets/harita/arayuzver2-12.png"
     }
+  },
+  "news": {
+    "title": "Bizden Haberler",
+    "content": "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yapancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı Dr. Öğr Üyesi Alper Ertem, Sağlık Hizmetleri MYO Bölüm Başkanları Prof. Dr. Meltem Uzunhisarcıklı, Prof. Dr.",
+    "buttonText": "DAHA FAZLA BİLGİ EDİNİN",
+    "buttonLink": "/news",
+    "backgroundImage": "/src/assets/genel/arayuzver2-19.png",
+    "portraitImage": "/src/assets/images/1.jpg",
+    "logoImage": "/src/assets/images/abad-logo-seffaf-buyuk.png",
+    "styles": {
+      "backgroundColor": "#f8f9fa",
+      "paddingTop": 80,
+      "paddingBottom": 200,
+      "title": {
+        "fontFamily": "Poppins, sans-serif",
+        "fontSize": 3.2,
+        "color": "#2c5f88"
+      },
+      "content": {
+        "fontFamily": "Open Sans, sans-serif",
+        "fontSize": 1.1,
+        "color": "#333333"
+      },
+      "portraitSize": 350,
+      "portraitBorderColor": "#f5f5dc",
+      "portraitBorderWidth": 8,
+      "logoWidth": 300,
+      "logoOpacity": 0.1,
+      "button": {
+        "backgroundColor": "#5a6c57",
+        "fontFamily": "Open Sans, sans-serif",
+        "fontSize": 0.9,
+        "borderRadius": 5
+      }
+    }
   }
 }
