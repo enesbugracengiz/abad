@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2025-08-06T14:17:01.138Z",
+    "lastUpdated": "2025-08-06T14:25:59.993Z",
     "version": "1.0.0"
   },
   "header": {
@@ -212,17 +212,52 @@
       }
     },
     "quickLinks": [
-      { "text": "Ana Sayfa", "url": "/" },
-      { "text": "Faaliyetler", "url": "/activities" },
-      { "text": "Bağış Yap", "url": "/certificate" },
-      { "text": "Haberler", "url": "/news" },
-      { "text": "Hakkımızda", "url": "/about" }
+      {
+        "text": "Ana Sayfa",
+        "url": "/"
+      },
+      {
+        "text": "Faaliyetler",
+        "url": "/activities"
+      },
+      {
+        "text": "Bağış Yap",
+        "url": "/certificate"
+      },
+      {
+        "text": "Haberler",
+        "url": "/news"
+      },
+      {
+        "text": "Hakkımızda",
+        "url": "/about"
+      }
     ],
     "activityAreas": [
-      { "text": "Doğa Faaliyetleri", "url": "/activities", "icon": "fas fa-seedling", "color": "#00baa3" },
-      { "text": "Çocuk & Genç", "url": "/activities", "icon": "fas fa-child", "color": "#eb8958" },
-      { "text": "Eğitim & Seminer", "url": "/activities", "icon": "fas fa-graduation-cap", "color": "#ebc858" },
-      { "text": "Bağış Desteği", "url": "/certificate", "icon": "fas fa-heart", "color": "#ebc858" }
+      {
+        "text": "Doğa Faaliyetleri",
+        "url": "/activities",
+        "icon": "fas fa-seedling",
+        "color": "#00baa3"
+      },
+      {
+        "text": "Çocuk & Genç",
+        "url": "/activities",
+        "icon": "fas fa-child",
+        "color": "#eb8958"
+      },
+      {
+        "text": "Eğitim & Seminer",
+        "url": "/activities",
+        "icon": "fas fa-graduation-cap",
+        "color": "#ebc858"
+      },
+      {
+        "text": "Bağış Desteği",
+        "url": "/certificate",
+        "icon": "fas fa-heart",
+        "color": "#ebc858"
+      }
     ],
     "copyright": "© 2025 ABAD - Anadolu Bilgelerini Araştırma Derneği. Tüm hakları saklıdır.",
     "motto": "Hiçbir yer, hiçbir gönül çorak kalmasın"
