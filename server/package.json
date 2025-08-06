@@ -14,6 +14,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "iyzipay": "^2.0.64"
+    "iyzipay": "^2.0.64",
+    "multer": "^2.0.2"
   }
 }

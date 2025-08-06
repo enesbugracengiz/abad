@@ -1,13 +1,20 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import useContent from "../hooks/useContent";
 
 const FeaturedProjects = () => {
+  const { content } = useContent();
+
+  if (!content) return null;
+
+  const featuredProjects = content.homepage?.featured_projects;
+  
   return (
     <section
       className="py-5"
       style={{
         backgroundColor: "#f8f9fa",
-        backgroundImage: `url("/src/assets/genel/arayuzver2_calismayuzeyicopy.png"), url("/src/assets/genel/arayuzver2-19.png")`,
+        backgroundImage: `url("${featuredProjects?.backgroundPattern || "/src/assets/genel/arayuzver2_calismayuzeyicopy.png"}"), url("${featuredProjects?.bottomPattern || "/src/assets/genel/arayuzver2-19.png"}")`,
         backgroundRepeat: "repeat, repeat-x",
         backgroundPosition: "center, bottom",
         backgroundSize: "auto, auto 130px",
@@ -25,7 +32,7 @@ const FeaturedProjects = () => {
                 letterSpacing: "1px",
               }}
             >
-              ÖNE ÇIKAN PROJELER
+{featuredProjects?.title || "ÖNE ÇIKAN PROJELER"}
             </h2>
           </Col>
         </Row>
@@ -35,21 +42,23 @@ const FeaturedProjects = () => {
           <Col lg={8} md={10} sm={12} xs={12}>
             <div className="h-100" style={{ position: "relative" }}>
               {/* Arka plan görseli */}
-              <div
-                className="d-none d-lg-block"
-                style={{
-                  position: "absolute",
-                  left: "-50px",
-                  top: "-60px",
-                  width: "200px",
-                  height: "200px",
-                  backgroundImage: `url("/src/assets/genel/arayuzver2-14.png")`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  backgroundSize: "contain",
-                  zIndex: "1",
-                }}
-              />
+              {featuredProjects?.leftIcon && (
+                <div
+                  className="d-none d-lg-block"
+                  style={{
+                    position: "absolute",
+                    left: "-50px",
+                    top: "-60px",
+                    width: "200px",
+                    height: "200px",
+                    backgroundImage: `url("${featuredProjects.leftIcon}")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "contain",
+                    zIndex: "1",
+                  }}
+                />
+              )}
 
               {/* Ana proje içeriği */}
               <div
@@ -64,9 +73,18 @@ const FeaturedProjects = () => {
                     lineHeight: "1.3",
                   }}
                 >
-                  ABAD'ın Fidanları
-                  <br />
-                  Gazi'nin Toprağı ile Buluşuyor
+                  {featuredProjects?.mainProject?.subtitle?.split('\n').map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index === 0 && <br />}
+                    </span>
+                  )) || (
+                    <>
+                      ABAD'ın Fidanları
+                      <br />
+                      Gazi'nin Toprağı ile Buluşuyor
+                    </>
+                  )}
                 </h3>
                 <p
                   className="text-muted mb-5"
@@ -76,12 +94,9 @@ const FeaturedProjects = () => {
                     textAlign: "justify",
                   }}
                 >
-                  Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD
-                  Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi
-                  Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller
-                  Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık
-                  Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere,
-                  Müdür Yardımcısı...
+                  {featuredProjects?.mainProject?.description || 
+                    "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı..."
+                  }
                 </p>
               </div>
 
@@ -90,7 +105,7 @@ const FeaturedProjects = () => {
                 <Button
                   className="border-0 text-uppercase fw-semibold"
                   style={{
-                    backgroundColor: "#5a6c57",
+                    backgroundColor: featuredProjects?.mainProject?.buttonColor || "#5a6c57",
                     padding: "15px 35px",
                     borderRadius: "0",
                     fontSize: "1rem",
@@ -104,12 +119,17 @@ const FeaturedProjects = () => {
                       "0 8px 20px rgba(90, 108, 87, 0.4)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = "#5a6c57";
+                    e.target.style.backgroundColor = featuredProjects?.mainProject?.buttonColor || "#5a6c57";
                     e.target.style.transform = "translateY(0)";
                     e.target.style.boxShadow = "none";
                   }}
+                  onClick={() => {
+                    if (featuredProjects?.mainProject?.link) {
+                      window.location.href = featuredProjects.mainProject.link;
+                    }
+                  }}
                 >
-                  DAHA FAZLA BİLGİ EDİNİN
+                  {featuredProjects?.mainProject?.buttonText || "DAHA FAZLA BİLGİ EDİNİN"}
                 </Button>
               </div>
             </div>

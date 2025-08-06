@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
+import useContent from "../hooks/useContent";
 
 const Header = () => {
+  const { content, loading } = useContent();
+
+  if (loading) {
+    return (
+      <header className="bg-white py-4 shadow-sm">
+        <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
+          <div className="text-center py-3">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Yükleniyor...</span>
+            </div>
+          </div>
+        </Container>
+      </header>
+    );
+  }
+
   return (
     <header className="bg-white py-4 shadow-sm">
       <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
@@ -16,7 +33,7 @@ const Header = () => {
                 fontFamily: "Open Sans, sans-serif",
               }}
             >
-              0212 880 00 00
+              {content?.header?.phone || "0212 880 00 00"}
             </div>
           </Col>
         </Row>
@@ -27,8 +44,8 @@ const Header = () => {
           <Col xs="auto">
             <Link to="/" className="text-decoration-none">
               <img
-                src="/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"
-                alt="ABAD Logo"
+                src={content?.header?.logo?.src || "/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"}
+                alt={content?.header?.logo?.alt || "ABAD Logo"}
                 style={{ height: "180px", width: "auto" }}
                 className="img-fluid"
               />
@@ -40,7 +57,7 @@ const Header = () => {
             <Nav className="gap-5">
               <div className="d-flex flex-column align-items-center">
                 <Link
-                  to="/"
+                  to={content?.header?.navigation?.home?.path || "/"}
                   className="text-decoration-none fw-normal"
                   style={{
                     color: "#2c5aa0",
@@ -49,7 +66,7 @@ const Header = () => {
                     transition: "color 0.3s ease",
                   }}
                 >
-                  ABAD
+                  {content?.header?.navigation?.home?.text || "ABAD"}
                 </Link>
                 <div
                   style={{
@@ -63,7 +80,7 @@ const Header = () => {
 
               <div className="d-flex flex-column align-items-center">
                 <Link
-                  to="/activities"
+                  to={content?.header?.navigation?.activities?.path || "/activities"}
                   className="text-decoration-none fw-normal"
                   style={{
                     color: "#2c5aa0",
@@ -72,7 +89,7 @@ const Header = () => {
                     transition: "color 0.3s ease",
                   }}
                 >
-                  Harekete Geçin
+                  {content?.header?.navigation?.activities?.text || "Harekete Geçin"}
                 </Link>
                 <div
                   style={{
@@ -86,7 +103,7 @@ const Header = () => {
 
               <div className="d-flex flex-column align-items-center">
                 <Link
-                  to="/kindergarten"
+                  to={content?.header?.navigation?.kindergarten?.path || "/kindergarten"}
                   className="text-decoration-none fw-normal"
                   style={{
                     color: "#2c5aa0",
@@ -95,7 +112,7 @@ const Header = () => {
                     transition: "color 0.3s ease",
                   }}
                 >
-                  Yunus Emre Anaokulu
+                  {content?.header?.navigation?.kindergarten?.text || "Yunus Emre Anaokulu"}
                 </Link>
                 <div
                   style={{

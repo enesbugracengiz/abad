@@ -39,101 +39,30 @@ const ImageManager = () => {
     loadImages();
   }, []);
 
-  const loadImages = () => {
-    // Bu kısımda normalde backend'den görseller çekilir
-    // Şimdilik örnek veriler kullanıyoruz
-    const exampleImages = {
-      homepage: [
-        {
-          id: 1,
-          name: "parallax-1.jpg",
-          path: "/src/assets/images/parallax-1.jpg",
-          size: "2.3 MB",
-          uploadDate: "2025-01-15",
-          usedIn: ["Anasayfa Hero Bölümü"],
-        },
-        {
-          id: 2,
-          name: "blog-1.jpg",
-          path: "/src/assets/images/blog-1.jpg",
-          size: "1.8 MB",
-          uploadDate: "2025-01-10",
-          usedIn: ["Blog Kartları"],
-        },
-        {
-          id: 3,
-          name: "cause-1.jpg",
-          path: "/src/assets/images/cause-1.jpg",
-          size: "2.1 MB",
-          uploadDate: "2025-01-08",
-          usedIn: ["Projeler Bölümü"],
-        },
-      ],
-      map: [
-        {
-          id: 4,
-          name: "turkey-map.png",
-          path: "/src/assets/harita/turkey-map.png",
-          size: "850 KB",
-          uploadDate: "2025-01-05",
-          usedIn: ["Harita Bileşeni"],
-        },
-        {
-          id: 5,
-          name: "arayuzver2-08.png",
-          path: "/src/assets/harita/arayuzver2-08.png",
-          size: "145 KB",
-          uploadDate: "2025-01-05",
-          usedIn: ["Eğitim İkonu"],
-        },
-        {
-          id: 6,
-          name: "arayuzver2-09.png",
-          path: "/src/assets/harita/arayuzver2-09.png",
-          size: "138 KB",
-          uploadDate: "2025-01-05",
-          usedIn: ["Blog İkonu"],
-        },
-      ],
-      general: [
-        {
-          id: 7,
-          name: "abad-logo-seffaf1.png",
-          path: "/src/assets/genel/abad-logo-seffaf1.png",
-          size: "256 KB",
-          uploadDate: "2025-01-01",
-          usedIn: ["Header Logo"],
-        },
-        {
-          id: 8,
-          name: "arayuzver2-17.png",
-          path: "/src/assets/genel/arayuzver2-17.png",
-          size: "142 KB",
-          uploadDate: "2025-01-01",
-          usedIn: ["Bağış İkonu"],
-        },
-      ],
-      activities: [
-        {
-          id: 9,
-          name: "doga-faaliyetleri.jpg",
-          path: "/src/assets/images/doga-faaliyetleri.jpg",
-          size: "1.9 MB",
-          uploadDate: "2025-01-12",
-          usedIn: ["Faaliyet Sayfası"],
-        },
-        {
-          id: 10,
-          name: "eğitim-ve-seminer.jpg",
-          path: "/src/assets/images/eğitim-ve-seminer.jpg",
-          size: "2.2 MB",
-          uploadDate: "2025-01-12",
-          usedIn: ["Faaliyet Sayfası"],
-        },
-      ],
-    };
+  const loadImages = async () => {
+    try {
+      const categories = ['homepage', 'map', 'general', 'activities'];
+      const imageData = {};
 
-    setImages(exampleImages);
+      for (const category of categories) {
+        try {
+          const response = await fetch(`http://localhost:5001/api/admin/images/${category}`);
+          if (response.ok) {
+            imageData[category] = await response.json();
+          } else {
+            imageData[category] = [];
+          }
+        } catch (error) {
+          console.error(`Error loading ${category} images:`, error);
+          imageData[category] = [];
+        }
+      }
+
+      setImages(imageData);
+    } catch (error) {
+      console.error("Error loading images:", error);
+      toast.error("Görseller yüklenirken hata oluştu!");
+    }
   };
 
   // Dosya seçimi
@@ -152,27 +81,36 @@ const ImageManager = () => {
     setUploading(true);
 
     try {
-      // Simulated upload
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const formData = new FormData();
+      selectedFiles.forEach(file => {
+        formData.append('images', file);
+      });
 
-      const newImages = selectedFiles.map((file, index) => ({
-        id: Date.now() + index,
-        name: file.name,
-        path: `${imageCategories[selectedCategory].path}${file.name}`,
-        size: (file.size / (1024 * 1024)).toFixed(2) + " MB",
-        uploadDate: new Date().toISOString().split("T")[0],
-        usedIn: [],
-      }));
+      const response = await fetch(
+        `http://localhost:5001/api/admin/images/${selectedCategory}/upload`,
+        {
+          method: 'POST',
+          body: formData
+        }
+      );
 
-      setImages((prev) => ({
-        ...prev,
-        [selectedCategory]: [...prev[selectedCategory], ...newImages],
-      }));
+      if (response.ok) {
+        const result = await response.json();
+        
+        setImages((prev) => ({
+          ...prev,
+          [selectedCategory]: [...prev[selectedCategory], ...result.files],
+        }));
 
-      toast.success(`${selectedFiles.length} görsel başarıyla yüklendi!`);
-      setShowUploadModal(false);
-      setSelectedFiles([]);
+        toast.success(result.message);
+        setShowUploadModal(false);
+        setSelectedFiles([]);
+      } else {
+        const error = await response.json();
+        toast.error(error.error || "Yükleme sırasında hata oluştu!");
+      }
     } catch (error) {
+      console.error("Error uploading images:", error);
       toast.error("Yükleme sırasında hata oluştu!");
     } finally {
       setUploading(false);
@@ -180,13 +118,27 @@ const ImageManager = () => {
   };
 
   // Görsel silme
-  const handleDeleteImage = (categoryKey, imageId) => {
+  const handleDeleteImage = async (categoryKey, imageId, imageName) => {
     if (window.confirm("Bu görseli silmek istediğinizden emin misiniz?")) {
-      setImages((prev) => ({
-        ...prev,
-        [categoryKey]: prev[categoryKey].filter((img) => img.id !== imageId),
-      }));
-      toast.success("Görsel başarıyla silindi!");
+      try {
+        const response = await fetch(
+          `http://localhost:5001/api/admin/images/${categoryKey}/${imageName}`,
+          { method: "DELETE" }
+        );
+
+        if (response.ok) {
+          setImages((prev) => ({
+            ...prev,
+            [categoryKey]: prev[categoryKey].filter((img) => img.id !== imageId),
+          }));
+          toast.success("Görsel başarıyla silindi!");
+        } else {
+          toast.error("Görsel silinirken hata oluştu!");
+        }
+      } catch (error) {
+        console.error("Error deleting image:", error);
+        toast.error("Görsel silinirken hata oluştu!");
+      }
     }
   };
 
@@ -300,7 +252,7 @@ const ImageManager = () => {
                               <Button
                                 variant="outline-danger"
                                 size="sm"
-                                onClick={() => handleDeleteImage(key, image.id)}
+                                onClick={() => handleDeleteImage(key, image.id, image.name)}
                                 title="Sil"
                               >
                                 <i className="fas fa-trash"></i>

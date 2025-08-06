@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "lastUpdated": "2025-08-06T14:17:01.138Z",
+    "version": "1.0.0"
+  },
+  "header": {
+    "phone": "0212 880 00 00",
+    "logo": {
+      "src": "/src/assets/harita/web-logo-yazili-512-x-512-piksel.png",
+      "alt": "ABAD Logo"
+    },
+    "navigation": {
+      "home": {
+        "text": "ABAD",
+        "path": "/"
+      },
+      "activities": {
+        "text": "Harekete Geçin",
+        "path": "/activities"
+      },
+      "kindergarten": {
+        "text": "Yunus Emre Anaokulu",
+        "path": "/kindergarten"
+      },
+      "news": {
+        "text": "Haberler",
+        "path": "/news"
+      }
+    }
+  },
+  "homepage": {
+    "hero": {
+      "title": "Hiç Bir Yer Hiç Bir Gönül Çorak Kalmasın",
+      "subtitle": "ABAD - Anadolu Bilgileri Derneği",
+      "description": "Eğitim, kültür ve sosyal yardım alanında faaliyet gösteren derneğimiz, toplumsal dayanışmayı güçlendirmeyi amaçlamaktadır."
+    },
+    "featured_projects": {
+      "title": "ÖNE ÇIKAN PROJELER",
+      "subtitle": "Toplumsal değer yaratan projelerimizle fark yaratıyoruz",
+      "backgroundPattern": "/src/assets/genel/arayuzver2_calismayuzeyicopy.png",
+      "bottomPattern": "/src/assets/genel/arayuzver2-19.png",
+      "leftIcon": "/src/assets/genel/arayuzver2-14.png",
+      "mainProject": {
+        "title": "ABAD'ın Fidanları Gazi'nin Toprağı ile Buluşuyor",
+        "subtitle": "ABAD'ın Fidanları\nGazi'nin Toprağı ile Buluşuyor",
+        "description": "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı...",
+        "buttonText": "DAHA FAZLASI",
+        "buttonColor": "#5a6c57",
+        "link": "/projects/fidan-dikimi"
+      }
+    },
+    "categories": {
+      "title": "Faaliyet Alanlarımız",
+      "subtitle": "Çeşitli alanlarda topluma hizmet ediyoruz"
+    },
+    "certificate": {
+      "title": "E-Sertifika",
+      "subtitle": "Dijital sertifika sistemi ile bağışlarınızı takip edin"
+    },
+    "gallery": {
+      "title": "Proje Galerisi",
+      "subtitle": "Gerçekleştirdiğimiz projelerin görsel hikayesi"
+    }
+  },
+  "categories": {
+    "title": "Faaliyet Alanlarımız",
+    "subtitle": "Toplumsal değer yaratan projelerimizle fark yaratıyoruz",
+    "backgroundImage": "/src/assets/genel/arayuzver2-19.png",
+    "items": [
+      {
+        "id": 1,
+        "title": "Doğa Faaliyetleri",
+        "image": "/src/assets/images/doga-faaliyetleri.jpg",
+        "description": "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ve doğa koruma çalışmaları. ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan öncülüğünde sürdürülen çevre dostu projeler."
+      },
+      {
+        "id": 2,
+        "title": "Çocuk ve Genç Faaliyetleri",
+        "image": "/src/assets/images/cocuk-ve-genc-faaliyetleri.jpg",
+        "description": "Çocukların ve gençlerin doğa ile buluştuğu, eğitici ve eğlenceli aktiviteler. Bahçe bakımı, fidan dikimi ve çevre bilinci kazandırma etkinlikleri."
+      },
+      {
+        "id": 3,
+        "title": "Eğitim ve Seminer Faaliyetleri",
+        "image": "/src/assets/images/seminer-ve-egitim-abad-anadolu-bilgleri.jpg",
+        "description": "Çevre bilinci, sürdürülebilirlik ve doğa koruma konularında eğitim programları ve seminerler. Uzman konuşmacılar eşliğinde bilgilendirici oturumlar."
+      }
+    ]
+  },
+  "ecertificate": {
+    "backgroundImage": "/src/assets/genel/arayuzver2-19.png",
+    "leftSection": {
+      "image": "/src/assets/genel/toprak.jpg",
+      "imageAlt": "Toprak tutan eller",
+      "quote": "Baban İçin Toprağa Hayat, Gökyüzüne Umut.",
+      "subtitle": "E-sertifikan Babanın İsmiyle Yeşersin!"
+    },
+    "rightSection": {
+      "title": "e-Sertifikalı",
+      "subtitle": "Meyve Fidan Bağışları",
+      "certificateImage": "/src/assets/genel/babalar-gunu-sertifikasi.jpg",
+      "certificateAlt": "Babalar Günü Meyve Fidanı Bağışı Sertifikası"
+    }
+  },
+  "projectGallery": {
+    "title": "Proje Galerisi",
+    "subtitle": "Gerçekleştirdiğimiz projelerin görsel hikayesi",
+    "backgroundImage": "/src/assets/genel/arayuzver2-19.png",
+    "newsSection": {
+      "title": "Bizden Haberler",
+      "content": "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel",
+      "readMore": "Devamını Oku"
+    },
+    "grid": {
+      "topRow": [
+        {
+          "type": "image",
+          "src": "/src/assets/images/parallax-1.jpg",
+          "alt": "Orman manzarası"
+        },
+        {
+          "type": "news",
+          "backgroundColor": "#e8e8e8"
+        },
+        {
+          "type": "color",
+          "backgroundColor": "#5a6c57"
+        }
+      ],
+      "bottomRow": [
+        {
+          "type": "color",
+          "backgroundColor": "#5a6c57"
+        },
+        {
+          "type": "content",
+          "content": "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel",
+          "readMore": "Devamını Oku",
+          "backgroundColor": "#e8e8e8"
+        },
+        {
+          "type": "longContent",
+          "content": "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimine ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı Dr. Öğr Üyesi Alper Ertem, Sağlık Hizmetleri MYO Bölüm Başkanları Prof. Dr. Meltem Uzunhisar-",
+          "readMore": "Devamını Oku",
+          "backgroundColor": "#e8e8e8"
+        }
+      ]
+    }
+  },
+  "activities": {
+    "title": "Faaliyet Alanlarımız",
+    "subtitle": "Topluma değer katan projelerimiz",
+    "categories": [
+      {
+        "id": "education",
+        "name": "Eğitim ve Seminer",
+        "description": "Eğitim alanında gerçekleştirdiğimiz faaliyetler",
+        "image": "/src/assets/images/eğitim-ve-seminer.jpg"
+      },
+      {
+        "id": "nature",
+        "name": "Doğa Faaliyetleri",
+        "description": "Çevre ve doğa koruma projelerimiz",
+        "image": "/src/assets/images/doga-faaliyetleri.jpg"
+      },
+      {
+        "id": "youth",
+        "name": "Çocuk ve Genç Faaliyetleri",
+        "description": "Gençlik ve çocuk odaklı projelerimiz",
+        "image": "/src/assets/images/cocuk-ve-genc-faaliyetleri.jpg"
+      }
+    ]
+  },
+  "mapSection": {
+    "backgroundImage": "/src/assets/genel/arayuzver2-19.png",
+    "title": "Türkiye Haritası",
+    "subtitle": "Faaliyet gösterdiğimiz şehirler",
+    "mapImage": "/src/assets/harita/turkey-map.png",
+    "icons": {
+      "education": "/src/assets/harita/arayuzver2-08.png",
+      "blog": "/src/assets/harita/arayuzver2-09.png",
+      "projects": "/src/assets/harita/arayuzver2-10.png",
+      "activities": "/src/assets/harita/arayuzver2-11.png",
+      "support": "/src/assets/harita/arayuzver2-12.png"
+    }
+  },
+  "footer": {
+    "logo": "/src/assets/images/abad-logo-seffaf-buyuk.png",
+    "brandName": "ABAD",
+    "brandSubtitle": "Anadolu Bilgelerini\nAraştırma Derneği",
+    "description": "Hiçbir yer, hiçbir gönül çorak kalmasın. Anadolu'nun bilgelerini gelecek nesillere aktarıyor, doğaya sahip çıkıyoruz.",
+    "address": "Fatih Sultan Mehmet Mah. Balkan Cad. No: 62",
+    "city": "Ümraniye / İSTANBUL",
+    "phone": "0212 880 00 00",
+    "email": "info@abad.org.tr",
+    "social": {
+      "facebook": {
+        "url": "https://facebook.com/abad",
+        "color": "#00baa3"
+      },
+      "twitter": {
+        "url": "https://twitter.com/abad",
+        "color": "#ebc858"
+      },
+      "instagram": {
+        "url": "https://instagram.com/abad",
+        "color": "#eb8958"
+      },
+      "linkedin": {
+        "url": "https://linkedin.com/company/abad",
+        "color": "#00baa3"
+      }
+    },
+    "quickLinks": [
+      { "text": "Ana Sayfa", "url": "/" },
+      { "text": "Faaliyetler", "url": "/activities" },
+      { "text": "Bağış Yap", "url": "/certificate" },
+      { "text": "Haberler", "url": "/news" },
+      { "text": "Hakkımızda", "url": "/about" }
+    ],
+    "activityAreas": [
+      { "text": "Doğa Faaliyetleri", "url": "/activities", "icon": "fas fa-seedling", "color": "#00baa3" },
+      { "text": "Çocuk & Genç", "url": "/activities", "icon": "fas fa-child", "color": "#eb8958" },
+      { "text": "Eğitim & Seminer", "url": "/activities", "icon": "fas fa-graduation-cap", "color": "#ebc858" },
+      { "text": "Bağış Desteği", "url": "/certificate", "icon": "fas fa-heart", "color": "#ebc858" }
+    ],
+    "copyright": "© 2025 ABAD - Anadolu Bilgelerini Araştırma Derneği. Tüm hakları saklıdır.",
+    "motto": "Hiçbir yer, hiçbir gönül çorak kalmasın"
+  }
+}

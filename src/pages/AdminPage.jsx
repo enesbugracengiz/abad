@@ -4,6 +4,8 @@ import AdminLayout from "../components/admin/AdminLayout";
 import MapDataManager from "../components/admin/MapDataManager";
 import ImageManager from "../components/admin/ImageManager";
 import AdminAuth from "../components/admin/AdminAuth";
+import ContentManager from "../components/admin/ContentManager";
+import StatisticsManager from "../components/admin/StatisticsManager";
 
 const AdminPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,6 +44,12 @@ const AdminPage = () => {
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
+                  <Nav.Link eventKey="content" className="text-start mb-2">
+                    <i className="fas fa-edit me-2"></i>
+                    İçerik Yönetimi
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
                   <Nav.Link eventKey="statistics" className="text-start mb-2">
                     <i className="fas fa-chart-bar me-2"></i>
                     İstatistikler
@@ -60,17 +68,12 @@ const AdminPage = () => {
                   <ImageManager />
                 </Tab.Pane>
                 
+                <Tab.Pane eventKey="content">
+                  <ContentManager />
+                </Tab.Pane>
+                
                 <Tab.Pane eventKey="statistics">
-                  <div className="card">
-                    <div className="card-header">
-                      <h5 className="mb-0">İstatistik Yönetimi</h5>
-                    </div>
-                    <div className="card-body">
-                      <Alert variant="info">
-                        İstatistik yönetimi özelliği yakında eklenecek.
-                      </Alert>
-                    </div>
-                  </div>
+                  <StatisticsManager />
                 </Tab.Pane>
               </Tab.Content>
             </Col>

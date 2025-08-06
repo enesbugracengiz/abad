@@ -1,6 +1,26 @@
 import { Container, Row, Col } from "react-bootstrap";
+import useContent from "../hooks/useContent";
 
 const Footer = () => {
+  const { content, loading } = useContent();
+
+  if (loading) {
+    return (
+      <footer style={{ background: 'linear-gradient(135deg, #727475 0%, #5a5a5a 100%)', minHeight: '200px' }}>
+        <Container>
+          <div className="text-center py-5">
+            <div className="spinner-border text-white" role="status">
+              <span className="visually-hidden">Yükleniyor...</span>
+            </div>
+            <p className="text-white mt-3">Footer yükleniyor...</p>
+          </div>
+        </Container>
+      </footer>
+    );
+  }
+
+  const footer = content?.footer || {};
+
   return (
     <footer style={{ 
       background: 'linear-gradient(135deg, #727475 0%, #5a5a5a 100%)',
@@ -352,7 +372,7 @@ const Footer = () => {
                     onMouseEnter={(e) => e.target.style.color = '#00baa3'}
                     onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
                   >
-                    0212 880 00 00
+{footer.phone || "0212 880 00 00"}
                   </a>
                 </div>
                 <div 
@@ -374,7 +394,7 @@ const Footer = () => {
                     onMouseEnter={(e) => e.target.style.color = '#ebc858'}
                     onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
                   >
-                    info@abad.org.tr
+{footer.email || "info@abad.org.tr"}
                   </a>
                 </div>
                 <div 
@@ -391,7 +411,7 @@ const Footer = () => {
                       fontSize: '0.9rem' 
                     }}
                   >
-                    İstanbul, Türkiye
+{footer.address && footer.city ? `${footer.address}, ${footer.city}` : "İstanbul, Türkiye"}
                   </span>
                 </div>
               </div>
@@ -416,7 +436,7 @@ const Footer = () => {
                   fontSize: '0.85rem' 
                 }}
               >
-                © 2024 ABAD - Anadolu Bilgelerini Araştırma Derneği. Tüm hakları saklıdır.
+{footer.copyright || "© 2025 ABAD - Anadolu Bilgelerini Araştırma Derneği. Tüm hakları saklıdır."}
               </p>
             </Col>
             <Col md={6} className="text-md-end">

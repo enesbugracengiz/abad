@@ -1,13 +1,34 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import useContent from "../hooks/useContent";
 
 const ECertificate = () => {
+  const { content, loading } = useContent();
+
+  if (loading) {
+    return (
+      <section className="py-5" style={{ backgroundColor: "#f8f9fa", minHeight: "400px" }}>
+        <Container style={{ maxWidth: "1200px" }}>
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Yükleniyor...</span>
+            </div>
+            <p className="mt-3">E-Sertifika bölümü yükleniyor...</p>
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
+  const ecertificate = content?.ecertificate || {};
+  const backgroundImage = ecertificate.backgroundImage || "/src/assets/genel/arayuzver2-19.png";
+
   return (
     <section
       className="py-5 position-relative"
       style={{
         backgroundColor: "#f8f9fa",
-        backgroundImage: `url("/src/assets/genel/arayuzver2-19.png")`,
+        backgroundImage: `url("${backgroundImage}")`,
         backgroundRepeat: "repeat-x",
         backgroundPosition: "bottom",
         backgroundSize: "auto 130px",
@@ -56,8 +77,8 @@ const ECertificate = () => {
                   }}
                 >
                   <img
-                    src="/src/assets/genel/toprak.jpg"
-                    alt="Toprak tutan eller"
+                    src={ecertificate.leftSection?.image || "/src/assets/genel/toprak.jpg"}
+                    alt={ecertificate.leftSection?.imageAlt || "Toprak tutan eller"}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -80,9 +101,18 @@ const ECertificate = () => {
                     fontWeight: "400",
                   }}
                 >
-                  "Baban İçin Toprağa Hayat,
-                  <br />
-                  Gökyüzüne Umut."
+{ecertificate.leftSection?.quote?.split(', ').map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index === 0 && <br />}
+                    </span>
+                  )) || (
+                    <>
+                      "Baban İçin Toprağa Hayat,
+                      <br />
+                      Gökyüzüne Umut."
+                    </>
+                  )}
                 </h3>
 
                 <p
@@ -94,7 +124,7 @@ const ECertificate = () => {
                     marginTop: "20px",
                   }}
                 >
-                  E-sertifikan Babanın İsmiyle Yeşersin!
+{ecertificate.leftSection?.subtitle || "E-sertifikan Babanın İsmiyle Yeşersin!"}
                 </p>
               </div>
             </div>
@@ -122,7 +152,7 @@ const ECertificate = () => {
                       fontFamily: "Poppins, sans-serif",
                     }}
                   >
-                    e-Sertifikalı
+{ecertificate.rightSection?.title || "e-Sertifikalı"}
                   </h2>
                 </div>
 
@@ -135,7 +165,7 @@ const ECertificate = () => {
                     marginBottom: "30px",
                   }}
                 >
-                  Meyve Fidan Bağışları
+{ecertificate.rightSection?.subtitle || "Meyve Fidan Bağışları"}
                 </h3>
               </div>
 
@@ -162,8 +192,8 @@ const ECertificate = () => {
                 }}
               >
                 <img
-                  src="/src/assets/genel/babalar-gunu-sertifikasi.jpg"
-                  alt="Babalar Günü Meyve Fidanı Bağışı Sertifikası"
+                  src={ecertificate.rightSection?.certificateImage || "/src/assets/genel/babalar-gunu-sertifikasi.jpg"}
+                  alt={ecertificate.rightSection?.certificateAlt || "Babalar Günü Meyve Fidanı Bağışı Sertifikası"}
                   style={{
                     width: "350px",
                     height: "auto",
