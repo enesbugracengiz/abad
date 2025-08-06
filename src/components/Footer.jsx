@@ -209,7 +209,7 @@ const Footer = () => {
                 </li>
                 <li style={{ marginBottom: '0.5rem' }}>
                   <a 
-                    href="/activities" 
+                    href="" 
                     style={{ 
                       color: 'rgba(255,255,255,0.7)', 
                       textDecoration: 'none',
@@ -276,7 +276,7 @@ const Footer = () => {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 <li style={{ marginBottom: '0.5rem' }}>
                   <a 
-                    href="/activities" 
+                    href="" 
                     style={{ 
                       color: 'rgba(255,255,255,0.7)', 
                       textDecoration: 'none',
@@ -294,7 +294,7 @@ const Footer = () => {
                 </li>
                 <li style={{ marginBottom: '0.5rem' }}>
                   <a 
-                    href="/activities" 
+                    href="" 
                     style={{ 
                       color: 'rgba(255,255,255,0.7)', 
                       textDecoration: 'none',
@@ -312,7 +312,7 @@ const Footer = () => {
                 </li>
                 <li style={{ marginBottom: '0.5rem' }}>
                   <a 
-                    href="/activities" 
+                    href="" 
                     style={{ 
                       color: 'rgba(255,255,255,0.7)', 
                       textDecoration: 'none',

@@ -36,18 +36,6 @@ const useContent = () => {
             home: {
               text: "ABAD",
               path: "/"
-            },
-            activities: {
-              text: "Harekete Geçin",
-              path: "/activities"
-            },
-            kindergarten: {
-              text: "Yunus Emre Anaokulu",
-              path: "/kindergarten"
-            },
-            news: {
-              text: "Haberler",
-              path: "/news"
             }
           }
         },

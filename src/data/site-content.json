@@ -13,18 +13,6 @@
       "home": {
         "text": "ABAD",
         "path": "/"
-      },
-      "activities": {
-        "text": "Harekete Geçin",
-        "path": "/activities"
-      },
-      "kindergarten": {
-        "text": "Yunus Emre Anaokulu",
-        "path": "/kindergarten"
-      },
-      "news": {
-        "text": "Haberler",
-        "path": "/news"
       }
     }
   },
@@ -217,16 +205,8 @@
         "url": "/"
       },
       {
-        "text": "Faaliyetler",
-        "url": "/activities"
-      },
-      {
         "text": "Bağış Yap",
         "url": "/certificate"
-      },
-      {
-        "text": "Haberler",
-        "url": "/news"
       },
       {
         "text": "Hakkımızda",

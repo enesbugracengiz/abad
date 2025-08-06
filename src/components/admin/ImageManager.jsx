@@ -18,8 +18,7 @@ const ImageManager = () => {
   const [images, setImages] = useState({
     homepage: [],
     map: [],
-    general: [],
-    activities: [],
+    general: []
   });
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("homepage");
@@ -30,8 +29,7 @@ const ImageManager = () => {
   const imageCategories = {
     homepage: { name: "Anasayfa Görselleri", path: "/src/assets/images/" },
     map: { name: "Harita Görselleri", path: "/src/assets/harita/" },
-    general: { name: "Genel Görseller", path: "/src/assets/genel/" },
-    activities: { name: "Faaliyet Görselleri", path: "/src/assets/images/" },
+    general: { name: "Genel Görseller", path: "/src/assets/genel/" }
   };
 
   // Görselleri yükle
@@ -41,7 +39,7 @@ const ImageManager = () => {
 
   const loadImages = async () => {
     try {
-      const categories = ['homepage', 'map', 'general', 'activities'];
+      const categories = ['homepage', 'map', 'general'];
       const imageData = {};
 
       for (const category of categories) {

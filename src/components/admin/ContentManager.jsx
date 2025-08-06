@@ -797,13 +797,6 @@ const ContentManager = () => {
           </Card>
         </Tab>
 
-        {/* Activities Tab - Simplified since we have dedicated categories tab */}
-        <Tab eventKey="activities" title="Faaliyet Sayfası">
-          <Alert variant="info">
-            <i className="fas fa-info-circle me-2"></i>
-            Faaliyet kategorileri "Kategoriler" sekmesinde yönetilmektedir. Bu sekme gelecekteki özellikler için ayrılmıştır.
-          </Alert>
-        </Tab>
 
         {/* Footer Tab */}
         <Tab eventKey="footer" title="Footer">

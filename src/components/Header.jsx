@@ -80,7 +80,7 @@ const Header = () => {
 
               <div className="d-flex flex-column align-items-center">
                 <Link
-                  to={content?.header?.navigation?.activities?.path || "/activities"}
+                  to=""
                   className="text-decoration-none fw-normal"
                   style={{
                     color: "#2c5aa0",
@@ -89,7 +89,7 @@ const Header = () => {
                     transition: "color 0.3s ease",
                   }}
                 >
-                  {content?.header?.navigation?.activities?.text || "Harekete Geçin"}
+                  Harekete Geçin
                 </Link>
                 <div
                   style={{
@@ -103,7 +103,7 @@ const Header = () => {
 
               <div className="d-flex flex-column align-items-center">
                 <Link
-                  to={content?.header?.navigation?.kindergarten?.path || "/kindergarten"}
+                  to=""
                   className="text-decoration-none fw-normal"
                   style={{
                     color: "#2c5aa0",
@@ -112,7 +112,7 @@ const Header = () => {
                     transition: "color 0.3s ease",
                   }}
                 >
-                  {content?.header?.navigation?.kindergarten?.text || "Yunus Emre Anaokulu"}
+                  Yunus Emre Anaokulu
                 </Link>
                 <div
                   style={{

@@ -17,8 +17,7 @@ const ImageSelector = ({ show, onHide, onSelect, currentImage }) => {
   const [images, setImages] = useState({
     homepage: [],
     map: [],
-    general: [],
-    activities: [],
+    general: []
   });
   const [selectedCategory, setSelectedCategory] = useState("general");
   const [uploading, setUploading] = useState(false);
@@ -27,8 +26,7 @@ const ImageSelector = ({ show, onHide, onSelect, currentImage }) => {
   const imageCategories = {
     homepage: { name: "Anasayfa Görselleri", path: "/src/assets/images/" },
     map: { name: "Harita Görselleri", path: "/src/assets/harita/" },
-    general: { name: "Genel Görseller", path: "/src/assets/genel/" },
-    activities: { name: "Faaliyet Görselleri", path: "/src/assets/images/" },
+    general: { name: "Genel Görseller", path: "/src/assets/genel/" }
   };
 
   useEffect(() => {
@@ -39,7 +37,7 @@ const ImageSelector = ({ show, onHide, onSelect, currentImage }) => {
 
   const loadImages = async () => {
     try {
-      const categories = ['homepage', 'map', 'general', 'activities'];
+      const categories = ['homepage', 'map', 'general'];
       const imageData = {};
 
       for (const category of categories) {
