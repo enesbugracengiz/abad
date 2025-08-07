@@ -1,9 +1,58 @@
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
+import { useState } from "react";
 import useContent from "../hooks/useContent";
 
 const Header = () => {
   const { content, loading } = useContent();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
+  const [showFaaliyetSubMenu, setShowFaaliyetSubMenu] = useState(false);
+  const [showHareketeGecinSubMenu, setShowHareketeGecinSubMenu] =
+    useState(false);
+  const [showNavbarHareketeGecinDropdown, setShowNavbarHareketeGecinDropdown] =
+    useState(false);
+  const [navbarTimeoutId, setNavbarTimeoutId] = useState(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const id = setTimeout(() => {
+      setIsDropdownOpen(false);
+      setShowFaaliyetSubMenu(false); // Alt menüyü de kapat
+      setShowHareketeGecinSubMenu(false); // Harekete Geçin alt menüsünü de kapat
+    }, 300); // 300ms delay
+    setTimeoutId(id);
+  };
+
+  const handleFaaliyetClick = (e) => {
+    e.preventDefault();
+    setShowFaaliyetSubMenu(!showFaaliyetSubMenu);
+  };
+
+  const handleHareketeGecinClick = (e) => {
+    e.preventDefault();
+    setShowHareketeGecinSubMenu(!showHareketeGecinSubMenu);
+  };
+
+  const handleNavbarHareketeGecinMouseEnter = () => {
+    if (navbarTimeoutId) {
+      clearTimeout(navbarTimeoutId);
+    }
+    setShowNavbarHareketeGecinDropdown(true);
+  };
+
+  const handleNavbarHareketeGecinMouseLeave = () => {
+    const id = setTimeout(() => {
+      setShowNavbarHareketeGecinDropdown(false);
+    }, 300); // 300ms delay
+    setNavbarTimeoutId(id);
+  };
 
   if (loading) {
     return (
@@ -20,166 +69,989 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-white py-4 shadow-sm">
-      <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
-        {/* Telefon numarası - Sağ üst köşe */}
-        <Row>
-          <Col className="text-end">
+    <>
+      <header className="bg-white py-4 shadow-sm position-relative">
+        <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
+          {/* Telefon numarası - Sağ üst köşe */}
+          <Row>
+            <Col className="text-end">
+              <div
+                className="text-primary fw-normal"
+                style={{
+                  color: content?.header?.styles?.phone?.color || "#2c5aa0",
+                  fontSize: `${
+                    content?.header?.styles?.phone?.fontSize || 18
+                  }px`,
+                  fontFamily:
+                    content?.header?.styles?.phone?.fontFamily ||
+                    "Open Sans, sans-serif",
+                }}
+              >
+                {content?.header?.phone || "0212 880 00 00"}
+              </div>
+            </Col>
+          </Row>
+
+          {/* Ana header içeriği */}
+          <Row className="align-items-center mt-4">
+            {/* Sol taraf - Logo */}
+            <Col xs="auto">
+              <Link to="/" className="text-decoration-none">
+                <img
+                  src={
+                    content?.header?.logo?.src ||
+                    "/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"
+                  }
+                  alt={content?.header?.logo?.alt || "ABAD Logo"}
+                  style={{
+                    height: `${content?.header?.logo?.height || 180}px`,
+                    width: "auto",
+                  }}
+                  className="img-fluid"
+                />
+              </Link>
+            </Col>
+
+            {/* Orta kısım - Navigasyon linkleri */}
+            <Col className="d-flex justify-content-center">
+              <Nav className="gap-5">
+                <div
+                  className="d-flex flex-column align-items-center position-relative"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Link
+                    to={content?.header?.navigation?.home?.path || "/"}
+                    className="text-decoration-none fw-normal"
+                    style={{
+                      color:
+                        content?.header?.styles?.navigation?.color || "#2c5aa0",
+                      fontSize: `${
+                        content?.header?.styles?.navigation?.fontSize || 20
+                      }px`,
+                      fontFamily:
+                        content?.header?.styles?.navigation?.fontFamily ||
+                        "Open Sans, sans-serif",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    {content?.header?.navigation?.home?.text || "ABAD"}
+                  </Link>
+                  <div
+                    style={{
+                      width: "50px",
+                      height: "2px",
+                      backgroundColor:
+                        content?.header?.styles?.navigation?.underlineColor ||
+                        "#D4A574",
+                    }}
+                    className="mt-2"
+                  />
+                </div>
+
+                <div
+                  className="d-flex flex-column align-items-center position-relative"
+                  onMouseEnter={handleNavbarHareketeGecinMouseEnter}
+                  onMouseLeave={handleNavbarHareketeGecinMouseLeave}
+                >
+                  <div
+                    onClick={handleHareketeGecinClick}
+                    className="text-decoration-none fw-normal"
+                    style={{
+                      color:
+                        content?.header?.styles?.navigation?.color || "#2c5aa0",
+                      fontSize: `${
+                        content?.header?.styles?.navigation?.fontSize || 20
+                      }px`,
+                      fontFamily:
+                        content?.header?.styles?.navigation?.fontFamily ||
+                        "Open Sans, sans-serif",
+                      transition: "color 0.3s ease",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Harekete Geçin
+                  </div>
+                  <div
+                    style={{
+                      width: "130px",
+                      height: "2px",
+                      backgroundColor:
+                        content?.header?.styles?.navigation?.underlineColor ||
+                        "#D4A574",
+                    }}
+                    className="mt-2"
+                  />
+                </div>
+
+                <div className="d-flex flex-column align-items-center">
+                  <Link
+                    to=""
+                    className="text-decoration-none fw-normal"
+                    style={{
+                      color:
+                        content?.header?.styles?.navigation?.color || "#2c5aa0",
+                      fontSize: `${
+                        content?.header?.styles?.navigation?.fontSize || 20
+                      }px`,
+                      fontFamily:
+                        content?.header?.styles?.navigation?.fontFamily ||
+                        "Open Sans, sans-serif",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    Yunus Emre Anaokulu
+                  </Link>
+                  <div
+                    style={{
+                      width: "200px",
+                      height: "2px",
+                      backgroundColor:
+                        content?.header?.styles?.navigation?.underlineColor ||
+                        "#D4A574",
+                    }}
+                    className="mt-2"
+                  />
+                </div>
+              </Nav>
+            </Col>
+
+            {/* Sağ taraf - İkonlar ve Butonlar */}
+            <Col xs="auto" className="d-flex gap-3 align-items-center">
+              {/* Dükkan - İkon ve Buton */}
+              <div className="d-flex align-items-center gap-2">
+                <img
+                  src="/src/assets/genel/arayuzver2-18.png"
+                  alt="Dükkan İkonu"
+                  style={{ width: "24px", height: "24px" }}
+                />
+                <Link
+                  to="/shop"
+                  className="btn text-white text-decoration-none"
+                  style={{
+                    backgroundColor:
+                      content?.header?.styles?.buttons?.shop?.backgroundColor ||
+                      "#2B5F7F",
+                    borderRadius: "15px",
+                    fontFamily: "Open Sans, sans-serif",
+                    fontSize: `${
+                      content?.header?.styles?.buttons?.fontSize || 16
+                    }px`,
+                    padding: "10px 20px",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  Dükkan
+                </Link>
+              </div>
+
+              {/* Bağış - İkon ve Buton */}
+              <div className="d-flex align-items-center gap-2">
+                <img
+                  src="/src/assets/genel/arayuzver2-17.png"
+                  alt="Bağış İkonu"
+                  style={{ width: "24px", height: "24px" }}
+                />
+                <Link
+                  to="/donate"
+                  className="btn text-white text-decoration-none"
+                  style={{
+                    backgroundColor:
+                      content?.header?.styles?.buttons?.donate
+                        ?.backgroundColor || "#2E8B57",
+                    borderRadius: "15px",
+                    fontFamily: "Open Sans, sans-serif",
+                    fontSize: `${
+                      content?.header?.styles?.buttons?.fontSize || 16
+                    }px`,
+                    padding: "10px 20px",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  Bağış Yapın
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </header>
+
+      {/* Dropdown Menü - Header'ın Dışında */}
+      {isDropdownOpen && (
+        <div
+          className="position-relative shadow-lg"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            width: "100%",
+            zIndex: 999,
+            backgroundColor: "#D4A574",
+            padding: "0",
+            borderRadius: "0",
+          }}
+        >
+          {!showFaaliyetSubMenu && !showHareketeGecinSubMenu ? (
+            // Ana menü - 3x2 grid
             <div
-              className="text-primary fw-normal"
               style={{
-                color: content?.header?.styles?.phone?.color || "#2c5aa0",
-                fontSize: `${content?.header?.styles?.phone?.fontSize || 18}px`,
-                fontFamily: content?.header?.styles?.phone?.fontFamily || "Open Sans, sans-serif",
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gridTemplateRows: "1fr 1fr",
+                gap: "3px",
               }}
             >
-              {content?.header?.phone || "0212 880 00 00"}
-            </div>
-          </Col>
-        </Row>
-
-        {/* Ana header içeriği */}
-        <Row className="align-items-center mt-4">
-          {/* Sol taraf - Logo */}
-          <Col xs="auto">
-            <Link to="/" className="text-decoration-none">
-              <img
-                src={content?.header?.logo?.src || "/src/assets/harita/web-logo-yazili-512-x-512-piksel.png"}
-                alt={content?.header?.logo?.alt || "ABAD Logo"}
-                style={{ 
-                  height: `${content?.header?.logo?.height || 180}px`, 
-                  width: "auto" 
+              {/* Üst sıra - 3 kart */}
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "22px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "150px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
                 }}
-                className="img-fluid"
-              />
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                HAKKIMIZDA
+              </Link>
+
+              <div
+                className="text-decoration-none"
+                onClick={handleFaaliyetClick}
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "22px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "150px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                FAALİYET ALANLARIMIZ
+              </div>
+
+              <div
+                className="text-decoration-none"
+                onClick={handleHareketeGecinClick}
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "22px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "150px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                HAREKETE GEÇİN
+              </div>
+
+              {/* Alt sıra - 3 kart */}
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "40px 25px",
+                  fontSize: "18px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "150px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  lineHeight: "1.3",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                <div style={{ marginBottom: "10px" }}>YUNUS'UN İZİNDE</div>
+                <div
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "500",
+                    opacity: "0.9",
+                    textTransform: "none",
+                  }}
+                >
+                  Çevrimiçi Atölye Portalı
+                </div>
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "22px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "150px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                BLOG
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "22px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "150px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                GÖNÜLLÜ OL
+              </Link>
+            </div>
+          ) : showFaaliyetSubMenu ? (
+            // Faaliyet Alt Menüsü - 3 kart yan yana
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gap: "3px",
+              }}
+            >
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "60px 40px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "200px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                DOĞA FAALİYETLERİMİZ
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "60px 40px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "200px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                ÇOCUK VE GENÇ FAALİYETLERİMİZ
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "60px 40px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "200px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                EĞİTİM VE SEMİNER FAALİYETLERİMİZ
+              </Link>
+            </div>
+          ) : showHareketeGecinSubMenu ? (
+            // Harekete Geçin Alt Menüsü - 3x2 grid (6 kart)
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gridTemplateRows: "1fr 1fr",
+                gap: "3px",
+              }}
+            >
+              {/* Üst sıra - 3 kart */}
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "180px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                PROJEYE DESTEK OL
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "180px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                HEDİYE MAĞAZASI
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "180px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                BAĞIŞ YAPIN
+              </Link>
+
+              {/* Alt sıra - 3 kart */}
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "35px 25px",
+                  fontSize: "18px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "180px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  lineHeight: "1.3",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                <div style={{ marginBottom: "10px" }}>YUNUS'UN İZİNDE</div>
+                <div
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "500",
+                    opacity: "0.9",
+                    textTransform: "none",
+                  }}
+                >
+                  Çevrimiçi Atölye Portalı
+                </div>
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "40px 20px",
+                  fontSize: "18px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "180px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                ANADOLU BAŞTAN BAŞA HEDİYE ET
+              </Link>
+
+              <Link
+                to="#"
+                className="text-decoration-none"
+                style={{
+                  backgroundColor: "#6B8E6B",
+                  color: "white",
+                  padding: "50px 30px",
+                  fontSize: "20px",
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  minHeight: "180px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: "1.4",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#5A7B5A";
+                  e.target.style.transform = "scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#6B8E6B";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                GÖNÜLLÜ OL
+              </Link>
+            </div>
+          ) : null}
+        </div>
+      )}
+
+      {/* Navbar Harekete Geçin Dropdown - Header'ın Dışında */}
+      {showNavbarHareketeGecinDropdown && (
+        <div
+          className="position-relative shadow-lg"
+          onMouseEnter={handleNavbarHareketeGecinMouseEnter}
+          onMouseLeave={handleNavbarHareketeGecinMouseLeave}
+          style={{
+            width: "100%",
+            zIndex: 999,
+            backgroundColor: "#D4A574",
+            padding: "0",
+            borderRadius: "0",
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              gridTemplateRows: "1fr 1fr",
+              gap: "3px",
+            }}
+          >
+            {/* Üst sıra - 3 kart */}
+            <Link
+              to="#"
+              className="text-decoration-none"
+              style={{
+                backgroundColor: "#6B8E6B",
+                color: "white",
+                padding: "50px 30px",
+                fontSize: "22px",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: "700",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                minHeight: "150px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#5A7B5A";
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#6B8E6B";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              PROJEYE DESTEK OL
             </Link>
-          </Col>
 
-          {/* Orta kısım - Navigasyon linkleri */}
-          <Col className="d-flex justify-content-center">
-            <Nav className="gap-5">
-              <div className="d-flex flex-column align-items-center">
-                <Link
-                  to={content?.header?.navigation?.home?.path || "/"}
-                  className="text-decoration-none fw-normal"
-                  style={{
-                    color: content?.header?.styles?.navigation?.color || "#2c5aa0",
-                    fontSize: `${content?.header?.styles?.navigation?.fontSize || 20}px`,
-                    fontFamily: content?.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {content?.header?.navigation?.home?.text || "ABAD"}
-                </Link>
-                <div
-                  style={{
-                    width: "50px",
-                    height: "2px",
-                    backgroundColor: content?.header?.styles?.navigation?.underlineColor || "#D4A574",
-                  }}
-                  className="mt-2"
-                />
-              </div>
+            <Link
+              to="#"
+              className="text-decoration-none"
+              style={{
+                backgroundColor: "#6B8E6B",
+                color: "white",
+                padding: "50px 30px",
+                fontSize: "22px",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: "700",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                minHeight: "150px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#5A7B5A";
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#6B8E6B";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              HEDİYE MAĞAZASI
+            </Link>
 
-              <div className="d-flex flex-column align-items-center">
-                <Link
-                  to=""
-                  className="text-decoration-none fw-normal"
-                  style={{
-                    color: content?.header?.styles?.navigation?.color || "#2c5aa0",
-                    fontSize: `${content?.header?.styles?.navigation?.fontSize || 20}px`,
-                    fontFamily: content?.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  Harekete Geçin
-                </Link>
-                <div
-                  style={{
-                    width: "130px",
-                    height: "2px",
-                    backgroundColor: content?.header?.styles?.navigation?.underlineColor || "#D4A574",
-                  }}
-                  className="mt-2"
-                />
-              </div>
+            <Link
+              to="#"
+              className="text-decoration-none"
+              style={{
+                backgroundColor: "#6B8E6B",
+                color: "white",
+                padding: "50px 30px",
+                fontSize: "22px",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: "700",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                minHeight: "150px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#5A7B5A";
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#6B8E6B";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              BAĞIŞ YAPIN
+            </Link>
 
-              <div className="d-flex flex-column align-items-center">
-                <Link
-                  to=""
-                  className="text-decoration-none fw-normal"
-                  style={{
-                    color: content?.header?.styles?.navigation?.color || "#2c5aa0",
-                    fontSize: `${content?.header?.styles?.navigation?.fontSize || 20}px`,
-                    fontFamily: content?.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  Yunus Emre Anaokulu
-                </Link>
-                <div
-                  style={{
-                    width: "200px",
-                    height: "2px",
-                    backgroundColor: content?.header?.styles?.navigation?.underlineColor || "#D4A574",
-                  }}
-                  className="mt-2"
-                />
-              </div>
-            </Nav>
-          </Col>
-
-          {/* Sağ taraf - İkonlar ve Butonlar */}
-          <Col xs="auto" className="d-flex gap-3 align-items-center">
-            {/* Dükkan - İkon ve Buton */}
-            <div className="d-flex align-items-center gap-2">
-              <img
-                src="/src/assets/genel/arayuzver2-18.png"
-                alt="Dükkan İkonu"
-                style={{ width: "24px", height: "24px" }}
-              />
-              <Link
-                to="/shop"
-                className="btn text-white text-decoration-none"
+            {/* Alt sıra - 3 kart */}
+            <Link
+              to="#"
+              className="text-decoration-none"
+              style={{
+                backgroundColor: "#6B8E6B",
+                color: "white",
+                padding: "40px 25px",
+                fontSize: "18px",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: "700",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                minHeight: "150px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                lineHeight: "1.3",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#5A7B5A";
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#6B8E6B";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              <div style={{ marginBottom: "10px" }}>YUNUS'UN İZİNDE</div>
+              <div
                 style={{
-                  backgroundColor: content?.header?.styles?.buttons?.shop?.backgroundColor || "#2B5F7F",
-                  borderRadius: "15px",
-                  fontFamily: "Open Sans, sans-serif",
-                  fontSize: `${content?.header?.styles?.buttons?.fontSize || 16}px`,
-                  padding: "10px 20px",
-                  transition: "all 0.3s ease",
+                  fontSize: "15px",
+                  fontWeight: "500",
+                  opacity: "0.9",
+                  textTransform: "none",
                 }}
               >
-                Dükkan
-              </Link>
-            </div>
+                Çevrimiçi Atölye Portalı
+              </div>
+            </Link>
 
-            {/* Bağış - İkon ve Buton */}
-            <div className="d-flex align-items-center gap-2">
-              <img
-                src="/src/assets/genel/arayuzver2-17.png"
-                alt="Bağış İkonu"
-                style={{ width: "24px", height: "24px" }}
-              />
-              <Link
-                to="/donate"
-                className="btn text-white text-decoration-none"
-                style={{
-                  backgroundColor: content?.header?.styles?.buttons?.donate?.backgroundColor || "#2E8B57",
-                  borderRadius: "15px",
-                  fontFamily: "Open Sans, sans-serif",
-                  fontSize: `${content?.header?.styles?.buttons?.fontSize || 16}px`,
-                  padding: "10px 20px",
-                  transition: "all 0.3s ease",
-                }}
-              >
-                Bağış Yapın
-              </Link>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </header>
+            <Link
+              to="#"
+              className="text-decoration-none"
+              style={{
+                backgroundColor: "#6B8E6B",
+                color: "white",
+                padding: "40px 20px",
+                fontSize: "18px",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: "700",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                minHeight: "150px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                lineHeight: "1.4",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#5A7B5A";
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#6B8E6B";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              ANADOLU BAŞTAN BAŞA HEDİYE ET
+            </Link>
+
+            <Link
+              to="#"
+              className="text-decoration-none"
+              style={{
+                backgroundColor: "#6B8E6B",
+                color: "white",
+                padding: "50px 30px",
+                fontSize: "22px",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: "700",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                minHeight: "150px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#5A7B5A";
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "#6B8E6B";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              GÖNÜLLÜ OL
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

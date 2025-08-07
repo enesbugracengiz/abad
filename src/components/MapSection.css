@@ -4,7 +4,9 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 3rem 0;
+  padding: 2rem 0 3rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .map-container {
@@ -244,4 +246,12 @@
   100% {
     box-shadow: 0 0 0 0 rgba(198, 115, 102, 0);
   }
+}
+
+/* Seçili şehir bilgi kutusu stil ayarları */
+.alert.alert-info {
+  position: relative;
+  z-index: 1050;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
 }

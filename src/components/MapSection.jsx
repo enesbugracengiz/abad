@@ -96,10 +96,10 @@ const MapSection = () => {
   return (
     <section
       className="map-section text-center"
-      style={{ 
-        paddingTop: `${content?.mapSection?.styles?.paddingTop || 0}px`, 
-        marginTop: `${content?.mapSection?.styles?.marginTop || -150}px`, 
-        marginBottom: `${content?.mapSection?.styles?.marginBottom || -90}px` 
+      style={{
+        paddingTop: `${content?.mapSection?.styles?.paddingTop || 0}px`,
+        marginTop: `${content?.mapSection?.styles?.marginTop || -50}px`,
+        marginBottom: `${content?.mapSection?.styles?.marginBottom || 0}px`,
       }}
     >
       <Container style={{ maxWidth: "1200px" }}>
@@ -108,7 +108,10 @@ const MapSection = () => {
           <Col xs={12} lg={10} xl={8}>
             <div className="map-container fade-in">
               <img
-                src={content?.mapSection?.mapImage || "/src/assets/harita/turkey-map.png"}
+                src={
+                  content?.mapSection?.mapImage ||
+                  "/src/assets/harita/turkey-map.png"
+                }
                 alt="Türkiye Haritası"
                 className="turkey-map"
               />
