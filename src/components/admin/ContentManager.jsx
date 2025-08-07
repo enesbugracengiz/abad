@@ -160,7 +160,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Logo Görseli"
                       value={content.header?.logo?.src || ""}
-                      onChange={(value) => updateContent("header.logo.src", value)}
+                      onChange={(value) =>
+                        updateContent("header.logo.src", value)
+                      }
                       placeholder="Logo görsel yolu"
                     />
                   </Col>
@@ -183,7 +185,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.header?.logo?.height || 180}
                         onChange={(e) =>
-                          updateContent("header.logo.height", parseInt(e.target.value))
+                          updateContent(
+                            "header.logo.height",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -193,41 +198,43 @@ const ContentManager = () => {
                 <h6 className="mt-4 mb-3">Navigasyon Menüsü</h6>
                 <Row className="g-4">
                   {content.header?.navigation &&
-                    Object.entries(content.header.navigation).map(([key, nav]) => (
-                      <Col md={6} key={key}>
-                        <Card className="border">
-                          <Card.Body>
-                            <h6 className="text-capitalize">{key}</h6>
-                            <Form.Group className="mb-2">
-                              <Form.Label>Metin</Form.Label>
-                              <Form.Control
-                                type="text"
-                                value={nav.text || ""}
-                                onChange={(e) =>
-                                  updateContent(
-                                    `header.navigation.${key}.text`,
-                                    e.target.value
-                                  )
-                                }
-                              />
-                            </Form.Group>
-                            <Form.Group>
-                              <Form.Label>Yol</Form.Label>
-                              <Form.Control
-                                type="text"
-                                value={nav.path || ""}
-                                onChange={(e) =>
-                                  updateContent(
-                                    `header.navigation.${key}.path`,
-                                    e.target.value
-                                  )
-                                }
-                              />
-                            </Form.Group>
-                          </Card.Body>
-                        </Card>
-                      </Col>
-                    ))}
+                    Object.entries(content.header.navigation).map(
+                      ([key, nav]) => (
+                        <Col md={6} key={key}>
+                          <Card className="border">
+                            <Card.Body>
+                              <h6 className="text-capitalize">{key}</h6>
+                              <Form.Group className="mb-2">
+                                <Form.Label>Metin</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  value={nav.text || ""}
+                                  onChange={(e) =>
+                                    updateContent(
+                                      `header.navigation.${key}.text`,
+                                      e.target.value
+                                    )
+                                  }
+                                />
+                              </Form.Group>
+                              <Form.Group>
+                                <Form.Label>Yol</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  value={nav.path || ""}
+                                  onChange={(e) =>
+                                    updateContent(
+                                      `header.navigation.${key}.path`,
+                                      e.target.value
+                                    )
+                                  }
+                                />
+                              </Form.Group>
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      )
+                    )}
                 </Row>
               </Accordion.Body>
             </Accordion.Item>
@@ -242,16 +249,24 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Telefon Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.header?.styles?.phone?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.header?.styles?.phone?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.phone.fontFamily", e.target.value)
+                          updateContent(
+                            "header.styles.phone.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Poppins, sans-serif">Poppins</option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
@@ -264,7 +279,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.header?.styles?.phone?.fontSize || 18}
                         onChange={(e) =>
-                          updateContent("header.styles.phone.fontSize", parseInt(e.target.value))
+                          updateContent(
+                            "header.styles.phone.fontSize",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -274,9 +292,14 @@ const ContentManager = () => {
                       <Form.Label>Telefon Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.header?.styles?.phone?.color || "#2c5aa0"}
+                        value={
+                          content.header?.styles?.phone?.color || "#2c5aa0"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.phone.color", e.target.value)
+                          updateContent(
+                            "header.styles.phone.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -289,16 +312,24 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Nav Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.header?.styles?.navigation?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.header?.styles?.navigation?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.navigation.fontFamily", e.target.value)
+                          updateContent(
+                            "header.styles.navigation.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Poppins, sans-serif">Poppins</option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
@@ -309,9 +340,14 @@ const ContentManager = () => {
                       <Form.Label>Nav Font Boyutu (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.header?.styles?.navigation?.fontSize || 20}
+                        value={
+                          content.header?.styles?.navigation?.fontSize || 20
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.navigation.fontSize", parseInt(e.target.value))
+                          updateContent(
+                            "header.styles.navigation.fontSize",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -321,9 +357,14 @@ const ContentManager = () => {
                       <Form.Label>Nav Metin Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.header?.styles?.navigation?.color || "#2c5aa0"}
+                        value={
+                          content.header?.styles?.navigation?.color || "#2c5aa0"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.navigation.color", e.target.value)
+                          updateContent(
+                            "header.styles.navigation.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -333,9 +374,15 @@ const ContentManager = () => {
                       <Form.Label>Alt Çizgi Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.header?.styles?.navigation?.underlineColor || "#D4A574"}
+                        value={
+                          content.header?.styles?.navigation?.underlineColor ||
+                          "#D4A574"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.navigation.underlineColor", e.target.value)
+                          updateContent(
+                            "header.styles.navigation.underlineColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -349,9 +396,15 @@ const ContentManager = () => {
                       <Form.Label>Dükkan Buton Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.header?.styles?.buttons?.shop?.backgroundColor || "#2B5F7F"}
+                        value={
+                          content.header?.styles?.buttons?.shop
+                            ?.backgroundColor || "#2B5F7F"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.buttons.shop.backgroundColor", e.target.value)
+                          updateContent(
+                            "header.styles.buttons.shop.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -361,9 +414,15 @@ const ContentManager = () => {
                       <Form.Label>Bağış Buton Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.header?.styles?.buttons?.donate?.backgroundColor || "#2E8B57"}
+                        value={
+                          content.header?.styles?.buttons?.donate
+                            ?.backgroundColor || "#2E8B57"
+                        }
                         onChange={(e) =>
-                          updateContent("header.styles.buttons.donate.backgroundColor", e.target.value)
+                          updateContent(
+                            "header.styles.buttons.donate.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -375,7 +434,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.header?.styles?.buttons?.fontSize || 16}
                         onChange={(e) =>
-                          updateContent("header.styles.buttons.fontSize", parseInt(e.target.value))
+                          updateContent(
+                            "header.styles.buttons.fontSize",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -413,7 +475,10 @@ const ContentManager = () => {
                         type="text"
                         value={content.homepage?.hero?.subtitle || ""}
                         onChange={(e) =>
-                          updateContent("homepage.hero.subtitle", e.target.value)
+                          updateContent(
+                            "homepage.hero.subtitle",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -464,7 +529,9 @@ const ContentManager = () => {
                       <Form.Label>Alt Başlık</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.homepage?.featured_projects?.subtitle || ""}
+                        value={
+                          content.homepage?.featured_projects?.subtitle || ""
+                        }
                         onChange={(e) =>
                           updateContent(
                             "homepage.featured_projects.subtitle",
@@ -482,24 +549,46 @@ const ContentManager = () => {
                   <Col md={6}>
                     <ImageField
                       label="Ana Desen Görseli"
-                      value={content.homepage?.featured_projects?.backgroundPattern || ""}
-                      onChange={(value) => updateContent("homepage.featured_projects.backgroundPattern", value)}
+                      value={
+                        content.homepage?.featured_projects
+                          ?.backgroundPattern || ""
+                      }
+                      onChange={(value) =>
+                        updateContent(
+                          "homepage.featured_projects.backgroundPattern",
+                          value
+                        )
+                      }
                       placeholder="Ana arkaplan deseni"
                     />
                   </Col>
                   <Col md={6}>
                     <ImageField
                       label="Alt Desen Görseli"
-                      value={content.homepage?.featured_projects?.bottomPattern || ""}
-                      onChange={(value) => updateContent("homepage.featured_projects.bottomPattern", value)}
+                      value={
+                        content.homepage?.featured_projects?.bottomPattern || ""
+                      }
+                      onChange={(value) =>
+                        updateContent(
+                          "homepage.featured_projects.bottomPattern",
+                          value
+                        )
+                      }
                       placeholder="Alt kısım deseni"
                     />
                   </Col>
                   <Col md={12}>
                     <ImageField
                       label="Sol İkon Görseli"
-                      value={content.homepage?.featured_projects?.leftIcon || ""}
-                      onChange={(value) => updateContent("homepage.featured_projects.leftIcon", value)}
+                      value={
+                        content.homepage?.featured_projects?.leftIcon || ""
+                      }
+                      onChange={(value) =>
+                        updateContent(
+                          "homepage.featured_projects.leftIcon",
+                          value
+                        )
+                      }
                       placeholder="Sol üst köşe dekoratif ikonu"
                     />
                   </Col>
@@ -512,9 +601,15 @@ const ContentManager = () => {
                       <Form.Label>Proje Başlığı</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.homepage?.featured_projects?.mainProject?.title || ""}
+                        value={
+                          content.homepage?.featured_projects?.mainProject
+                            ?.title || ""
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.mainProject.title", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.mainProject.title",
+                            e.target.value
+                          )
                         }
                         placeholder="Ana proje başlığı"
                       />
@@ -526,14 +621,21 @@ const ContentManager = () => {
                       <Form.Control
                         as="textarea"
                         rows={2}
-                        value={content.homepage?.featured_projects?.mainProject?.subtitle || ""}
+                        value={
+                          content.homepage?.featured_projects?.mainProject
+                            ?.subtitle || ""
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.mainProject.subtitle", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.mainProject.subtitle",
+                            e.target.value
+                          )
                         }
                         placeholder="İlk satır\nİkinci satır (Enter ile ayırın)"
                       />
                       <Form.Text className="text-muted">
-                        İki satır halinde görünecek başlığı yazın. Satır arası geçiş için Enter kullanın.
+                        İki satır halinde görünecek başlığı yazın. Satır arası
+                        geçiş için Enter kullanın.
                       </Form.Text>
                     </Form.Group>
                   </Col>
@@ -543,9 +645,15 @@ const ContentManager = () => {
                       <Form.Control
                         as="textarea"
                         rows={4}
-                        value={content.homepage?.featured_projects?.mainProject?.description || ""}
+                        value={
+                          content.homepage?.featured_projects?.mainProject
+                            ?.description || ""
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.mainProject.description", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.mainProject.description",
+                            e.target.value
+                          )
                         }
                         placeholder="Proje hakkında detaylı açıklama"
                       />
@@ -556,9 +664,15 @@ const ContentManager = () => {
                       <Form.Label>Buton Metni</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.homepage?.featured_projects?.mainProject?.buttonText || ""}
+                        value={
+                          content.homepage?.featured_projects?.mainProject
+                            ?.buttonText || ""
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.mainProject.buttonText", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.mainProject.buttonText",
+                            e.target.value
+                          )
                         }
                         placeholder="Örn: DAHA FAZLASI"
                       />
@@ -569,9 +683,15 @@ const ContentManager = () => {
                       <Form.Label>Buton Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.homepage?.featured_projects?.mainProject?.buttonColor || "#5a6c57"}
+                        value={
+                          content.homepage?.featured_projects?.mainProject
+                            ?.buttonColor || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.mainProject.buttonColor", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.mainProject.buttonColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -581,9 +701,15 @@ const ContentManager = () => {
                       <Form.Label>Buton Linki</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.homepage?.featured_projects?.mainProject?.link || ""}
+                        value={
+                          content.homepage?.featured_projects?.mainProject
+                            ?.link || ""
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.mainProject.link", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.mainProject.link",
+                            e.target.value
+                          )
                         }
                         placeholder="/projects/fidan-dikimi veya https://example.com"
                       />
@@ -593,9 +719,55 @@ const ContentManager = () => {
               </Accordion.Body>
             </Accordion.Item>
 
+            {/* Üst Kart Ayarları */}
+            <Accordion.Item eventKey="topCard">
+              <Accordion.Header>Üst Kart Ayarları</Accordion.Header>
+              <Accordion.Body>
+                <Row className="g-3">
+                  <Col md={8}>
+                    <ImageField
+                      label="Kart Görseli"
+                      value={
+                        content.homepage?.featured_projects?.topCard?.image ||
+                        ""
+                      }
+                      onChange={(value) =>
+                        updateContent(
+                          "homepage.featured_projects.topCard.image",
+                          value
+                        )
+                      }
+                      placeholder="Üst kartta gösterilecek görsel"
+                    />
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Alt Metin</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={
+                          content.homepage?.featured_projects?.topCard?.alt ||
+                          ""
+                        }
+                        onChange={(e) =>
+                          updateContent(
+                            "homepage.featured_projects.topCard.alt",
+                            e.target.value
+                          )
+                        }
+                        placeholder="Görsel alt metni"
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+              </Accordion.Body>
+            </Accordion.Item>
+
             {/* Featured Projects Stil Ayarları */}
             <Accordion.Item eventKey="featuredProjectsStyles">
-              <Accordion.Header>Öne Çıkan Projeler Stil Ayarları</Accordion.Header>
+              <Accordion.Header>
+                Öne Çıkan Projeler Stil Ayarları
+              </Accordion.Header>
               <Accordion.Body>
                 <h6 className="mb-3">Bölüm Stilleri</h6>
                 <Row className="g-3 mb-4">
@@ -604,9 +776,15 @@ const ContentManager = () => {
                       <Form.Label>Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.homepage?.featured_projects?.styles?.backgroundColor || "#f8f9fa"}
+                        value={
+                          content.homepage?.featured_projects?.styles
+                            ?.backgroundColor || "#f8f9fa"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.backgroundColor", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -616,9 +794,15 @@ const ContentManager = () => {
                       <Form.Label>Padding Top (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.homepage?.featured_projects?.styles?.paddingTop || 80}
+                        value={
+                          content.homepage?.featured_projects?.styles
+                            ?.paddingTop || 80
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.paddingTop", parseInt(e.target.value))
+                          updateContent(
+                            "homepage.featured_projects.styles.paddingTop",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -628,9 +812,15 @@ const ContentManager = () => {
                       <Form.Label>Padding Bottom (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.homepage?.featured_projects?.styles?.paddingBottom || 120}
+                        value={
+                          content.homepage?.featured_projects?.styles
+                            ?.paddingBottom || 120
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.paddingBottom", parseInt(e.target.value))
+                          updateContent(
+                            "homepage.featured_projects.styles.paddingBottom",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -643,9 +833,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Ana Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.homepage?.featured_projects?.styles?.title?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.homepage?.featured_projects?.styles?.title
+                            ?.fontFamily || "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.title.fontFamily", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.title.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -653,7 +849,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -663,9 +861,15 @@ const ContentManager = () => {
                       <Form.Label>Ana Başlık Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.homepage?.featured_projects?.styles?.title?.color || "#5a6c57"}
+                        value={
+                          content.homepage?.featured_projects?.styles?.title
+                            ?.color || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.title.color", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.title.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -674,9 +878,16 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Proje Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.homepage?.featured_projects?.styles?.projectTitle?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.homepage?.featured_projects?.styles
+                            ?.projectTitle?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.projectTitle.fontFamily", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.projectTitle.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -684,7 +895,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -694,9 +907,15 @@ const ContentManager = () => {
                       <Form.Label>Proje Başlık Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.homepage?.featured_projects?.styles?.projectTitle?.color || "#2c5282"}
+                        value={
+                          content.homepage?.featured_projects?.styles
+                            ?.projectTitle?.color || "#2c5282"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.projectTitle.color", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.projectTitle.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -706,9 +925,15 @@ const ContentManager = () => {
                       <Form.Label>Açıklama Metni Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.homepage?.featured_projects?.styles?.description?.color || "#6c757d"}
+                        value={
+                          content.homepage?.featured_projects?.styles
+                            ?.description?.color || "#6c757d"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.description.color", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.description.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -721,9 +946,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Buton Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.homepage?.featured_projects?.styles?.button?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.homepage?.featured_projects?.styles?.button
+                            ?.fontFamily || "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.button.fontFamily", e.target.value)
+                          updateContent(
+                            "homepage.featured_projects.styles.button.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -731,7 +962,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -742,9 +975,15 @@ const ContentManager = () => {
                       <Form.Control
                         type="number"
                         step="0.1"
-                        value={content.homepage?.featured_projects?.styles?.button?.fontSize || 1.0}
+                        value={
+                          content.homepage?.featured_projects?.styles?.button
+                            ?.fontSize || 1.0
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.button.fontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "homepage.featured_projects.styles.button.fontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -754,9 +993,15 @@ const ContentManager = () => {
                       <Form.Label>Buton Yuvarlama (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.homepage?.featured_projects?.styles?.button?.borderRadius || 0}
+                        value={
+                          content.homepage?.featured_projects?.styles?.button
+                            ?.borderRadius || 0
+                        }
                         onChange={(e) =>
-                          updateContent("homepage.featured_projects.styles.button.borderRadius", parseInt(e.target.value))
+                          updateContent(
+                            "homepage.featured_projects.styles.button.borderRadius",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -855,7 +1100,10 @@ const ContentManager = () => {
                         type="text"
                         value={content.homepage?.gallery?.title || ""}
                         onChange={(e) =>
-                          updateContent("homepage.gallery.title", e.target.value)
+                          updateContent(
+                            "homepage.gallery.title",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -921,7 +1169,9 @@ const ContentManager = () => {
                   categories={content.categories?.items || []}
                   onUpdate={(items) => updateContent("categories.items", items)}
                   backgroundImage={content.categories?.backgroundImage || ""}
-                  onBackgroundUpdate={(value) => updateContent("categories.backgroundImage", value)}
+                  onBackgroundUpdate={(value) =>
+                    updateContent("categories.backgroundImage", value)
+                  }
                 />
               </Accordion.Body>
             </Accordion.Item>
@@ -936,9 +1186,15 @@ const ContentManager = () => {
                       <Form.Label>Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.categories?.styles?.backgroundColor || "#f8f9fa"}
+                        value={
+                          content.categories?.styles?.backgroundColor ||
+                          "#f8f9fa"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.backgroundColor", e.target.value)
+                          updateContent(
+                            "categories.styles.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -950,7 +1206,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.categories?.styles?.paddingTop || 60}
                         onChange={(e) =>
-                          updateContent("categories.styles.paddingTop", parseInt(e.target.value))
+                          updateContent(
+                            "categories.styles.paddingTop",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -962,7 +1221,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.categories?.styles?.paddingBottom || 250}
                         onChange={(e) =>
-                          updateContent("categories.styles.paddingBottom", parseInt(e.target.value))
+                          updateContent(
+                            "categories.styles.paddingBottom",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -975,9 +1237,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Kart Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.categories?.styles?.card?.titleFontFamily || "Poppins, sans-serif"}
+                        value={
+                          content.categories?.styles?.card?.titleFontFamily ||
+                          "Poppins, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.titleFontFamily", e.target.value)
+                          updateContent(
+                            "categories.styles.card.titleFontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Poppins, sans-serif">Poppins</option>
@@ -985,7 +1253,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -996,9 +1266,14 @@ const ContentManager = () => {
                       <Form.Control
                         type="number"
                         step="0.1"
-                        value={content.categories?.styles?.card?.titleFontSize || 1.3}
+                        value={
+                          content.categories?.styles?.card?.titleFontSize || 1.3
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.titleFontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "categories.styles.card.titleFontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1008,9 +1283,15 @@ const ContentManager = () => {
                       <Form.Label>Kart Başlık Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.categories?.styles?.card?.titleColor || "#5a6c57"}
+                        value={
+                          content.categories?.styles?.card?.titleColor ||
+                          "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.titleColor", e.target.value)
+                          updateContent(
+                            "categories.styles.card.titleColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1019,9 +1300,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Kart İçerik Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.categories?.styles?.card?.contentFontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.categories?.styles?.card?.contentFontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.contentFontFamily", e.target.value)
+                          updateContent(
+                            "categories.styles.card.contentFontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -1029,7 +1316,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1040,9 +1329,15 @@ const ContentManager = () => {
                       <Form.Control
                         type="number"
                         step="0.1"
-                        value={content.categories?.styles?.card?.contentFontSize || 0.95}
+                        value={
+                          content.categories?.styles?.card?.contentFontSize ||
+                          0.95
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.contentFontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "categories.styles.card.contentFontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1052,9 +1347,15 @@ const ContentManager = () => {
                       <Form.Label>Kart İçerik Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.categories?.styles?.card?.contentColor || "#666666"}
+                        value={
+                          content.categories?.styles?.card?.contentColor ||
+                          "#666666"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.contentColor", e.target.value)
+                          updateContent(
+                            "categories.styles.card.contentColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1064,9 +1365,15 @@ const ContentManager = () => {
                       <Form.Label>Kart Border Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.categories?.styles?.card?.borderColor || "#e8f5e8"}
+                        value={
+                          content.categories?.styles?.card?.borderColor ||
+                          "#e8f5e8"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.borderColor", e.target.value)
+                          updateContent(
+                            "categories.styles.card.borderColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1076,9 +1383,15 @@ const ContentManager = () => {
                       <Form.Label>Kart Hover Border Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.categories?.styles?.card?.hoverBorderColor || "#5a6c57"}
+                        value={
+                          content.categories?.styles?.card?.hoverBorderColor ||
+                          "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.hoverBorderColor", e.target.value)
+                          updateContent(
+                            "categories.styles.card.hoverBorderColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1088,9 +1401,14 @@ const ContentManager = () => {
                       <Form.Label>Kart Yuvarlama (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.categories?.styles?.card?.borderRadius || 20}
+                        value={
+                          content.categories?.styles?.card?.borderRadius || 20
+                        }
                         onChange={(e) =>
-                          updateContent("categories.styles.card.borderRadius", parseInt(e.target.value))
+                          updateContent(
+                            "categories.styles.card.borderRadius",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1113,7 +1431,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Arkaplan Görseli"
                       value={content.ecertificate?.backgroundImage || ""}
-                      onChange={(value) => updateContent("ecertificate.backgroundImage", value)}
+                      onChange={(value) =>
+                        updateContent("ecertificate.backgroundImage", value)
+                      }
                       placeholder="E-sertifika arkaplan görseli"
                     />
                   </Col>
@@ -1125,7 +1445,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Sol Bölüm Görseli"
                       value={content.ecertificate?.leftSection?.image || ""}
-                      onChange={(value) => updateContent("ecertificate.leftSection.image", value)}
+                      onChange={(value) =>
+                        updateContent("ecertificate.leftSection.image", value)
+                      }
                       placeholder="Sol bölüm görseli (toprak görseli)"
                     />
                   </Col>
@@ -1134,9 +1456,14 @@ const ContentManager = () => {
                       <Form.Label>Görsel Alt Metni</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.ecertificate?.leftSection?.imageAlt || ""}
+                        value={
+                          content.ecertificate?.leftSection?.imageAlt || ""
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.leftSection.imageAlt", e.target.value)
+                          updateContent(
+                            "ecertificate.leftSection.imageAlt",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1148,7 +1475,10 @@ const ContentManager = () => {
                         type="text"
                         value={content.ecertificate?.leftSection?.quote || ""}
                         onChange={(e) =>
-                          updateContent("ecertificate.leftSection.quote", e.target.value)
+                          updateContent(
+                            "ecertificate.leftSection.quote",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1158,9 +1488,14 @@ const ContentManager = () => {
                       <Form.Label>Alt Başlık</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.ecertificate?.leftSection?.subtitle || ""}
+                        value={
+                          content.ecertificate?.leftSection?.subtitle || ""
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.leftSection.subtitle", e.target.value)
+                          updateContent(
+                            "ecertificate.leftSection.subtitle",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1176,7 +1511,10 @@ const ContentManager = () => {
                         type="text"
                         value={content.ecertificate?.rightSection?.title || ""}
                         onChange={(e) =>
-                          updateContent("ecertificate.rightSection.title", e.target.value)
+                          updateContent(
+                            "ecertificate.rightSection.title",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1186,9 +1524,14 @@ const ContentManager = () => {
                       <Form.Label>Alt Başlık</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.ecertificate?.rightSection?.subtitle || ""}
+                        value={
+                          content.ecertificate?.rightSection?.subtitle || ""
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.rightSection.subtitle", e.target.value)
+                          updateContent(
+                            "ecertificate.rightSection.subtitle",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1196,8 +1539,16 @@ const ContentManager = () => {
                   <Col md={12}>
                     <ImageField
                       label="Sertifika Görseli"
-                      value={content.ecertificate?.rightSection?.certificateImage || ""}
-                      onChange={(value) => updateContent("ecertificate.rightSection.certificateImage", value)}
+                      value={
+                        content.ecertificate?.rightSection?.certificateImage ||
+                        ""
+                      }
+                      onChange={(value) =>
+                        updateContent(
+                          "ecertificate.rightSection.certificateImage",
+                          value
+                        )
+                      }
                       placeholder="Sertifika örnek görseli"
                     />
                   </Col>
@@ -1206,9 +1557,15 @@ const ContentManager = () => {
                       <Form.Label>Sertifika Alt Metni</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.ecertificate?.rightSection?.certificateAlt || ""}
+                        value={
+                          content.ecertificate?.rightSection?.certificateAlt ||
+                          ""
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.rightSection.certificateAlt", e.target.value)
+                          updateContent(
+                            "ecertificate.rightSection.certificateAlt",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1227,9 +1584,15 @@ const ContentManager = () => {
                       <Form.Label>Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.ecertificate?.styles?.backgroundColor || "#f8f9fa"}
+                        value={
+                          content.ecertificate?.styles?.backgroundColor ||
+                          "#f8f9fa"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.backgroundColor", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1241,7 +1604,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.ecertificate?.styles?.paddingTop || 80}
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.paddingTop", parseInt(e.target.value))
+                          updateContent(
+                            "ecertificate.styles.paddingTop",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1251,9 +1617,14 @@ const ContentManager = () => {
                       <Form.Label>Padding Bottom (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.ecertificate?.styles?.paddingBottom || 200}
+                        value={
+                          content.ecertificate?.styles?.paddingBottom || 200
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.paddingBottom", parseInt(e.target.value))
+                          updateContent(
+                            "ecertificate.styles.paddingBottom",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1266,13 +1637,21 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Alıntı Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.ecertificate?.styles?.leftSection?.quoteFontFamily || "Georgia, serif"}
+                        value={
+                          content.ecertificate?.styles?.leftSection
+                            ?.quoteFontFamily || "Georgia, serif"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.leftSection.quoteFontFamily", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.leftSection.quoteFontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Open Sans, sans-serif">Open Sans</option>
                         <option value="Poppins, sans-serif">Poppins</option>
                         <option value="Arial, sans-serif">Arial</option>
@@ -1286,9 +1665,15 @@ const ContentManager = () => {
                       <Form.Label>Alıntı Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.ecertificate?.styles?.leftSection?.quoteColor || "#5a6c57"}
+                        value={
+                          content.ecertificate?.styles?.leftSection
+                            ?.quoteColor || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.leftSection.quoteColor", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.leftSection.quoteColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1298,9 +1683,15 @@ const ContentManager = () => {
                       <Form.Label>Görsel Border Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.ecertificate?.styles?.leftSection?.imageBorderColor || "#5a6c57"}
+                        value={
+                          content.ecertificate?.styles?.leftSection
+                            ?.imageBorderColor || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.leftSection.imageBorderColor", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.leftSection.imageBorderColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1309,9 +1700,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Alt Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.ecertificate?.styles?.leftSection?.subtitleFontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.ecertificate?.styles?.leftSection
+                            ?.subtitleFontFamily || "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.leftSection.subtitleFontFamily", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.leftSection.subtitleFontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -1319,7 +1716,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1329,9 +1728,15 @@ const ContentManager = () => {
                       <Form.Label>Alt Başlık Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.ecertificate?.styles?.leftSection?.subtitleColor || "#5a6c57"}
+                        value={
+                          content.ecertificate?.styles?.leftSection
+                            ?.subtitleColor || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.leftSection.subtitleColor", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.leftSection.subtitleColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1345,9 +1750,15 @@ const ContentManager = () => {
                       <Form.Label>Başlık Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.ecertificate?.styles?.rightSection?.titleBackgroundColor || "#5a6c57"}
+                        value={
+                          content.ecertificate?.styles?.rightSection
+                            ?.titleBackgroundColor || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.rightSection.titleBackgroundColor", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.rightSection.titleBackgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1356,9 +1767,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.ecertificate?.styles?.rightSection?.titleFontFamily || "Poppins, sans-serif"}
+                        value={
+                          content.ecertificate?.styles?.rightSection
+                            ?.titleFontFamily || "Poppins, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.rightSection.titleFontFamily", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.rightSection.titleFontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Poppins, sans-serif">Poppins</option>
@@ -1366,7 +1783,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1375,9 +1794,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Alt Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.ecertificate?.styles?.rightSection?.subtitleFontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.ecertificate?.styles?.rightSection
+                            ?.subtitleFontFamily || "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.rightSection.subtitleFontFamily", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.rightSection.subtitleFontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -1385,7 +1810,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1395,9 +1822,15 @@ const ContentManager = () => {
                       <Form.Label>Alt Başlık Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.ecertificate?.styles?.rightSection?.subtitleColor || "#5a6c57"}
+                        value={
+                          content.ecertificate?.styles?.rightSection
+                            ?.subtitleColor || "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.rightSection.subtitleColor", e.target.value)
+                          updateContent(
+                            "ecertificate.styles.rightSection.subtitleColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1407,9 +1840,15 @@ const ContentManager = () => {
                       <Form.Label>Sertifika Görsel Genişliği (px)</Form.Label>
                       <Form.Control
                         type="number"
-                        value={content.ecertificate?.styles?.rightSection?.certificateWidth || 350}
+                        value={
+                          content.ecertificate?.styles?.rightSection
+                            ?.certificateWidth || 350
+                        }
                         onChange={(e) =>
-                          updateContent("ecertificate.styles.rightSection.certificateWidth", parseInt(e.target.value))
+                          updateContent(
+                            "ecertificate.styles.rightSection.certificateWidth",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1456,7 +1895,9 @@ const ContentManager = () => {
                   <ImageField
                     label="Arkaplan Görseli"
                     value={content.projectGallery?.backgroundImage || ""}
-                    onChange={(value) => updateContent("projectGallery.backgroundImage", value)}
+                    onChange={(value) =>
+                      updateContent("projectGallery.backgroundImage", value)
+                    }
                     placeholder="Proje galerisi arkaplan görseli"
                   />
                 </Col>
@@ -1471,7 +1912,10 @@ const ContentManager = () => {
                       type="text"
                       value={content.projectGallery?.newsSection?.title || ""}
                       onChange={(e) =>
-                        updateContent("projectGallery.newsSection.title", e.target.value)
+                        updateContent(
+                          "projectGallery.newsSection.title",
+                          e.target.value
+                        )
                       }
                     />
                   </Form.Group>
@@ -1481,9 +1925,14 @@ const ContentManager = () => {
                     <Form.Label>"Devamını Oku" Metni</Form.Label>
                     <Form.Control
                       type="text"
-                      value={content.projectGallery?.newsSection?.readMore || ""}
+                      value={
+                        content.projectGallery?.newsSection?.readMore || ""
+                      }
                       onChange={(e) =>
-                        updateContent("projectGallery.newsSection.readMore", e.target.value)
+                        updateContent(
+                          "projectGallery.newsSection.readMore",
+                          e.target.value
+                        )
                       }
                     />
                   </Form.Group>
@@ -1496,21 +1945,287 @@ const ContentManager = () => {
                       rows={2}
                       value={content.projectGallery?.newsSection?.content || ""}
                       onChange={(e) =>
-                        updateContent("projectGallery.newsSection.content", e.target.value)
+                        updateContent(
+                          "projectGallery.newsSection.content",
+                          e.target.value
+                        )
                       }
                     />
                   </Form.Group>
                 </Col>
               </Row>
 
+              <h6>Grid Düzeni</h6>
+              <Row className="g-3 mb-3">
+                <Col md={12}>
+                  <h6 className="text-muted">Üst Satır</h6>
+                  {content.projectGallery?.grid?.topRow?.map((item, index) => (
+                    <Card key={index} className="mb-2">
+                      <Card.Body>
+                        <Row className="g-3 align-items-center">
+                          <Col md={2}>
+                            <Form.Select
+                              value={item.type || "color"}
+                              onChange={(e) => {
+                                const newGrid = {
+                                  ...content.projectGallery.grid,
+                                };
+                                newGrid.topRow[index] = {
+                                  ...item,
+                                  type: e.target.value,
+                                };
+                                updateContent("projectGallery.grid", newGrid);
+                              }}
+                            >
+                              <option value="image">Görsel</option>
+                              <option value="news">Haber</option>
+                              <option value="color">Renk Alanı</option>
+                            </Form.Select>
+                          </Col>
+                          {item.type === "image" && (
+                            <>
+                              <Col md={6}>
+                                <ImageField
+                                  label=""
+                                  value={item.src || ""}
+                                  onChange={(value) => {
+                                    const newGrid = {
+                                      ...content.projectGallery.grid,
+                                    };
+                                    newGrid.topRow[index] = {
+                                      ...item,
+                                      src: value,
+                                    };
+                                    updateContent(
+                                      "projectGallery.grid",
+                                      newGrid
+                                    );
+                                  }}
+                                  placeholder="Görsel yolu"
+                                />
+                              </Col>
+                              <Col md={4}>
+                                <Form.Control
+                                  type="text"
+                                  value={item.alt || ""}
+                                  onChange={(e) => {
+                                    const newGrid = {
+                                      ...content.projectGallery.grid,
+                                    };
+                                    newGrid.topRow[index] = {
+                                      ...item,
+                                      alt: e.target.value,
+                                    };
+                                    updateContent(
+                                      "projectGallery.grid",
+                                      newGrid
+                                    );
+                                  }}
+                                  placeholder="Alt metin"
+                                />
+                              </Col>
+                            </>
+                          )}
+                          {item.type === "color" && (
+                            <Col md={4}>
+                              <Form.Control
+                                type="color"
+                                value={item.backgroundColor || "#5a6c57"}
+                                onChange={(e) => {
+                                  const newGrid = {
+                                    ...content.projectGallery.grid,
+                                  };
+                                  newGrid.topRow[index] = {
+                                    ...item,
+                                    backgroundColor: e.target.value,
+                                  };
+                                  updateContent("projectGallery.grid", newGrid);
+                                }}
+                              />
+                            </Col>
+                          )}
+                        </Row>
+                      </Card.Body>
+                    </Card>
+                  ))}
+                </Col>
+              </Row>
+
+              <Row className="g-3 mb-4">
+                <Col md={12}>
+                  <h6 className="text-muted">Alt Satır</h6>
+                  {content.projectGallery?.grid?.bottomRow?.map(
+                    (item, index) => (
+                      <Card key={index} className="mb-2">
+                        <Card.Body>
+                          <Row className="g-3 align-items-center">
+                            <Col md={2}>
+                              <Form.Select
+                                value={item.type || "color"}
+                                onChange={(e) => {
+                                  const newGrid = {
+                                    ...content.projectGallery.grid,
+                                  };
+                                  newGrid.bottomRow[index] = {
+                                    ...item,
+                                    type: e.target.value,
+                                  };
+                                  updateContent("projectGallery.grid", newGrid);
+                                }}
+                              >
+                                <option value="image">Görsel</option>
+                                <option value="content">Kısa İçerik</option>
+                                <option value="longContent">Uzun İçerik</option>
+                                <option value="color">Renk Alanı</option>
+                              </Form.Select>
+                            </Col>
+                            {item.type === "image" && (
+                              <>
+                                <Col md={6}>
+                                  <ImageField
+                                    label=""
+                                    value={item.src || ""}
+                                    onChange={(value) => {
+                                      const newGrid = {
+                                        ...content.projectGallery.grid,
+                                      };
+                                      newGrid.bottomRow[index] = {
+                                        ...item,
+                                        src: value,
+                                      };
+                                      updateContent(
+                                        "projectGallery.grid",
+                                        newGrid
+                                      );
+                                    }}
+                                    placeholder="Görsel yolu"
+                                  />
+                                </Col>
+                                <Col md={4}>
+                                  <Form.Control
+                                    type="text"
+                                    value={item.alt || ""}
+                                    onChange={(e) => {
+                                      const newGrid = {
+                                        ...content.projectGallery.grid,
+                                      };
+                                      newGrid.bottomRow[index] = {
+                                        ...item,
+                                        alt: e.target.value,
+                                      };
+                                      updateContent(
+                                        "projectGallery.grid",
+                                        newGrid
+                                      );
+                                    }}
+                                    placeholder="Alt metin"
+                                  />
+                                </Col>
+                              </>
+                            )}
+                            {(item.type === "content" ||
+                              item.type === "longContent") && (
+                              <>
+                                <Col md={6}>
+                                  <Form.Control
+                                    as="textarea"
+                                    rows={2}
+                                    value={item.content || ""}
+                                    onChange={(e) => {
+                                      const newGrid = {
+                                        ...content.projectGallery.grid,
+                                      };
+                                      newGrid.bottomRow[index] = {
+                                        ...item,
+                                        content: e.target.value,
+                                      };
+                                      updateContent(
+                                        "projectGallery.grid",
+                                        newGrid
+                                      );
+                                    }}
+                                    placeholder="İçerik metni"
+                                  />
+                                </Col>
+                                <Col md={2}>
+                                  <Form.Control
+                                    type="text"
+                                    value={item.readMore || ""}
+                                    onChange={(e) => {
+                                      const newGrid = {
+                                        ...content.projectGallery.grid,
+                                      };
+                                      newGrid.bottomRow[index] = {
+                                        ...item,
+                                        readMore: e.target.value,
+                                      };
+                                      updateContent(
+                                        "projectGallery.grid",
+                                        newGrid
+                                      );
+                                    }}
+                                    placeholder="Devamını oku"
+                                  />
+                                </Col>
+                                <Col md={2}>
+                                  <Form.Control
+                                    type="color"
+                                    value={item.backgroundColor || "#e8e8e8"}
+                                    onChange={(e) => {
+                                      const newGrid = {
+                                        ...content.projectGallery.grid,
+                                      };
+                                      newGrid.bottomRow[index] = {
+                                        ...item,
+                                        backgroundColor: e.target.value,
+                                      };
+                                      updateContent(
+                                        "projectGallery.grid",
+                                        newGrid
+                                      );
+                                    }}
+                                  />
+                                </Col>
+                              </>
+                            )}
+                            {item.type === "color" && (
+                              <Col md={4}>
+                                <Form.Control
+                                  type="color"
+                                  value={item.backgroundColor || "#5a6c57"}
+                                  onChange={(e) => {
+                                    const newGrid = {
+                                      ...content.projectGallery.grid,
+                                    };
+                                    newGrid.bottomRow[index] = {
+                                      ...item,
+                                      backgroundColor: e.target.value,
+                                    };
+                                    updateContent(
+                                      "projectGallery.grid",
+                                      newGrid
+                                    );
+                                  }}
+                                />
+                              </Col>
+                            )}
+                          </Row>
+                        </Card.Body>
+                      </Card>
+                    )
+                  )}
+                </Col>
+              </Row>
+
               <Alert variant="info">
                 <i className="fas fa-info-circle me-2"></i>
-                Galeri grid düzeni karmaşık bir yapıya sahiptir. Gelişmiş düzenleme için JSON önizleme kullanın.
+                Grid düzenini değiştirmek için yukarıdaki kontrolleri kullanın.
+                Yeşil alanları görsel olarak değiştirmek için "Görsel"
+                seçeneğini kullanın.
               </Alert>
             </Card.Body>
           </Card>
         </Tab>
-
 
         {/* Map Section Tab */}
         <Tab eventKey="mapSection" title="Harita Bölümü">
@@ -1553,7 +2268,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Arkaplan Görseli"
                       value={content.mapSection?.backgroundImage || ""}
-                      onChange={(value) => updateContent("mapSection.backgroundImage", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.backgroundImage", value)
+                      }
                       placeholder="Harita bölümü arkaplan görseli"
                     />
                   </Col>
@@ -1561,7 +2278,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Harita Görseli"
                       value={content.mapSection?.mapImage || ""}
-                      onChange={(value) => updateContent("mapSection.mapImage", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.mapImage", value)
+                      }
                       placeholder="Türkiye haritası görseli"
                     />
                   </Col>
@@ -1573,7 +2292,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Eğitim İkonu"
                       value={content.mapSection?.icons?.education || ""}
-                      onChange={(value) => updateContent("mapSection.icons.education", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.icons.education", value)
+                      }
                       placeholder="Eğitim ve seminer ikonu"
                     />
                   </Col>
@@ -1581,7 +2302,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Blog İkonu"
                       value={content.mapSection?.icons?.blog || ""}
-                      onChange={(value) => updateContent("mapSection.icons.blog", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.icons.blog", value)
+                      }
                       placeholder="Blog/kitap ikonu"
                     />
                   </Col>
@@ -1589,7 +2312,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Projeler İkonu"
                       value={content.mapSection?.icons?.projects || ""}
-                      onChange={(value) => updateContent("mapSection.icons.projects", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.icons.projects", value)
+                      }
                       placeholder="Projeler ikonu"
                     />
                   </Col>
@@ -1597,7 +2322,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Aktiviteler İkonu"
                       value={content.mapSection?.icons?.activities || ""}
-                      onChange={(value) => updateContent("mapSection.icons.activities", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.icons.activities", value)
+                      }
                       placeholder="Aktiviteler ikonu"
                     />
                   </Col>
@@ -1605,7 +2332,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Destek İkonu"
                       value={content.mapSection?.icons?.support || ""}
-                      onChange={(value) => updateContent("mapSection.icons.support", value)}
+                      onChange={(value) =>
+                        updateContent("mapSection.icons.support", value)
+                      }
                       placeholder="Destek/gönüllü ikonu"
                     />
                   </Col>
@@ -1625,7 +2354,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.mapSection?.styles?.paddingTop || 0}
                         onChange={(e) =>
-                          updateContent("mapSection.styles.paddingTop", parseInt(e.target.value))
+                          updateContent(
+                            "mapSection.styles.paddingTop",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1637,7 +2369,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.mapSection?.styles?.marginTop || -150}
                         onChange={(e) =>
-                          updateContent("mapSection.styles.marginTop", parseInt(e.target.value))
+                          updateContent(
+                            "mapSection.styles.marginTop",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1649,7 +2384,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.mapSection?.styles?.marginBottom || -90}
                         onChange={(e) =>
-                          updateContent("mapSection.styles.marginBottom", parseInt(e.target.value))
+                          updateContent(
+                            "mapSection.styles.marginBottom",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1663,9 +2401,15 @@ const ContentManager = () => {
                       <Form.Label>Aktif Şehir Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.mapSection?.styles?.activeCity?.color || "#28a745"}
+                        value={
+                          content.mapSection?.styles?.activeCity?.color ||
+                          "#28a745"
+                        }
                         onChange={(e) =>
-                          updateContent("mapSection.styles.activeCity.color", e.target.value)
+                          updateContent(
+                            "mapSection.styles.activeCity.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1675,9 +2419,15 @@ const ContentManager = () => {
                       <Form.Label>Pasif Şehir Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.mapSection?.styles?.inactiveCity?.color || "#6c757d"}
+                        value={
+                          content.mapSection?.styles?.inactiveCity?.color ||
+                          "#6c757d"
+                        }
                         onChange={(e) =>
-                          updateContent("mapSection.styles.inactiveCity.color", e.target.value)
+                          updateContent(
+                            "mapSection.styles.inactiveCity.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1689,7 +2439,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.mapSection?.styles?.marker?.size || 12}
                         onChange={(e) =>
-                          updateContent("mapSection.styles.marker.size", parseInt(e.target.value))
+                          updateContent(
+                            "mapSection.styles.marker.size",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1702,9 +2455,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>İstatistik Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.mapSection?.styles?.stats?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.mapSection?.styles?.stats?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("mapSection.styles.stats.fontFamily", e.target.value)
+                          updateContent(
+                            "mapSection.styles.stats.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -1712,7 +2471,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1722,9 +2483,15 @@ const ContentManager = () => {
                       <Form.Label>İstatistik Buton Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.mapSection?.styles?.stats?.buttonColor || "#28a745"}
+                        value={
+                          content.mapSection?.styles?.stats?.buttonColor ||
+                          "#28a745"
+                        }
                         onChange={(e) =>
-                          updateContent("mapSection.styles.stats.buttonColor", e.target.value)
+                          updateContent(
+                            "mapSection.styles.stats.buttonColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1734,9 +2501,15 @@ const ContentManager = () => {
                       <Form.Label>İstatistik Metin Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.mapSection?.styles?.stats?.textColor || "#ffffff"}
+                        value={
+                          content.mapSection?.styles?.stats?.textColor ||
+                          "#ffffff"
+                        }
                         onChange={(e) =>
-                          updateContent("mapSection.styles.stats.textColor", e.target.value)
+                          updateContent(
+                            "mapSection.styles.stats.textColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1752,7 +2525,9 @@ const ContentManager = () => {
           <Accordion defaultActiveKey="0">
             {/* News İçerik */}
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Bizden Haberler İçerik Ayarları</Accordion.Header>
+              <Accordion.Header>
+                Bizden Haberler İçerik Ayarları
+              </Accordion.Header>
               <Accordion.Body>
                 <Row className="g-3 mb-4">
                   <Col md={6}>
@@ -1805,7 +2580,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Arkaplan Görseli"
                       value={content.news?.backgroundImage || ""}
-                      onChange={(value) => updateContent("news.backgroundImage", value)}
+                      onChange={(value) =>
+                        updateContent("news.backgroundImage", value)
+                      }
                       placeholder="Arkaplan görseli"
                     />
                   </Col>
@@ -1813,7 +2590,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Portre Görseli"
                       value={content.news?.portraitImage || ""}
-                      onChange={(value) => updateContent("news.portraitImage", value)}
+                      onChange={(value) =>
+                        updateContent("news.portraitImage", value)
+                      }
                       placeholder="Kişi portre görseli"
                     />
                   </Col>
@@ -1821,7 +2600,9 @@ const ContentManager = () => {
                     <ImageField
                       label="Logo Görseli"
                       value={content.news?.logoImage || ""}
-                      onChange={(value) => updateContent("news.logoImage", value)}
+                      onChange={(value) =>
+                        updateContent("news.logoImage", value)
+                      }
                       placeholder="ABAD logo görseli"
                     />
                   </Col>
@@ -1852,9 +2633,14 @@ const ContentManager = () => {
                       <Form.Label>Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.news?.styles?.backgroundColor || "#f8f9fa"}
+                        value={
+                          content.news?.styles?.backgroundColor || "#f8f9fa"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.backgroundColor", e.target.value)
+                          updateContent(
+                            "news.styles.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1866,7 +2652,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.news?.styles?.paddingTop || 80}
                         onChange={(e) =>
-                          updateContent("news.styles.paddingTop", parseInt(e.target.value))
+                          updateContent(
+                            "news.styles.paddingTop",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1878,7 +2667,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.news?.styles?.paddingBottom || 200}
                         onChange={(e) =>
-                          updateContent("news.styles.paddingBottom", parseInt(e.target.value))
+                          updateContent(
+                            "news.styles.paddingBottom",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1891,9 +2683,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.news?.styles?.title?.fontFamily || "Poppins, sans-serif"}
+                        value={
+                          content.news?.styles?.title?.fontFamily ||
+                          "Poppins, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.title.fontFamily", e.target.value)
+                          updateContent(
+                            "news.styles.title.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Poppins, sans-serif">Poppins</option>
@@ -1901,7 +2699,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1914,7 +2714,10 @@ const ContentManager = () => {
                         step="0.1"
                         value={content.news?.styles?.title?.fontSize || 3.2}
                         onChange={(e) =>
-                          updateContent("news.styles.title.fontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "news.styles.title.fontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1926,7 +2729,10 @@ const ContentManager = () => {
                         type="color"
                         value={content.news?.styles?.title?.color || "#2c5f88"}
                         onChange={(e) =>
-                          updateContent("news.styles.title.color", e.target.value)
+                          updateContent(
+                            "news.styles.title.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1939,9 +2745,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>İçerik Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.news?.styles?.content?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.news?.styles?.content?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.content.fontFamily", e.target.value)
+                          updateContent(
+                            "news.styles.content.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -1949,7 +2761,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -1962,7 +2776,10 @@ const ContentManager = () => {
                         step="0.1"
                         value={content.news?.styles?.content?.fontSize || 1.1}
                         onChange={(e) =>
-                          updateContent("news.styles.content.fontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "news.styles.content.fontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -1972,9 +2789,14 @@ const ContentManager = () => {
                       <Form.Label>İçerik Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.news?.styles?.content?.color || "#333333"}
+                        value={
+                          content.news?.styles?.content?.color || "#333333"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.content.color", e.target.value)
+                          updateContent(
+                            "news.styles.content.color",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -1990,7 +2812,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.news?.styles?.portraitSize || 350}
                         onChange={(e) =>
-                          updateContent("news.styles.portraitSize", parseInt(e.target.value))
+                          updateContent(
+                            "news.styles.portraitSize",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2000,9 +2825,14 @@ const ContentManager = () => {
                       <Form.Label>Portre Border Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.news?.styles?.portraitBorderColor || "#f5f5dc"}
+                        value={
+                          content.news?.styles?.portraitBorderColor || "#f5f5dc"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.portraitBorderColor", e.target.value)
+                          updateContent(
+                            "news.styles.portraitBorderColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -2014,7 +2844,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.news?.styles?.portraitBorderWidth || 8}
                         onChange={(e) =>
-                          updateContent("news.styles.portraitBorderWidth", parseInt(e.target.value))
+                          updateContent(
+                            "news.styles.portraitBorderWidth",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2030,7 +2863,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.news?.styles?.logoWidth || 300}
                         onChange={(e) =>
-                          updateContent("news.styles.logoWidth", parseInt(e.target.value))
+                          updateContent(
+                            "news.styles.logoWidth",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2045,7 +2881,10 @@ const ContentManager = () => {
                         max="1"
                         value={content.news?.styles?.logoOpacity || 0.1}
                         onChange={(e) =>
-                          updateContent("news.styles.logoOpacity", parseFloat(e.target.value))
+                          updateContent(
+                            "news.styles.logoOpacity",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2059,9 +2898,15 @@ const ContentManager = () => {
                       <Form.Label>Buton Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.news?.styles?.button?.backgroundColor || "#5a6c57"}
+                        value={
+                          content.news?.styles?.button?.backgroundColor ||
+                          "#5a6c57"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.button.backgroundColor", e.target.value)
+                          updateContent(
+                            "news.styles.button.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -2070,9 +2915,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Buton Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.news?.styles?.button?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.news?.styles?.button?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("news.styles.button.fontFamily", e.target.value)
+                          updateContent(
+                            "news.styles.button.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -2080,7 +2931,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -2093,7 +2946,10 @@ const ContentManager = () => {
                         step="0.1"
                         value={content.news?.styles?.button?.fontSize || 0.9}
                         onChange={(e) =>
-                          updateContent("news.styles.button.fontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "news.styles.button.fontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2105,7 +2961,10 @@ const ContentManager = () => {
                         type="number"
                         value={content.news?.styles?.button?.borderRadius || 5}
                         onChange={(e) =>
-                          updateContent("news.styles.button.borderRadius", parseInt(e.target.value))
+                          updateContent(
+                            "news.styles.button.borderRadius",
+                            parseInt(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2144,7 +3003,10 @@ const ContentManager = () => {
                         type="text"
                         value={content.paymentService?.subtitle || ""}
                         onChange={(e) =>
-                          updateContent("paymentService.subtitle", e.target.value)
+                          updateContent(
+                            "paymentService.subtitle",
+                            e.target.value
+                          )
                         }
                         placeholder="Ödeme açıklaması"
                       />
@@ -2161,7 +3023,10 @@ const ContentManager = () => {
                         rows={3}
                         value={content.paymentService?.description || ""}
                         onChange={(e) =>
-                          updateContent("paymentService.description", e.target.value)
+                          updateContent(
+                            "paymentService.description",
+                            e.target.value
+                          )
                         }
                         placeholder="Ödeme servisi hakkında detaylı bilgi"
                       />
@@ -2176,9 +3041,15 @@ const ContentManager = () => {
                       <Form.Label>Kredi Kartı Başlığı</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.paymentService?.options?.creditCard?.title || ""}
+                        value={
+                          content.paymentService?.options?.creditCard?.title ||
+                          ""
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.options.creditCard.title", e.target.value)
+                          updateContent(
+                            "paymentService.options.creditCard.title",
+                            e.target.value
+                          )
                         }
                         placeholder="Kredi Kartı ile Ödeme"
                       />
@@ -2189,9 +3060,15 @@ const ContentManager = () => {
                       <Form.Label>Banka Havalesi Başlığı</Form.Label>
                       <Form.Control
                         type="text"
-                        value={content.paymentService?.options?.bankTransfer?.title || ""}
+                        value={
+                          content.paymentService?.options?.bankTransfer
+                            ?.title || ""
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.options.bankTransfer.title", e.target.value)
+                          updateContent(
+                            "paymentService.options.bankTransfer.title",
+                            e.target.value
+                          )
                         }
                         placeholder="Banka Havalesi"
                       />
@@ -2203,9 +3080,15 @@ const ContentManager = () => {
                       <Form.Control
                         as="textarea"
                         rows={4}
-                        value={content.paymentService?.options?.bankTransfer?.details || ""}
+                        value={
+                          content.paymentService?.options?.bankTransfer
+                            ?.details || ""
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.options.bankTransfer.details", e.target.value)
+                          updateContent(
+                            "paymentService.options.bankTransfer.details",
+                            e.target.value
+                          )
                         }
                         placeholder="Banka hesap bilgileri ve IBAN numarası"
                       />
@@ -2225,9 +3108,15 @@ const ContentManager = () => {
                       <Form.Label>Arkaplan Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.paymentService?.styles?.backgroundColor || "#ffffff"}
+                        value={
+                          content.paymentService?.styles?.backgroundColor ||
+                          "#ffffff"
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.styles.backgroundColor", e.target.value)
+                          updateContent(
+                            "paymentService.styles.backgroundColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -2237,9 +3126,15 @@ const ContentManager = () => {
                       <Form.Label>Başlık Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.paymentService?.styles?.titleColor || "#2c5aa0"}
+                        value={
+                          content.paymentService?.styles?.titleColor ||
+                          "#2c5aa0"
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.styles.titleColor", e.target.value)
+                          updateContent(
+                            "paymentService.styles.titleColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -2249,9 +3144,14 @@ const ContentManager = () => {
                       <Form.Label>Metin Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.paymentService?.styles?.textColor || "#6c757d"}
+                        value={
+                          content.paymentService?.styles?.textColor || "#6c757d"
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.styles.textColor", e.target.value)
+                          updateContent(
+                            "paymentService.styles.textColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -2264,9 +3164,15 @@ const ContentManager = () => {
                     <Form.Group>
                       <Form.Label>Başlık Font Ailesi</Form.Label>
                       <Form.Select
-                        value={content.paymentService?.styles?.title?.fontFamily || "Open Sans, sans-serif"}
+                        value={
+                          content.paymentService?.styles?.title?.fontFamily ||
+                          "Open Sans, sans-serif"
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.styles.title.fontFamily", e.target.value)
+                          updateContent(
+                            "paymentService.styles.title.fontFamily",
+                            e.target.value
+                          )
                         }
                       >
                         <option value="Open Sans, sans-serif">Open Sans</option>
@@ -2274,7 +3180,9 @@ const ContentManager = () => {
                         <option value="Arial, sans-serif">Arial</option>
                         <option value="Helvetica, sans-serif">Helvetica</option>
                         <option value="Georgia, serif">Georgia</option>
-                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Times New Roman, serif">
+                          Times New Roman
+                        </option>
                         <option value="Roboto, sans-serif">Roboto</option>
                       </Form.Select>
                     </Form.Group>
@@ -2285,9 +3193,14 @@ const ContentManager = () => {
                       <Form.Control
                         type="number"
                         step="0.1"
-                        value={content.paymentService?.styles?.title?.fontSize || 2.0}
+                        value={
+                          content.paymentService?.styles?.title?.fontSize || 2.0
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.styles.title.fontSize", parseFloat(e.target.value))
+                          updateContent(
+                            "paymentService.styles.title.fontSize",
+                            parseFloat(e.target.value)
+                          )
                         }
                       />
                     </Form.Group>
@@ -2297,9 +3210,15 @@ const ContentManager = () => {
                       <Form.Label>Buton Rengi</Form.Label>
                       <Form.Control
                         type="color"
-                        value={content.paymentService?.styles?.buttonColor || "#28a745"}
+                        value={
+                          content.paymentService?.styles?.buttonColor ||
+                          "#28a745"
+                        }
                         onChange={(e) =>
-                          updateContent("paymentService.styles.buttonColor", e.target.value)
+                          updateContent(
+                            "paymentService.styles.buttonColor",
+                            e.target.value
+                          )
                         }
                       />
                     </Form.Group>
@@ -2309,15 +3228,10 @@ const ContentManager = () => {
             </Accordion.Item>
           </Accordion>
         </Tab>
-
       </Tabs>
 
       {/* Preview Modal */}
-      <Modal
-        show={showPreview}
-        onHide={() => setShowPreview(false)}
-        size="lg"
-      >
+      <Modal show={showPreview} onHide={() => setShowPreview(false)} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>İçerik Önizlemesi</Modal.Title>
         </Modal.Header>

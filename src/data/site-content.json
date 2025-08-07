@@ -35,6 +35,10 @@
         "buttonText": "DAHA FAZLA BİLGİ EDİNİN",
         "buttonColor": "#5a6c57",
         "link": "/projects/fidan-dikimi"
+      },
+      "topCard": {
+        "image": "/src/assets/images/parallax-13.jpg",
+        "alt": "Proje görseli"
       }
     },
     "categories": {
@@ -111,14 +115,16 @@
           "backgroundColor": "#e8e8e8"
         },
         {
-          "type": "color",
-          "backgroundColor": "#5a6c57"
+          "type": "image",
+          "src": "/src/assets/images/parallax-17.jpg",
+          "alt": "Proje görsel 1"
         }
       ],
       "bottomRow": [
         {
-          "type": "color",
-          "backgroundColor": "#5a6c57"
+          "type": "image",
+          "src": "/src/assets/images/parallax-24.jpg",
+          "alt": "Proje görsel 2"
         },
         {
           "type": "content",

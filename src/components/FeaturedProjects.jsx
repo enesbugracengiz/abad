@@ -8,13 +8,19 @@ const FeaturedProjects = () => {
   if (!content) return null;
 
   const featuredProjects = content.homepage?.featured_projects;
-  
+
   return (
     <section
       className="py-5"
       style={{
         backgroundColor: featuredProjects?.styles?.backgroundColor || "#f8f9fa",
-        backgroundImage: `url("${featuredProjects?.backgroundPattern || "/src/assets/genel/arayuzver2_calismayuzeyicopy.png"}"), url("${featuredProjects?.bottomPattern || "/src/assets/genel/arayuzver2-19.png"}")`,
+        backgroundImage: `url("${
+          featuredProjects?.backgroundPattern ||
+          "/src/assets/genel/arayuzver2_calismayuzeyicopy.png"
+        }"), url("${
+          featuredProjects?.bottomPattern ||
+          "/src/assets/genel/arayuzver2-19.png"
+        }")`,
         backgroundRepeat: "repeat, repeat-x",
         backgroundPosition: "center, bottom",
         backgroundSize: "auto, auto 130px",
@@ -30,11 +36,13 @@ const FeaturedProjects = () => {
               style={{
                 fontSize: "clamp(1.8rem, 5vw, 2.5rem)",
                 color: featuredProjects?.styles?.title?.color || "#5a6c57",
-                fontFamily: featuredProjects?.styles?.title?.fontFamily || "Open Sans, sans-serif",
+                fontFamily:
+                  featuredProjects?.styles?.title?.fontFamily ||
+                  "Open Sans, sans-serif",
                 letterSpacing: "1px",
               }}
             >
-{featuredProjects?.title || "ÖNE ÇIKAN PROJELER"}
+              {featuredProjects?.title || "ÖNE ÇIKAN PROJELER"}
             </h2>
           </Col>
         </Row>
@@ -71,17 +79,23 @@ const FeaturedProjects = () => {
                   className="fw-bold mb-3 text-center text-lg-start"
                   style={{
                     fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
-                    color: featuredProjects?.styles?.projectTitle?.color || "#2c5282",
-                    fontFamily: featuredProjects?.styles?.projectTitle?.fontFamily || "Open Sans, sans-serif",
+                    color:
+                      featuredProjects?.styles?.projectTitle?.color ||
+                      "#2c5282",
+                    fontFamily:
+                      featuredProjects?.styles?.projectTitle?.fontFamily ||
+                      "Open Sans, sans-serif",
                     lineHeight: "1.3",
                   }}
                 >
-                  {featuredProjects?.mainProject?.subtitle?.split('\n').map((line, index) => (
-                    <span key={index}>
-                      {line}
-                      {index === 0 && <br />}
-                    </span>
-                  )) || (
+                  {featuredProjects?.mainProject?.subtitle
+                    ?.split("\n")
+                    .map((line, index) => (
+                      <span key={index}>
+                        {line}
+                        {index === 0 && <br />}
+                      </span>
+                    )) || (
                     <>
                       ABAD'ın Fidanları
                       <br />
@@ -95,12 +109,12 @@ const FeaturedProjects = () => {
                     fontSize: "1rem",
                     lineHeight: "1.6",
                     textAlign: "justify",
-                    color: featuredProjects?.styles?.description?.color || "#6c757d",
+                    color:
+                      featuredProjects?.styles?.description?.color || "#6c757d",
                   }}
                 >
-                  {featuredProjects?.mainProject?.description || 
-                    "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı..."
-                  }
+                  {featuredProjects?.mainProject?.description ||
+                    "Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı..."}
                 </p>
               </div>
 
@@ -109,11 +123,18 @@ const FeaturedProjects = () => {
                 <Button
                   className="border-0 text-uppercase fw-semibold"
                   style={{
-                    backgroundColor: featuredProjects?.mainProject?.buttonColor || "#5a6c57",
-                    fontFamily: featuredProjects?.styles?.button?.fontFamily || "Open Sans, sans-serif",
+                    backgroundColor:
+                      featuredProjects?.mainProject?.buttonColor || "#5a6c57",
+                    fontFamily:
+                      featuredProjects?.styles?.button?.fontFamily ||
+                      "Open Sans, sans-serif",
                     padding: "15px 35px",
-                    borderRadius: `${featuredProjects?.styles?.button?.borderRadius || 0}px`,
-                    fontSize: `${featuredProjects?.styles?.button?.fontSize || 1.0}rem`,
+                    borderRadius: `${
+                      featuredProjects?.styles?.button?.borderRadius || 0
+                    }px`,
+                    fontSize: `${
+                      featuredProjects?.styles?.button?.fontSize || 1.0
+                    }rem`,
                     letterSpacing: "1px",
                     transition: "all 0.3s ease",
                   }}
@@ -124,7 +145,8 @@ const FeaturedProjects = () => {
                       "0 8px 20px rgba(90, 108, 87, 0.4)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = featuredProjects?.mainProject?.buttonColor || "#5a6c57";
+                    e.target.style.backgroundColor =
+                      featuredProjects?.mainProject?.buttonColor || "#5a6c57";
                     e.target.style.transform = "translateY(0)";
                     e.target.style.boxShadow = "none";
                   }}
@@ -134,7 +156,8 @@ const FeaturedProjects = () => {
                     }
                   }}
                 >
-                  {featuredProjects?.mainProject?.buttonText || "DAHA FAZLA BİLGİ EDİNİN"}
+                  {featuredProjects?.mainProject?.buttonText ||
+                    "DAHA FAZLA BİLGİ EDİNİN"}
                 </Button>
               </div>
             </div>
@@ -143,25 +166,59 @@ const FeaturedProjects = () => {
           {/* Sağ taraf - Kartlar */}
           <Col lg={4} md={8} sm={10} xs={12} className="mx-auto">
             <div className="d-flex flex-column gap-3 h-100">
-              {/* Üst boş kart */}
+              {/* Üst kart - Proje görseli */}
               <Card
                 className="border-2"
                 style={{
                   borderColor: "#5a6c57",
                   borderRadius: "15px",
-                  height: "120px",
+                  height: "220px", // 180px'den 220px'e büyüttüm
+                  overflow: "hidden",
+                  padding: "0",
                 }}
               >
-                <Card.Body></Card.Body>
+                <div
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    overflow: "hidden",
+                    borderRadius: "13px", // Kart border radius'undan biraz küçük
+                  }}
+                >
+                  {featuredProjects?.topCard?.image ? (
+                    <img
+                      src={featuredProjects.topCard.image}
+                      alt={featuredProjects.topCard.alt || "Proje görseli"}
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src="/src/assets/images/parallax-13.jpg"
+                      alt="Proje görseli"
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                      }}
+                    />
+                  )}
+                </div>
               </Card>
 
               {/* Alt küçük proje kartı */}
               <Card
-                className="border-2 h-100"
+                className="border-2"
                 style={{
                   borderColor: "#5a6c57",
                   borderRadius: "15px",
                   transition: "all 0.3s ease",
+                  height: "170px", // 140px'den 170px'e büyüttüm
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-3px)";
@@ -173,11 +230,11 @@ const FeaturedProjects = () => {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                <Card.Body className="p-4">
+                <Card.Body className="p-2 d-flex flex-column justify-content-center h-100">
                   <Card.Title
-                    className="text-center fw-semibold mb-4"
+                    className="text-center fw-semibold mb-2"
                     style={{
-                      fontSize: "1.1rem",
+                      fontSize: "0.95rem", // 1rem'den 0.95rem'e küçülttüm
                       color: "#5a6c57",
                       letterSpacing: "0.5px",
                     }}
@@ -187,8 +244,8 @@ const FeaturedProjects = () => {
                   <Card.Text
                     className="text-center text-muted"
                     style={{
-                      fontSize: "0.9rem",
-                      lineHeight: "1.5",
+                      fontSize: "0.8rem", // 0.85rem'den 0.8rem'e küçülttüm
+                      lineHeight: "1.3", // 1.4'den 1.3'e sıkıştırdım
                     }}
                   >
                     Gölbaşı yerleşkesinde gerçekleştirilen fidan dikimi ABAD
