@@ -8,11 +8,13 @@ import {
   Alert,
   Modal,
 } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import PaymentService from "../components/PaymentService";
 import Header from "../components/Header";
 
 const CertificatePage = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -30,6 +32,26 @@ const CertificatePage = () => {
   const [paymentResult, setPaymentResult] = useState(null);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isGuest, setIsGuest] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Check if user is logged in
+    const token = localStorage.getItem('token');
+    const userData = localStorage.getItem('user');
+    if (token && userData) {
+      setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
+      setFormData(prev => ({
+        ...prev,
+        name: JSON.parse(userData).name || "",
+        surname: JSON.parse(userData).surname || "",
+        email: JSON.parse(userData).email || "",
+        phone: JSON.parse(userData).phone || ""
+      }));
+      setIsGuest(true); // Skip login modal if already logged in
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -75,8 +97,11 @@ const CertificatePage = () => {
   };
 
   const handleLogin = () => {
-    alert("Üye giriş sayfasına yönlendiriliyorsunuz...");
-    setShowLoginModal(false);
+    navigate('/auth');
+  };
+
+  const handleMemberRegister = () => {
+    navigate('/auth');
   };
 
   return (
@@ -418,9 +443,14 @@ const CertificatePage = () => {
           <div className="text-center mt-4">
             <small className="text-muted">
               Hesabınız yok mu? 
-              <a href="#" style={{ color: '#00baa3', textDecoration: 'none', marginLeft: '5px' }}>
+              <Button 
+                variant="link" 
+                onClick={handleMemberRegister}
+                className="p-0"
+                style={{ color: '#00baa3', textDecoration: 'none', marginLeft: '5px', fontSize: 'inherit' }}
+              >
                 Üye olun
-              </a>
+              </Button>
             </small>
           </div>
         </Modal.Body>

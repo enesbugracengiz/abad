@@ -1,14 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthProvider } from "./contexts/AuthContext";
 import HomePage from "./pages/HomePage";
 import CertificatePage from "./pages/CertificatePage";
 import AdminPage from "./pages/AdminPage";
+import AuthPage from "./pages/AuthPage";
 import "./App.css";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/map" element={<HomePage />} />
@@ -16,6 +18,9 @@ function App() {
         <Route path="/shop" element={<HomePage />} />
         <Route path="/donate" element={<CertificatePage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/login" element={<AuthPage />} />
+        <Route path="/register" element={<AuthPage />} />
       </Routes>
 
       {/* Toast Bildirimleri */}
@@ -35,7 +40,7 @@ function App() {
           borderRadius: "8px",
         }}
       />
-    </>
+    </AuthProvider>
   );
 }
 

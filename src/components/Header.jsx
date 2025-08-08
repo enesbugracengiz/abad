@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Nav } from "react-bootstrap";
+import { Container, Row, Col, Nav, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import useContent from "../hooks/useContent";
-import { FaUser } from "react-icons/fa";
+import { useAuth } from "../contexts/AuthContext";
+import { FaUser, FaSignOutAlt, FaUserCog } from "react-icons/fa";
 
 const Header = () => {
   const { content, loading } = useContent();
+  const { isAuthenticated, user, logout } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
   const [showFaaliyetSubMenu, setShowFaaliyetSubMenu] = useState(false);
@@ -275,33 +277,106 @@ const Header = () => {
 
               {/* Kullanıcı Girişi - İkon */}
               <div className="d-flex align-items-center">
-                <Link
-                  to="/donate"
-                  className="text-decoration-none d-flex align-items-center justify-content-center"
-                  style={{
-                    backgroundColor: "#2c5aa0",
-                    borderRadius: "50%",
-                    width: "45px",
-                    height: "45px",
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "#1e4080";
-                    e.target.style.transform = "scale(1.05)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = "#2c5aa0";
-                    e.target.style.transform = "scale(1)";
-                  }}
-                  title="Üye İşlemleri"
-                >
-                  <FaUser 
-                    style={{ 
-                      color: "white", 
-                      fontSize: "18px" 
-                    }} 
-                  />
-                </Link>
+                {isAuthenticated && user ? (
+                  <Dropdown align="end">
+                    <Dropdown.Toggle
+                      as="div"
+                      className="text-decoration-none d-flex align-items-center justify-content-center"
+                      style={{
+                        backgroundColor: "#2E8B57",
+                        borderRadius: "50%",
+                        width: "45px",
+                        height: "45px",
+                        transition: "all 0.3s ease",
+                        cursor: "pointer",
+                        border: "2px solid #fff"
+                      }}
+                      title={`${user.name} ${user.surname}`}
+                    >
+                      <FaUser 
+                        style={{ 
+                          color: "white", 
+                          fontSize: "16px" 
+                        }} 
+                      />
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu 
+                      style={{ 
+                        borderRadius: "15px",
+                        minWidth: "220px",
+                        padding: "10px 0",
+                        boxShadow: "0 8px 25px rgba(0,0,0,0.15)"
+                      }}
+                    >
+                      <div className="px-3 py-2 border-bottom">
+                        <div style={{ fontSize: "0.85rem", color: "#6c757d" }}>Hoşgeldiniz</div>
+                        <div style={{ fontWeight: "600", color: "#2c5aa0" }}>
+                          {user.name} {user.surname}
+                        </div>
+                        <div style={{ fontSize: "0.8rem", color: "#6c757d" }}>
+                          {user.email}
+                        </div>
+                      </div>
+                      
+                      <Dropdown.Item 
+                        as={Link} 
+                        to="/profile"
+                        style={{ 
+                          display: "flex", 
+                          alignItems: "center", 
+                          padding: "8px 16px" 
+                        }}
+                      >
+                        <FaUserCog style={{ marginRight: "8px", color: "#2c5aa0" }} />
+                        Profilim
+                      </Dropdown.Item>
+                      
+                      <Dropdown.Divider />
+                      
+                      <Dropdown.Item 
+                        onClick={logout}
+                        style={{ 
+                          display: "flex", 
+                          alignItems: "center", 
+                          padding: "8px 16px",
+                          color: "#dc3545"
+                        }}
+                      >
+                        <FaSignOutAlt style={{ marginRight: "8px" }} />
+                        Çıkış Yap
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                ) : (
+                  <Link
+                    to="/auth"
+                    className="text-decoration-none d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "#2c5aa0",
+                      borderRadius: "50%",
+                      width: "45px",
+                      height: "45px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = "#1e4080";
+                      e.target.style.transform = "scale(1.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = "#2c5aa0";
+                      e.target.style.transform = "scale(1)";
+                    }}
+                    title="Üye İşlemleri"
+                  >
+                    <FaUser 
+                      style={{ 
+                        color: "white", 
+                        fontSize: "18px" 
+                      }} 
+                    />
+                  </Link>
+                )}
               </div>
             </Col>
           </Row>

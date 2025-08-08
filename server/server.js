@@ -5,12 +5,17 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import multer from "multer";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 5001;
+
+// JWT Secret Key
+const JWT_SECRET = "ABAD_JWT_SECRET_KEY_2025";
 
 app.use(express.json());
 app.use(cors());
@@ -106,8 +111,231 @@ app.post("/create-payment", (req, res) => {
   });
 });
 
-// Admin API endpoints
+// Authentication middleware
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ error: 'Access token required' });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.status(403).json({ error: 'Invalid token' });
+    }
+    req.user = user;
+    next();
+  });
+};
+
+// Authentication API endpoints
 const DATA_PATH = path.join(__dirname, "../src/data");
+
+// User Registration
+app.post("/api/auth/register", async (req, res) => {
+  try {
+    const { email, password, name, surname, phone } = req.body;
+
+    // Validation
+    if (!email || !password || !name || !surname) {
+      return res.status(400).json({ error: "Tüm alanları doldurun" });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ error: "Şifre en az 6 karakter olmalıdır" });
+    }
+
+    // Read existing users
+    const usersPath = path.join(DATA_PATH, "users.json");
+    let usersData;
+    try {
+      const data = await fs.readFile(usersPath, "utf8");
+      usersData = JSON.parse(data);
+    } catch (error) {
+      usersData = { meta: { totalCount: 0, lastUpdated: new Date().toISOString() }, users: [] };
+    }
+
+    // Check if user already exists
+    const existingUser = usersData.users.find(user => user.email === email);
+    if (existingUser) {
+      return res.status(400).json({ error: "Bu e-posta adresi zaten kullanılıyor" });
+    }
+
+    // Hash password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+    // Create new user
+    const newUser = {
+      id: Date.now().toString(),
+      email,
+      password: hashedPassword,
+      name,
+      surname,
+      phone: phone || "",
+      createdAt: new Date().toISOString(),
+      isActive: true,
+      donations: []
+    };
+
+    // Add user to data
+    usersData.users.push(newUser);
+    usersData.meta.totalCount = usersData.users.length;
+    usersData.meta.lastUpdated = new Date().toISOString();
+
+    // Save to file
+    await fs.writeFile(usersPath, JSON.stringify(usersData, null, 2), "utf8");
+
+    res.json({ 
+      success: true, 
+      message: "Kayıt başarılı! Şimdi giriş yapabilirsiniz.",
+      userId: newUser.id 
+    });
+  } catch (error) {
+    console.error("Registration error:", error);
+    res.status(500).json({ error: "Kayıt sırasında bir hata oluştu" });
+  }
+});
+
+// User Login
+app.post("/api/auth/login", async (req, res) => {
+  try {
+    const { email, password, rememberMe } = req.body;
+
+    // Validation
+    if (!email || !password) {
+      return res.status(400).json({ error: "E-posta ve şifre gerekli" });
+    }
+
+    // Read users data
+    const usersPath = path.join(DATA_PATH, "users.json");
+    let usersData;
+    try {
+      const data = await fs.readFile(usersPath, "utf8");
+      usersData = JSON.parse(data);
+    } catch (error) {
+      return res.status(500).json({ error: "Kullanıcı verileri okunamadı" });
+    }
+
+    // Find user
+    const user = usersData.users.find(user => user.email === email);
+    if (!user) {
+      return res.status(400).json({ error: "Geçersiz e-posta veya şifre" });
+    }
+
+    // Check password
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(400).json({ error: "Geçersiz e-posta veya şifre" });
+    }
+
+    // Check if user is active
+    if (!user.isActive) {
+      return res.status(400).json({ error: "Hesabınız devre dışı bırakılmış" });
+    }
+
+    // Create JWT token
+    const tokenExpiry = rememberMe ? '30d' : '1d';
+    const token = jwt.sign(
+      { 
+        userId: user.id, 
+        email: user.email,
+        name: user.name,
+        surname: user.surname
+      }, 
+      JWT_SECRET, 
+      { expiresIn: tokenExpiry }
+    );
+
+    // Return success response
+    res.json({
+      success: true,
+      message: "Giriş başarılı",
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        surname: user.surname,
+        phone: user.phone,
+        createdAt: user.createdAt
+      }
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ error: "Giriş sırasında bir hata oluştu" });
+  }
+});
+
+// Get User Profile (Protected)
+app.get("/api/auth/profile", authenticateToken, async (req, res) => {
+  try {
+    const usersPath = path.join(DATA_PATH, "users.json");
+    const data = await fs.readFile(usersPath, "utf8");
+    const usersData = JSON.parse(data);
+    
+    const user = usersData.users.find(user => user.id === req.user.userId);
+    if (!user) {
+      return res.status(404).json({ error: "Kullanıcı bulunamadı" });
+    }
+
+    res.json({
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      surname: user.surname,
+      phone: user.phone,
+      createdAt: user.createdAt,
+      donations: user.donations || []
+    });
+  } catch (error) {
+    console.error("Profile error:", error);
+    res.status(500).json({ error: "Profil bilgileri alınamadı" });
+  }
+});
+
+// Update User Profile (Protected)
+app.put("/api/auth/profile", authenticateToken, async (req, res) => {
+  try {
+    const { name, surname, phone } = req.body;
+    
+    const usersPath = path.join(DATA_PATH, "users.json");
+    const data = await fs.readFile(usersPath, "utf8");
+    const usersData = JSON.parse(data);
+    
+    const userIndex = usersData.users.findIndex(user => user.id === req.user.userId);
+    if (userIndex === -1) {
+      return res.status(404).json({ error: "Kullanıcı bulunamadı" });
+    }
+
+    // Update user data
+    if (name) usersData.users[userIndex].name = name;
+    if (surname) usersData.users[userIndex].surname = surname;
+    if (phone) usersData.users[userIndex].phone = phone;
+    usersData.users[userIndex].updatedAt = new Date().toISOString();
+    
+    usersData.meta.lastUpdated = new Date().toISOString();
+    await fs.writeFile(usersPath, JSON.stringify(usersData, null, 2), "utf8");
+
+    res.json({ 
+      success: true, 
+      message: "Profil güncellendi",
+      user: {
+        id: usersData.users[userIndex].id,
+        email: usersData.users[userIndex].email,
+        name: usersData.users[userIndex].name,
+        surname: usersData.users[userIndex].surname,
+        phone: usersData.users[userIndex].phone
+      }
+    });
+  } catch (error) {
+    console.error("Profile update error:", error);
+    res.status(500).json({ error: "Profil güncellenemedi" });
+  }
+});
+
+// Admin API endpoints
 
 // Get cities data
 app.get("/api/admin/cities", async (req, res) => {
