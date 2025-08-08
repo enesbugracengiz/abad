@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { useState } from "react";
 import PaymentService from "../components/PaymentService";
+import Header from "../components/Header";
 
 const CertificatePage = () => {
   const [formData, setFormData] = useState({
@@ -80,6 +81,7 @@ const CertificatePage = () => {
 
   return (
     <div className="tema-donation-page" style={{ fontFamily: 'Poppins, sans-serif' }}>
+      <Header />
       {/* TEMA Benzeri Hero Section */}
       <section 
         className="tema-hero-section" 
