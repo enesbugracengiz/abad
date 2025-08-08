@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { useState } from "react";
 import useContent from "../hooks/useContent";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   const { content, loading } = useContent();
@@ -269,6 +270,37 @@ const Header = () => {
                   }}
                 >
                   Bağış Yapın
+                </Link>
+              </div>
+
+              {/* Kullanıcı Girişi - İkon */}
+              <div className="d-flex align-items-center">
+                <Link
+                  to="/donate"
+                  className="text-decoration-none d-flex align-items-center justify-content-center"
+                  style={{
+                    backgroundColor: "#2c5aa0",
+                    borderRadius: "50%",
+                    width: "45px",
+                    height: "45px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#1e4080";
+                    e.target.style.transform = "scale(1.05)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "#2c5aa0";
+                    e.target.style.transform = "scale(1)";
+                  }}
+                  title="Üye İşlemleri"
+                >
+                  <FaUser 
+                    style={{ 
+                      color: "white", 
+                      fontSize: "18px" 
+                    }} 
+                  />
                 </Link>
               </div>
             </Col>
