@@ -73,7 +73,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white py-4 shadow-sm position-relative">
+      <header className="bg-white py-4 position-relative">
         <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
           {/* Telefon numarası - Sağ üst köşe */}
           <Row>
