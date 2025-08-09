@@ -619,7 +619,7 @@ const Header = () => {
               }}
             >
               <Link
-                to="#"
+                to="/nature"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
