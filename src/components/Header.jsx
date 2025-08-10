@@ -505,7 +505,9 @@ const Header = () => {
 
               {/* Alt sıra - 3 kart */}
               <Link
-                to="#"
+                to="https://yunusunizinde.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -823,7 +825,9 @@ const Header = () => {
 
               {/* Alt sıra - 3 kart */}
               <Link
-                to="#"
+                to="https://yunusunizinde.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -1051,7 +1055,9 @@ const Header = () => {
 
             {/* Alt sıra - 3 kart */}
             <Link
-              to="#"
+              to="https://yunusunizinde.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-decoration-none"
               style={{
                 backgroundColor: "#6B8E6B",
