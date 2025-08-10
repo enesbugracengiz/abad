@@ -9,6 +9,7 @@ import AuthPage from "./pages/AuthPage";
 import NaturePage from "./pages/NaturePage";
 import YouthPage from "./pages/YouthPage";
 import EducationPage from "./pages/EducationPage";
+import AboutPage from "./pages/AboutPage";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/nature" element={<NaturePage />} />
         <Route path="/youth" element={<YouthPage />} />
         <Route path="/education" element={<EducationPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<AuthPage />} />

@@ -409,7 +409,7 @@ const Header = () => {
             >
               {/* Üst sıra - 3 kart */}
               <Link
-                to="#"
+                to="/about"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -790,7 +790,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/donate"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -1019,7 +1019,7 @@ const Header = () => {
             </Link>
 
             <Link
-              to="#"
+              to="/donate"
               className="text-decoration-none"
               style={{
                 backgroundColor: "#6B8E6B",
