@@ -7,6 +7,7 @@ import CertificatePage from "./pages/CertificatePage";
 import AdminPage from "./pages/AdminPage";
 import AuthPage from "./pages/AuthPage";
 import NaturePage from "./pages/NaturePage";
+import YouthPage from "./pages/YouthPage";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/shop" element={<HomePage />} />
         <Route path="/donate" element={<CertificatePage />} />
         <Route path="/nature" element={<NaturePage />} />
+        <Route path="/youth" element={<YouthPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<AuthPage />} />

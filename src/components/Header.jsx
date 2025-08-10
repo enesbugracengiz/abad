@@ -651,7 +651,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/youth"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
