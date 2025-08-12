@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useContent from "../hooks/useContent";
 
 const News = () => {
   const { content, loading } = useContent();
+  const navigate = useNavigate();
 
   if (loading) {
     return (
@@ -166,9 +168,7 @@ const News = () => {
                       e.target.style.backgroundColor = news?.styles?.button?.backgroundColor || "#5a6c57";
                     }}
                     onClick={() => {
-                      if (news?.buttonLink) {
-                        window.location.href = news.buttonLink;
-                      }
+                      navigate('/news');
                     }}
                   >
                     {news?.buttonText || "DAHA FAZLA BİLGİ EDİNİN"}
