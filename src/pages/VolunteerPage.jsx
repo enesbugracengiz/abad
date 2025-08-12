@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const VolunteerPage = () => {
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     name: "",
     tcNumber: "",
@@ -915,6 +918,105 @@ const VolunteerPage = () => {
             </Col>
           </Row>
         </Container>
+
+        {/* Gönüllülük Bilgi Bölümü */}
+        <section
+          className="py-5"
+          style={{
+            backgroundImage: "url('/src/assets/images/cocuk-ve-genc-faaliyetleri.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+            minHeight: "60vh",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              zIndex: 1,
+            }}
+          />
+          
+          <Container className="position-relative" style={{ zIndex: 2 }}>
+            <Row className="justify-content-center text-center">
+              <Col lg={8}>
+                <h2
+                  className="fw-bold mb-4"
+                  style={{
+                    fontSize: "3rem",
+                    color: "white",
+                    fontFamily: "Roboto Condensed, sans-serif",
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
+                    textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Gönüllülük
+                </h2>
+                <p
+                  className="mb-4"
+                  style={{
+                    fontSize: "1.2rem",
+                    color: "white",
+                    lineHeight: "1.8",
+                    fontFamily: "Open Sans, sans-serif",
+                    textShadow: "0 1px 2px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Gönüllü olmak, toplumsal değişime katkıda bulunmanın en anlamlı yollarından biridir. 
+                  Anadolu Bilgelerini Araştırma Derneği olarak, doğa koruma, gençlik ve eğitim alanlarında 
+                  sürdürdüğümüz çalışmalarda gönüllülerimizin desteği bizim için çok değerlidir.
+                </p>
+                <p
+                  className="mb-4"
+                  style={{
+                    fontSize: "1.1rem",
+                    color: "#f8f9fa",
+                    lineHeight: "1.7",
+                    fontFamily: "Open Sans, sans-serif",
+                    textShadow: "0 1px 2px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Birlikte daha güzel bir gelecek inşa etmek için bize katılın. 
+                  Her bireyin katkısı, toplumsal değişim için atılan değerli birer adımdır.
+                </p>
+                <div className="mt-5">
+                  <Button
+                    style={{
+                      background: "linear-gradient(135deg, #6B8E6B 0%, #5A7B5A 100%)",
+                      border: "none",
+                      borderRadius: "25px",
+                      padding: "15px 40px",
+                      fontSize: "1.1rem",
+                      fontFamily: "Roboto Condensed, sans-serif",
+                      fontWeight: "bold",
+                      textTransform: "uppercase",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                      boxShadow: "0 4px 15px rgba(107, 142, 107, 0.3)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "translateY(-3px)";
+                      e.target.style.boxShadow = "0 8px 25px rgba(107, 142, 107, 0.4)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "translateY(0)";
+                      e.target.style.boxShadow = "0 4px 15px rgba(107, 142, 107, 0.3)";
+                    }}
+                    onClick={() => navigate('/', { state: { scrollToCategories: true } })}
+                  >
+                    FAALİYETLERİMİZİ İNCELE
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
       </main>
     </div>
   );
