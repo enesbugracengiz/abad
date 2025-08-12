@@ -550,7 +550,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/404"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -581,7 +581,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/404"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -728,7 +728,7 @@ const Header = () => {
             >
               {/* Üst sıra - 3 kart */}
               <Link
-                to="#"
+                to="/404"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -760,7 +760,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/404"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -870,7 +870,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/404"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -902,7 +902,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="#"
+                to="/404"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
@@ -961,7 +961,7 @@ const Header = () => {
           >
             {/* Üst sıra - 3 kart */}
             <Link
-              to="#"
+              to="/404"
               className="text-decoration-none"
               style={{
                 backgroundColor: "#6B8E6B",
@@ -992,7 +992,7 @@ const Header = () => {
             </Link>
 
             <Link
-              to="#"
+              to="/404"
               className="text-decoration-none"
               style={{
                 backgroundColor: "#6B8E6B",
@@ -1100,7 +1100,7 @@ const Header = () => {
             </Link>
 
             <Link
-              to="#"
+              to="/404"
               className="text-decoration-none"
               style={{
                 backgroundColor: "#6B8E6B",
@@ -1132,7 +1132,7 @@ const Header = () => {
             </Link>
 
             <Link
-              to="#"
+              to="/404"
               className="text-decoration-none"
               style={{
                 backgroundColor: "#6B8E6B",

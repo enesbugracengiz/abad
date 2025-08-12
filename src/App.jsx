@@ -10,6 +10,7 @@ import NaturePage from "./pages/NaturePage";
 import YouthPage from "./pages/YouthPage";
 import EducationPage from "./pages/EducationPage";
 import AboutPage from "./pages/AboutPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<AuthPage />} />
         <Route path="/register" element={<AuthPage />} />
+        <Route path="/404" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       {/* Toast Bildirimleri */}
