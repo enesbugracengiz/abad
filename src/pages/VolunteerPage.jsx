@@ -910,7 +910,25 @@ const VolunteerPage = () => {
                         fontFamily: "Open Sans, sans-serif",
                       }}
                     >
-                      info@abad.org.tr adresinden bizimle iletişime geçebilirsiniz.
+                      <a 
+                        href="mailto:info@abad.org.tr"
+                        style={{
+                          color: "#6B8E6B",
+                          textDecoration: "none",
+                          fontWeight: "600",
+                          transition: "color 0.3s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.color = "#5A7B5A";
+                          e.target.style.textDecoration = "underline";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.color = "#6B8E6B";
+                          e.target.style.textDecoration = "none";
+                        }}
+                      >
+                        info@abad.org.tr
+                      </a> adresinden bizimle iletişime geçebilirsiniz.
                     </p>
                   </div>
                 </Card.Body>
