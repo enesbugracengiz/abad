@@ -56,69 +56,6 @@ const VolunteerPage = () => {
       <Header />
 
       <main className="main-content">
-        {/* Hero Section */}
-        <section
-          className="py-5 mb-5"
-          style={{
-            background: "linear-gradient(135deg, #e8f5e8 0%, #f8f9fa 100%)",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background:
-                'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="30" cy="30" r="1" fill="white" opacity="0.1"/><circle cx="60" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="50" r="1" fill="white" opacity="0.1"/><circle cx="20" cy="70" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="80" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>\') repeat',
-              zIndex: 1,
-            }}
-          />
-
-          <Container className="position-relative" style={{ zIndex: 2 }}>
-            <Row className="align-items-center min-vh-50">
-              <Col md={12} className="text-center">
-                <div className="mb-4">
-                  <img
-                    src="/src/assets/images/abad-logo-seffaf-buyuk.png"
-                    alt="ABAD Logo"
-                    style={{ height: "100px", marginBottom: "2rem" }}
-                  />
-                </div>
-                <h1
-                  className="fw-bold mb-4"
-                  style={{
-                    fontSize: "4rem",
-                    color: "#5a6c57",
-                    fontFamily: "Roboto Condensed, sans-serif",
-                    lineHeight: "1.2",
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                    textShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                  }}
-                >
-                  GÖNÜLLÜ OL
-                </h1>
-                <h2
-                  className="mb-0"
-                  style={{
-                    fontSize: "2rem",
-                    color: "#2c5aa0",
-                    fontFamily: "Open Sans, sans-serif",
-                    fontWeight: "700",
-                    textTransform: "uppercase",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  BİZE KATIL
-                </h2>
-              </Col>
-            </Row>
-          </Container>
-        </section>
 
         <Container fluid className="px-5" style={{ maxWidth: "1400px" }}>
           <Row>
