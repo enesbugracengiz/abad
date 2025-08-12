@@ -1,9 +1,30 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useContent from "../hooks/useContent";
 
 const Categories = () => {
   const { content, loading } = useContent();
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    if (category.navigationUrl) {
+      navigate(category.navigationUrl);
+    } else {
+      // Header'daki faaliyet alanları URL'lerini kullan
+      const title = category.title?.toLowerCase() || '';
+      if (title.includes('doğa')) {
+        navigate('/nature');
+      } else if (title.includes('çocuk') || title.includes('genç')) {
+        navigate('/youth');
+      } else if (title.includes('eğitim') || title.includes('seminer')) {
+        navigate('/education');
+      } else {
+        // Diğer kategoriler için genel bir sayfa
+        navigate(`/kategori/${category.id || category.title?.toLowerCase().replace(/\s+/g, '-')}`);
+      }
+    }
+  };
 
   if (loading) {
     return (
@@ -63,7 +84,9 @@ const Categories = () => {
                     transition: "all 0.3s ease",
                     backgroundColor: "white",
                     border: `2px solid ${content?.categories?.styles?.card?.borderColor || "#e8f5e8"}`,
+                    cursor: "pointer",
                   }}
+                  onClick={() => handleCategoryClick(category)}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-8px)";
                     e.currentTarget.style.boxShadow =
