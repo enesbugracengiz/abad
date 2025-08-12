@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import useContent from "../hooks/useContent";
 
 const ProjectGallery = () => {
   const { content, loading } = useContent();
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleCard = (cardId) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }));
+  };
 
   if (loading) {
     return (
@@ -80,8 +88,10 @@ const ProjectGallery = () => {
                     style={{
                       borderRadius: "15px",
                       backgroundColor: item.backgroundColor || "#e8e8e8",
-                      height: "200px",
+                      height: expandedCards['news-top'] ? "auto" : "200px",
+                      minHeight: "200px",
                       padding: "20px",
+                      transition: "height 0.3s ease",
                     }}
                   >
                     <div className="text-center">
@@ -108,15 +118,31 @@ const ProjectGallery = () => {
                       >
                         {gallery.newsSection?.content || ""}
                       </p>
+                      {expandedCards['news-top'] && (
+                        <p
+                          style={{
+                            color: "#333",
+                            fontSize: "0.85rem",
+                            fontFamily: "Open Sans, sans-serif",
+                            lineHeight: "1.4",
+                            textAlign: "left",
+                            marginBottom: "15px",
+                          }}
+                        >
+                          {gallery.newsSection?.fullContent || "Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı Dr. Öğr Üyesi Alper Ertem, Sağlık Hizmetleri MYO Bölüm Başkanları Prof. Dr. Meltem Uzunhisar ve diğer akademisyenlerle birlikte katılım göstermiştir. Bu değerli etkinlik ile çevreye duyarlılığımızı bir kez daha göstermiş olduk."}
+                        </p>
+                      )}
                       <p
                         style={{
                           color: "#2c5f88",
                           fontSize: "1rem",
                           fontWeight: "600",
                           textAlign: "left",
+                          cursor: "pointer",
                         }}
+                        onClick={() => toggleCard('news-top')}
                       >
-                        {gallery.newsSection?.readMore || "Devamını Oku"}
+                        {expandedCards['news-top'] ? "Kapat" : (gallery.newsSection?.readMore || "Devamını Oku")}
                       </p>
                     </div>
                   </Card>
@@ -173,8 +199,10 @@ const ProjectGallery = () => {
                     style={{
                       borderRadius: "15px",
                       backgroundColor: "#e8e8e8",
-                      height: "200px",
+                      height: expandedCards['news-fallback'] ? "auto" : "200px",
+                      minHeight: "200px",
                       padding: "20px",
+                      transition: "height 0.3s ease",
                     }}
                   >
                     <div className="text-center">
@@ -203,15 +231,31 @@ const ProjectGallery = () => {
                         ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi
                         Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel
                       </p>
+                      {expandedCards['news-fallback'] && (
+                        <p
+                          style={{
+                            color: "#333",
+                            fontSize: "0.85rem",
+                            fontFamily: "Open Sans, sans-serif",
+                            lineHeight: "1.4",
+                            textAlign: "left",
+                            marginBottom: "15px",
+                          }}
+                        >
+                          Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere, Müdür Yardımcısı Dr. Öğr Üyesi Alper Ertem, Sağlık Hizmetleri MYO Bölüm Başkanları Prof. Dr. Meltem Uzunhisar ve diğer akademisyenlerle birlikte katılım göstermiştir. Bu değerli etkinlik ile çevreye duyarlılığımızı bir kez daha göstermiş olduk.
+                        </p>
+                      )}
                       <p
                         style={{
                           color: "#2c5f88",
                           fontSize: "1rem",
                           fontWeight: "600",
                           textAlign: "left",
+                          cursor: "pointer",
                         }}
+                        onClick={() => toggleCard('news-fallback')}
                       >
-                        Devamını Oku
+                        {expandedCards['news-fallback'] ? "Kapat" : "Devamını Oku"}
                       </p>
                     </div>
                   </Card>
@@ -273,8 +317,10 @@ const ProjectGallery = () => {
                     style={{
                       borderRadius: "15px",
                       backgroundColor: item.backgroundColor || "#e8e8e8",
-                      height: "200px",
+                      height: expandedCards[`content-${index}`] ? "auto" : "200px",
+                      minHeight: "200px",
                       padding: "20px",
+                      transition: "height 0.3s ease",
                     }}
                   >
                     <div>
@@ -290,15 +336,31 @@ const ProjectGallery = () => {
                       >
                         {item.content}
                       </p>
+                      {expandedCards[`content-${index}`] && (
+                        <p
+                          style={{
+                            color: "#333",
+                            fontSize: "0.85rem",
+                            fontFamily: "Open Sans, sans-serif",
+                            lineHeight: "1.4",
+                            textAlign: "left",
+                            marginBottom: "15px",
+                          }}
+                        >
+                          {item.fullContent || "Bu içeriğin devamında, projemizin detayları ve gelecek planlarımız hakkında daha fazla bilgi bulabilirsiniz. Çevre dostu yaklaşımımız ve sürdürülebilir çözümlerimizle topluma değer katmaya devam ediyoruz."}
+                        </p>
+                      )}
                       <p
                         style={{
                           color: "#2c5f88",
                           fontSize: "1rem",
                           fontWeight: "600",
                           textAlign: "left",
+                          cursor: "pointer",
                         }}
+                        onClick={() => toggleCard(`content-${index}`)}
                       >
-                        {item.readMore || "Devamını Oku"}
+                        {expandedCards[`content-${index}`] ? "Kapat" : (item.readMore || "Devamını Oku")}
                       </p>
                     </div>
                   </Card>
@@ -308,8 +370,10 @@ const ProjectGallery = () => {
                     style={{
                       borderRadius: "15px",
                       backgroundColor: item.backgroundColor || "#e8e8e8",
-                      height: "200px",
+                      height: expandedCards[`longContent-${index}`] ? "auto" : "200px",
+                      minHeight: "200px",
                       padding: "20px",
+                      transition: "height 0.3s ease",
                     }}
                   >
                     <div>
@@ -320,11 +384,25 @@ const ProjectGallery = () => {
                           fontFamily: "Open Sans, sans-serif",
                           lineHeight: "1.4",
                           textAlign: "left",
-                          marginBottom: "0",
+                          marginBottom: expandedCards[`longContent-${index}`] ? "15px" : "0",
                         }}
                       >
                         {item.content}
                       </p>
+                      {expandedCards[`longContent-${index}`] && (
+                        <p
+                          style={{
+                            color: "#333",
+                            fontSize: "0.8rem",
+                            fontFamily: "Open Sans, sans-serif",
+                            lineHeight: "1.4",
+                            textAlign: "left",
+                            marginBottom: "0",
+                          }}
+                        >
+                          {item.fullContent || "ve akademik kadromuzla birlikte gerçekleştirdiğimiz bu anlamlı etkinlik sayesinde doğaya katkıda bulunduk. Gelecek nesillere daha yeşil bir dünya bırakma hedefimiz doğrultusunda bu tür faaliyetleri sürdürmeye devam edeceğiz."}
+                        </p>
+                      )}
                     </div>
                     <p
                       style={{
@@ -333,9 +411,11 @@ const ProjectGallery = () => {
                         fontWeight: "600",
                         textAlign: "left",
                         marginBottom: "0",
+                        cursor: "pointer",
                       }}
+                      onClick={() => toggleCard(`longContent-${index}`)}
                     >
-                      {item.readMore || "Devamını Oku"}
+                      {expandedCards[`longContent-${index}`] ? "Kapat" : (item.readMore || "Devamını Oku")}
                     </p>
                   </Card>
                 ) : (
@@ -395,8 +475,10 @@ const ProjectGallery = () => {
                     style={{
                       borderRadius: "15px",
                       backgroundColor: "#e8e8e8",
-                      height: "200px",
+                      height: expandedCards['bottom-middle'] ? "auto" : "200px",
+                      minHeight: "200px",
                       padding: "20px",
+                      transition: "height 0.3s ease",
                     }}
                   >
                     <div>
@@ -414,15 +496,31 @@ const ProjectGallery = () => {
                         ABAD Yönetim Kurulu Başkanımız Ayşe Figen Tan, Gazi
                         Üniversitesi Rektör Yardımcısı Prof. Dr. Yücel
                       </p>
+                      {expandedCards['bottom-middle'] && (
+                        <p
+                          style={{
+                            color: "#333",
+                            fontSize: "0.85rem",
+                            fontFamily: "Open Sans, sans-serif",
+                            lineHeight: "1.4",
+                            textAlign: "left",
+                            marginBottom: "15px",
+                          }}
+                        >
+                          Gelişli, Yabancı Diller Yüksekokulu Müdürü Öğr. Gör. Mustafa Akın Güngör, Sağlık Hizmetleri Meslek Yüksekokulu Müdürü Doç. Dr. Hakan Tekedere ve diğer değerli katılımcılar ile birlikte gerçekleştirilen bu anlamlı etkinlik kapsamında çok sayıda fidan toprakla buluşturulmuştur.
+                        </p>
+                      )}
                       <p
                         style={{
                           color: "#2c5f88",
                           fontSize: "1rem",
                           fontWeight: "600",
                           textAlign: "left",
+                          cursor: "pointer",
                         }}
+                        onClick={() => toggleCard('bottom-middle')}
                       >
-                        Devamını Oku
+                        {expandedCards['bottom-middle'] ? "Kapat" : "Devamını Oku"}
                       </p>
                     </div>
                   </Card>
@@ -435,8 +533,10 @@ const ProjectGallery = () => {
                     style={{
                       borderRadius: "15px",
                       backgroundColor: "#e8e8e8",
-                      height: "200px",
+                      height: expandedCards['bottom-right'] ? "auto" : "200px",
+                      minHeight: "200px",
                       padding: "20px",
+                      transition: "height 0.3s ease",
                     }}
                   >
                     <div>
@@ -459,6 +559,20 @@ const ProjectGallery = () => {
                         Ertem, Sağlık Hizmetleri MYO Bölüm Başkanları Prof. Dr.
                         Meltem Uzunhisar-
                       </p>
+                      {expandedCards['bottom-right'] && (
+                        <p
+                          style={{
+                            color: "#333",
+                            fontSize: "0.8rem",
+                            fontFamily: "Open Sans, sans-serif",
+                            lineHeight: "1.4",
+                            textAlign: "left",
+                            marginBottom: "0",
+                          }}
+                        >
+                          Çeliktepe ve Dr. Öğr. Üyesi Fatma Zehta Köse ile birlikte gerçekleştirilen bu çevre dostu etkinlik, üniversitemizin doğaya ve sürdürülebilirliğe verdiği önemi göstermektedir. Bu faaliyetlerle gelecek nesillere daha yaşanabilir bir dünya bırakma hedefimize katkıda bulunuyoruz.
+                        </p>
+                      )}
                     </div>
                     <p
                       style={{
@@ -467,9 +581,11 @@ const ProjectGallery = () => {
                         fontWeight: "600",
                         textAlign: "left",
                         marginBottom: "0",
+                        cursor: "pointer",
                       }}
+                      onClick={() => toggleCard('bottom-right')}
                     >
-                      Devamını Oku
+                      {expandedCards['bottom-right'] ? "Kapat" : "Devamını Oku"}
                     </p>
                   </Card>
                 </Col>
