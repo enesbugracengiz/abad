@@ -10,6 +10,7 @@ import NaturePage from "./pages/NaturePage";
 import YouthPage from "./pages/YouthPage";
 import EducationPage from "./pages/EducationPage";
 import AboutPage from "./pages/AboutPage";
+import BlogPage from "./pages/BlogPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/youth" element={<YouthPage />} />
         <Route path="/education" element={<EducationPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/login" element={<AuthPage />} />

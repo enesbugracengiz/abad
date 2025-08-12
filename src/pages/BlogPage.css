@@ -1,0 +1,128 @@
+.blog-page {
+  min-height: 100vh;
+}
+
+.blog-page .main-content {
+  padding-top: 2rem;
+}
+
+.blog-page .card {
+  transition: all 0.3s ease;
+}
+
+.blog-page .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.blog-page .card img {
+  transition: transform 0.3s ease;
+}
+
+.blog-page .card:hover img {
+  transform: scale(1.1);
+}
+
+.blog-page .social-icon {
+  transition: all 0.3s ease;
+}
+
+.blog-page .social-icon:hover {
+  transform: scale(1.1);
+}
+
+.blog-page .category-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.blog-page .category-item:hover {
+  color: #1e4080;
+  transform: translateX(5px);
+}
+
+.blog-page .search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  text-transform: lowercase;
+}
+
+.blog-page .search-input:focus {
+  outline: none;
+  text-transform: lowercase;
+}
+
+.blog-page .btn-read {
+  transition: all 0.3s ease;
+}
+
+.blog-page .btn-read:hover {
+  background-color: #2c5aa0;
+  color: white;
+}
+
+.blog-page .pagination-dot {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.blog-page .pagination-dot:hover {
+  background-color: #2c5aa0;
+}
+
+.blog-page .btn-continue {
+  transition: all 0.3s ease;
+}
+
+.blog-page .btn-continue:hover {
+  background-color: #1e4080;
+  transform: translateY(-2px);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .blog-page .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .blog-page .hero-section h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .blog-page .sidebar {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
+  .blog-page .main-content-area {
+    order: 1;
+  }
+  
+  .blog-page .search-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .blog-page .search-input {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-page .hero-section h1 {
+    font-size: 2rem !important;
+  }
+  
+  .blog-page .hero-section h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .blog-page .card-title {
+    font-size: 1rem !important;
+  }
+  
+  .blog-page .card-excerpt {
+    font-size: 0.8rem !important;
+  }
+}

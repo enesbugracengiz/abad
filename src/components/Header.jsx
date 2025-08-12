@@ -550,7 +550,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="/404"
+                to="/blog"
                 className="text-decoration-none"
                 style={{
                   backgroundColor: "#6B8E6B",
